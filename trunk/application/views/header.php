@@ -23,18 +23,19 @@
     <ul class="clearfix">
 
         <li><a style="padding: 8px 13px 7px 13px " href="<?=base_url()?>reservation/view_all_reservations"><img src="<?=$url?>assets/img/icons/light/house.png" /></a></li>
-        
-        <li><a href="<?=base_url()?>reservation/view_all_reservations"><span>Bookings</span></a>
+
+         <li><a href="<?=base_url()?>excursions/booking">Book Excursion</a></li>
+        <li><a href="<?=base_url()?>tours/booking">Book Tours</a></li> 
+        <li><a href="<?=base_url()?>excursions/excursions/views">Excursions</a>
             <ul>
-                <li><a href="<?=base_url()?>reservation/view_all_reservations"><span>All Bookings</span></a></li>
-                <li><a href="<?=base_url()?>reservation/view_finish_reservations" class="last"><span>Completed Bookings</span></a></li>
+                <li><a href="<?=base_url()?>excursions/excursions/views">View</a></li>
+                <li><a href="<?=base_url()?>excursions/excursions/add">Add</a></li>
             </ul>
         </li>
-
-        <li><a href="<?=base_url()?>car/view_all_cars"><span>Cars</span></a>
+        <li><a href="<?=base_url()?>tours/tours/views">Tours</a>
             <ul>
-                <li><a href="<?=base_url()?>car/view_all_cars"><span>All Cars</span></a></li>
-                <li ><a href="<?=base_url()?>car/view_new_car" class="last"><span>Add Car</span></a></li>
+                <li><a href="<?=base_url()?>tours/tours/views">View</a></li>
+                <li><a href="<?=base_url()?>tours/tours/add">Add</a></li>
             </ul>
         </li>
 
@@ -56,8 +57,6 @@
 
             </ul>
         </li>-->
-        
-        <li><a href="<?=base_url()?>rentacar"><span>Online Booking</span></a></li>
 
         <li><a href="<?=base_url()?>transactions/view_all_transactions" class="last"><span>Transactions</span></a>
             <ul>
