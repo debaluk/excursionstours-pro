@@ -2,198 +2,177 @@
 
     class Reservation_model extends CI_Model{
 
+        var $user_id; 
+
+        var $queryexc0 = 'SELECT t1.id, t1.date_from, t1.num_of_day, t1.totalprice, t1.noadult, t1.noch,
+        t2.title, 
+        t3.firstName, t3.lastName, t3.phone, t3.title AS c_title, t3.email AS c_email
+        FROM excursionbooking AS t1
+        INNER JOIN excursions AS t2 ON t1.excursions_id = t2.id
+        INNER JOIN customers AS t3 ON t1.customers_id = t3.id
+        where t1.status = 1';
+
+        var $queryexc1 = 'SELECT t1.id, t1.date_from, t1.num_of_day, t1.totalprice, t1.noadult, t1.noch,
+        t2.title, 
+        t3.firstName, t3.lastName, t3.phone, t3.title AS c_title, t3.email AS c_email
+        FROM tourbooking AS t1
+        INNER JOIN tours AS t2 ON t1.tours_id = t2.id
+        INNER JOIN customers AS t3 ON t1.customers_id = t3.id
+        where t1.status = 1';
+
         function __construct(){
             parent::__construct();
+            $this->user_id = 7; //hardcode
         }
 
-        var $reservations_in_progress = '
-        SELECT t1.id, t2.name, t1.datefrom, t1.dateto,
-        t3.firstName, t3.lastName, t1.source_info, 
-        t1.numofdays, t1.dayprice, t1.totalprice ,
-        t1.pickup_loc, t1.return_loc
-        FROM carbooking AS t1 
-        INNER JOIN car AS t2 ON t1.carid= t2.id 
-        INNER JOIN customers AS t3 ON t1.customerid = t3.id
-        where (t1.status = 1 or t1.status = 3)
-        ';
+        function readStatus0() {
+            $res = $this->db->query($this->queryexc0." ORDER BY t1.date_from DESC")->result_array();
 
-        var $reservations_on_hold = '
-        SELECT t1.id, t2.name, t1.datefrom, t1.dateto,
-        t3.firstName, t3.lastName, t1.source_info,
-        t1.numofdays, t1.dayprice, t1.totalprice,
-        t1.pickup_loc, t1.return_loc
-        FROM carbooking AS t1
-        INNER JOIN car AS t2 ON t1.carid= t2.id
-        INNER JOIN customers AS t3 ON t1.customerid = t3.id
-        where t1.status = 0
-        ';
-        
-        var $finish_reservations = '
-        SELECT t1.id, t2.name, t1.datefrom, t1.dateto,
-        t3.firstName, t3.lastName, t1.source_info,
-        t1.numofdays, t1.dayprice, t1.totalprice
-        FROM carbooking AS t1
-        INNER JOIN car AS t2 ON t1.carid= t2.id
-        INNER JOIN customers AS t3 ON t1.customerid = t3.id
-        where t1.status = 2
-        ';
+            foreach($res as $key=>$value){
+                //echo $value['title']; 
 
-        var $book_details = '
-        SELECT t1.id, t2.name, t1.datefrom, t1.dateto,
-        t3.firstName, t3.email, t3.phone, t1.source_info,
-        t1.numofdays, t1.dayprice, t1.totalprice,
-        t1.pickup_loc, t1.return_loc, t1.note, t1.hotel, t1.roomnumber
-        FROM carbooking AS t1
-        INNER JOIN car AS t2 ON t1.carid= t2.id
-        INNER JOIN customers AS t3 ON t1.customerid = t3.id
-        where t1.id =
-        ';
-
-        function all_reservations_in_progress(){
-
-            return $this->db->query($this->reservations_in_progress)->result_array();
-
-        }
-
-        function all_reservations_on_hold(){
-
-            return $this->db->query($this->reservations_on_hold)->result_array(); 
-
-        }
-        
-        function all_finish_reservations() {
-            return $this->db->query($this->finish_reservations)->result_array();
-        }
-
-        function read($id) {
-            return $this->db->where('id',$id)->get('carbooking')->row_array();
-        }
-
-        function modify_date($id, $datetom){
-
-            $data = array('dateto'=>$datetom);
-            $this->db->where('id',$id)->update('carbooking',$data);
-
-            //echo $this->db->last_query()."<br />";
-
-        }
-
-        function check_available_extend($bookid, $carid, $datetom){
-
-            $row = $this->read($bookid);
-            $datetimefrom = $row['datefrom'];
-            $datetimeto = $row['dateto'];
-
-            $query = "SELECT * FROM carbooking
-            WHERE (datefrom <= ".$datetom." and ".$datetom."<=dateto)
-            AND (status = 1 or status = 3 or status = 0)
-            AND carid = ".$carid;
-
-            $notavailable = array();
-            $q = $this->db->query($query)->result_array();
-
-            foreach($q as $one) {
-                $notavailable[] = $one['carid'];
+                $res[$key]['title'] = $this->translate->getArray($value['title'], TRUE);
+                if($res[$key]['title']=='')$res[$key]['title']='-Please translate-';
             }
 
-            //echo $this->db->last_query()."<br />";
+            return $res;
 
-            if(count($notavailable) > 0) {
-                return FALSE;
-                //echo 'count($notavailable) > 0 == TRUE<br />';
-            }else{
-                return TRUE;
-                //echo 'car is available to extend<br />';
+        }  
+        function filterStatus0() {
+            $excdate = $_POST['excdate']; 
+            $queryexc0f = $this->queryexc0 . " and t1.date_from='" . $excdate . "'";
+
+            $res = $this->db->query($queryexc0f)->result_array(); 
+            foreach($res as $key=>$value){
+                //echo $value['title']; 
+
+                $res[$key]['title'] = $this->translate->getArray($value['title'], TRUE);
+                if($res[$key]['title']=='')$res[$key]['title']='-Please translate-';
             }
-        }
-
-        function check_modify_date(){
-
-            /*$_POST['carbookingid'] = 675;
-            $_POST['datetom'] = '09.09.2011 12:59:00';*/
-
-            $row = $this->read($this->input->post('carbookingid'));
-
-
-            $id = $row['id'];
-            $carid = $row['carid'];
-            $datefrom = $row['datefrom'];
-            $dateto = $row['dateto'];
-            $datetom = strtotime($this->input->post('datetom'));
-
-            /*$format = "%d.%m - %H:%i".' h';
-            echo 'carid: '.$carid.'<br />';
-            echo 'datefrom: &nbsp;&nbsp;&nbsp;'.$datefrom.' - '.mdate($format, $datefrom).'<br />';
-            echo 'dateto: &nbsp;&nbsp;&nbsp;'.$dateto.' - '.mdate($format, $dateto).'<br />';
-            echo 'datetom: '.$datetom.' - '.mdate($format, $datetom).'<br />';*/
-
-            $msg = '';
-            $action = FALSE;
-
-            if($datetom<=$datefrom){
-                // Error.<br />Extended date must me greater than pickup date.<br />
-                $msg = "Extended date must me greater than pickup date";
-                $action = FALSE;
-            }else if($datetom<$dateto){
-                    $this->modify_date($id, $datetom);
-                    // Successful change booking operation.
-                    $msg = "Successful change booking operation";
-                    $action = TRUE;
-                }else if($datetom>$dateto){
-                        // datetoextend is greater then dateto in db. 
-                        // check if car is available for extend
-                        if($this->check_available_extend($id, $carid, $datetom)){
-                            $this->modify_date($id, $datetom);
-                            // Successful change booking operation.
-                            $msg = "Successful change booking operation"; 
-                            $action = TRUE;
-                        }else{
-                            // Car is not available to extend.
-                            $msg = "Car is not available to extend.";
-                            $action = FALSE;
-                        }
-                    }else if($datetom==$dateto){
-                            // Extended date is same with date to in db.
-                            $msg = "Extended date is same with date to in db.  ";
-                            $action = FALSE;
-                        }else{
-
-                            // Something wrong.<br />Please try again.
-                            $msg = "Something wrong.<br />Please try again.";
-                            $action = FALSE;
-            }
-
-            echo json_encode(array('success'=>'success','msg'=>$msg, 'action'=>$action));
-
-
-        }
-
-        function readStatus0_details($id) {
-            return $this->db->query($this->book_details.$id)->result_array();
-        }
-
-        function readStatus0_ac_details($id) {
-
-            $q = '
-            SELECT cbaccessories.*, 
-            accessorydescription.type, accessorydescription.description, accessorydescription.price            
-            FROM (`cbaccessories`) JOIN 
-            accessorydescription ON cbaccessories.adId = accessorydescription.id
-            WHERE `carBookingId` = '.$id.' 
-            ';
-            $res = $this->db->query($q)->result_array();
-            //echo $this->db->last_query();
             return $res;
         }
 
-        function stop_booking() {
-            $this->db->where('id',$this->input->post('id'))->update('carbooking',array('status' => 4));
-            echo json_encode(array('success'=>'success'));
+        function readStatus1() {
+            return $this->db->query($this->queryexc1." ORDER BY t1.date_from DESC")->result_array();
+        }  
+        function filterStatus1() {
+            $trdate = $_POST['trdate']; 
+            $queryexc0f = $this->queryexc1 . " and t1.date_from='" . $trdate . "'";
+
+            $res = $this->db->query($queryexc0f)->result_array(); 
+            $this->firephp->fb($this->db->last_query());
+            return $res;
+        }  
+
+
+        /*
+        *update status to number defined in status legend
+        */
+        function update_status_exc()
+        {
+            if(isset($_POST['excid']) && isset($_POST['excstatusid']))
+            {
+                $response="ok";
+
+                $excid=$_POST['excid'];
+                $excstatusid = $_POST['excstatusid'];
+
+                //uzimamo datum koji vracama radi osvezavanja tabele
+                $this->db->select('date_from'); 
+                $query = $this->db->get_where('excursionbooking', array(
+                'id' => $excid
+                ))->result_array(); 
+
+                foreach ($query as $key => $list) {
+                    $date_from = $list['date_from']; 
+                }
+
+                //menjamo status za zadani id i status koji je poslat preko post variable
+                $data = array(
+                'status' => $excstatusid
+                );
+
+                $this->db->where('id', $excid);
+                $this->db->update('excursionbooking', $data); 
+
+                $response = "promena statusa za " . $excid . " u: " . $excstatusid;
+                echo json_encode(array('success'=>'success', 's_date'=>$date_from));   
+            }
         }
 
-        function end_booking() {
-            $this->db->where('id',$this->input->post('id'))->update('carbooking',array('status' => 2));
-            echo json_encode(array('success'=>'success'));
+
+        /*
+        *update status to number defined in status legend
+        */
+        function update_status_tr()
+        {
+            if(isset($_POST['trid']) && isset($_POST['trstatusid']))
+            {
+                $response="ok";
+
+                $trid=$_POST['trid'];
+                $trstatusid = $_POST['trstatusid'];
+
+                //uzimamo datum koji vracama radi osvezavanja tabele
+                $this->db->select('date_from'); 
+                $query = $this->db->get_where('tourbooking', array(
+                'id' => $trid
+                ))->result_array(); 
+
+                foreach ($query as $key => $list) {
+                    $date_from = $list['date_from']; 
+                }
+
+                //menjamo status za zadani id i status koji je poslat preko post variable
+                $data = array(
+                'status' => $trstatusid
+                );
+
+                $this->db->where('id', $trid);
+                $this->db->update('tourbooking', $data); 
+
+                $response = "promena statusa za " . $trid . " u: " . $trstatusid;
+                echo json_encode(array('success'=>'success', 's_date'=>$date_from));   
+            }
+        }
+
+
+        /*
+        *uzima datume iz tabele excbooking za setovanje kalendara
+        */
+        function getBookingDates()
+        {
+            $response= array();
+            $this->db->select('date_from');   
+            $this->db->distinct();
+            $this->db->where('status',1);
+            $query = $this->db->get('excursionbooking')->result_array(); 
+            foreach ($query as $key => $list) {
+                array_push($response, date("n-j-Y" , $list['date_from']));
+            } 
+
+            $data = array('dates'=>$response);
+
+            echo json_encode($data);  
+        }
+
+        /*
+        *uzima datume iz tabele excbooking za setovanje kalendara
+        */
+        function getTrBookingDates()
+        {
+            $response= array();
+            $this->db->select('date_from');   
+            $this->db->distinct();
+            $this->db->where('status',1);
+            $query = $this->db->get('tourbooking')->result_array(); 
+            foreach ($query as $key => $list) {
+                array_push($response, date("n-j-Y" , $list['date_from']));
+            } 
+
+            $data = array('dates'=>$response);
+
+            echo json_encode($data);  
         }
 
     }

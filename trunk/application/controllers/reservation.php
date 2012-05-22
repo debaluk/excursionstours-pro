@@ -1,4 +1,12 @@
 <?php
+/*
+* status legend
+* status = 0 =>  pocetno stanje
+* status = 1 =>  validan - placanje uspesno 
+* status = 2 =>  otkazan
+* status = 3 =>  validan - rezervacija sa sistema
+* status = 4 =>  ceka proces placanja  
+*/
 require_once($application_folder."/controllers/navigator.php");
 class Reservation extends navigator 
 {
@@ -26,39 +34,87 @@ class Reservation extends navigator
     function view_all_reservations(){
 
         $data['title'] = "Reservations";
-        $data['all_reservations_in_progress'] = $this->reservation_model->all_reservations_in_progress(); 
-        $data['all_reservations_on_hold'] = $this->reservation_model->all_reservations_on_hold(); 
         $this->core_site('reservations','view_all_reservations',NULL,$data); 
 
     }
-    
-    function view_finish_reservations(){
 
-        $data['title'] = "Completed Bookings";
-        $data['all_finish_reservations'] = $this->reservation_model->all_finish_reservations(); 
-        $this->core_site('reservations','view_finish_reservations',NULL,$data); 
+    /*
+    *uzima niz datuma iz excusrionbooking
+    */
+    function exc_dates()
+    {
+        $this->reservation_model->getBookingDates();   
+    }      
 
+    /*
+    *filtrira podatke za prikaz u tablesorter-u
+    */
+    function exc_filter()
+    {
+        //videti za $type
+        $datum ="all days";
+        if(!isset($_POST['excdate']) )
+        {
+            $this->data['status0'] = $this->reservation_model->readStatus0();
+            //echo json_encode(array('success'=>'nema time stamp'));   
+        }
+        else
+        {
+            //$excdate = $_POST['excdate'];
+            //echo json_encode(array('success'=>'ima time stamp ' . date("d.M.Y", 1286748000)));    
+            $this->data['status0'] = $this->reservation_model->filterStatus0();   
+        }    
+
+
+        echo json_encode($this->load->view('reservations/view_list_exc',$this->data['status0'],TRUE));   
     }
 
-    function reservation_details($id){
-
-        $data['title'] = "Reservation Details";           
-        $this->data['status0'] = $this->reservation_model->readStatus0_details($id);
-        $this->data['status0_ac'] = $this->reservation_model->readStatus0_ac_details($id);
-        $this->core_site('reservations','reservation_details',NULL,$data);
-
+    /*
+    *otkazuje buking stattus na 0 za taj booking
+    */
+    function excstatus()
+    {
+        $this->reservation_model->update_status_exc();
     }
 
-    function check_modify_date(){
-        $this->reservation_model->check_modify_date();
+    /*
+    *uzima niz datuma iz tourbooking
+    */
+    function tr_dates()
+    {
+        $this->reservation_model->getTrBookingDates();   
     }
-    
-    function stop_booking(){
-        $this->reservation_model->stop_booking(); 
+
+
+    /*
+    *filtrira podatke za prikaz u tablesorter-u
+    */
+    function tr_filter()
+    {
+        //videti za $type
+        $datum ="all days";
+        if(!isset($_POST['trdate']) )
+        {
+            $this->data['status1'] = $this->reservation_model->readStatus1();
+            //echo json_encode(array('success'=>'nema time stamp'));   
+        }
+        else
+        {
+            //$excdate = $_POST['excdate'];
+            //echo json_encode(array('success'=>'ima time stamp ' . date("d.M.Y", 1286748000)));    
+            $this->data['status1'] = $this->reservation_model->filterStatus1();   
+        }    
+
+
+        echo json_encode($this->load->view('reservations/view_list_tr',$this->data['status1'],TRUE));   
     }
-    
-    function end_booking(){
-        $this->reservation_model->end_booking(); 
+
+    /*
+    *otkazuje buking stattus na 0 za taj booking
+    */
+    function trstatus()
+    {
+        $this->reservation_model->update_status_tr();
     }
 
 }

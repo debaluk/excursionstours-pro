@@ -12,9 +12,9 @@
         <li><a href="javascript:" rel="al"><img alt="Al" src="<?=base_url()?>assets/img/flags/al.png" /></a></li>
     </ul>
 </div>   
-<div id="logo" style="height: 73px;">
-    <a href="<?=base_url()?>" style="padding-top: 13px;">
-        <img alt="IT Montenegro" src="<?=base_url()?>assets/img/it-montenegro.png" />
+<div id="logo">
+    <a href="<?=base_url()?>">
+        <img alt="Sohotravel Montenegro" src="<?=base_url()?>assets/img/logo.jpg" />
     </a>
     <?//$language?>
 </div>
