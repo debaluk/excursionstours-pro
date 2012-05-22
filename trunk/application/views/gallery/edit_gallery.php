@@ -41,16 +41,18 @@
 
                                         <?foreach($page_types as $page_type):?>
 
-                                            <optgroup label="<?=ucfirst($page_type);?>s">
+                                            <optgroup label="<?=ucfirst($page_type);?>">
                                             <?
+                                           // echo $page_type;
                                                 $rows = $this->posts_model->view_related_post($page_type);
+                                                //print_r($rows);
                                                 $selected = '';
 
                                                 foreach($rows as $post):?>
 
                                                 <? if($post['id']==$gallery['posts_ID']) $selected = 'selected="selected"'; ?>
 
-                                                <option <?=$selected?> value="<?=$post['id']?>" class="level-0"> <?=$post['name']?></option>
+                                                <option <?=$selected?> value="<?=$post['id']?>" class="level-0"> <?=$post['title']?></option>
 
                                                 <? 
                                                     $selected ='';
