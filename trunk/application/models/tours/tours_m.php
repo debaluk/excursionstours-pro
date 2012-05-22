@@ -4,12 +4,12 @@
     * @author Djordje Zeljic
     * Date: Jun 2, 2010 11:34:40 PM
     */
-    class tours_m extends Model {
+    class tours_m extends CI_Model {
 
         public $errors;
 
         function tours_m () {
-            parent::Model();
+            parent::__construct();
         }// construct of tours_m
 
         function create(){
@@ -182,12 +182,12 @@
         *      VALIDATE FORM
         */
         function validate($type = 'create') {
-            $this->form_validation->set_rules('title','Naziv ture','trim|required');
-            $this->form_validation->set_rules('nodays','Broj dana','trim|required|numeric');
-            $this->form_validation->set_rules('nonights','Broj nocenja','trim|required|numeric');
-            $this->form_validation->set_rules('onebed','Cijena u jednokrevetnoj','trim|required|numeric');
-            $this->form_validation->set_rules('twobed','Cijena u dvokrevetnoj','trim|required|numeric');
-            $this->form_validation->set_rules('capacity','Kapacitet','trim|required|numeric');
+            $this->form_validation->set_rules('title','Title','trim|required');
+            $this->form_validation->set_rules('nodays','No. days','trim|required|numeric');
+            $this->form_validation->set_rules('nonights','No. nights','trim|required|numeric');
+            $this->form_validation->set_rules('onebed','Single room price','trim|required|numeric');
+            $this->form_validation->set_rules('twobed','Double room','trim|required|numeric');
+            $this->form_validation->set_rules('capacity','Vapacity','trim|required|numeric');
             //$this->form_validation->set_rules('startdate','Pocetak','trim|required|valid_date');
 
             if($this->form_validation->run()){

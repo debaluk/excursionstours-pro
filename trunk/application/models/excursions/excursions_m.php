@@ -1,13 +1,13 @@
 <?php 
 
-    class excursions_m extends Model {
+    class excursions_m extends CI_Model {
 
         var $errors = '';
         private $fields = array('title','description','excursion_text','addition','pickup_location');
 
 
         function excursions_m () {
-            parent::Model();
+            parent::__construct(); 
 
         }
 
@@ -118,12 +118,12 @@
         */
 
         function validate($type='create') {
-            $this->form_validation->set_rules('title','Naziv izleta','trim|required');
+            $this->form_validation->set_rules('title','Title','trim|required');
             //$this->form_validation->set_rules('nodays','Broj dana','trim|required|numeric');
             //$this->form_validation->set_rules('nonights','Broj nocenja','trim|required|numeric');
-            $this->form_validation->set_rules('adultprice','Cijena za odrasle','trim|required|numeric');
-            $this->form_validation->set_rules('childprice','Cijena za djecu','trim|required|numeric');
-            $this->form_validation->set_rules('capacity','Kapacitet','trim|required|numeric');
+            $this->form_validation->set_rules('adultprice','Adult price','trim|required|numeric');
+            $this->form_validation->set_rules('childprice','Children price','trim|required|numeric');
+            $this->form_validation->set_rules('capacity','Capacity','trim|required|numeric');
             if($this->form_validation->run()) {
                 return TRUE;
             }else {

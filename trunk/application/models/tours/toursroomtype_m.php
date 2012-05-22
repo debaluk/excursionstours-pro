@@ -4,10 +4,10 @@
  * @author Djordje Zeljic
  * Date: Jun 3, 2010 1:31:55 AM
  */
-class toursroomtype_m extends Model {
+class toursroomtype_m extends CI_Model {
 
     function toursroomtype_m () {
-        parent::Model();
+        parent::__construct();
     }// construct of toursroomtype_m
 
     function read(){

@@ -29,7 +29,7 @@
             $this->montenegrin->display();
         ?> 
 
-        <? if ($page=='cars'): ?>
+        <? if (($page=='excursions' && ($sub=='edit_v' || $sub=='add_v')) || ($page=='tours' && ($sub=='edit_v' || $sub=='add_v'))): ?>
             <!--TINY MCE EDITOR-->
             <script src="<?=$url?>assets/js/editor.js" type="text/javascript"></script>
             <script src="<?=base_url()?>assets/js/tinymce/tiny_mce.js" type="text/javascript"></script>
@@ -141,7 +141,7 @@
     </head>
 
     <body>
-        <? //echo $page.'/'.$sub; ?>
+        <? echo $page.'/'.$sub; ?>
         <div id="wrap">
 
             <div id="header" class="clearfix"><? $this->load->view('header')?></div>
