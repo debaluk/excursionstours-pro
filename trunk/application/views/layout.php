@@ -19,6 +19,8 @@
             var upsub = '<?=$upsub?>';
             var path = base_url+'assets/';
             var lang = '<?=$lang?>';
+            //var system_url = 'http://localhost/_informacionisistem/excursion_&_tours/';
+            var system_lang = '<?=$language?>'; 
 
         </script>   
 
@@ -120,17 +122,18 @@
             }
         ?>
 
-        <? if ($page=='rentacar'): ?>
+        <? if ($page=='excursions/booking'): ?>
 
             <!-- IT-Montenegro Rentacar CSS       -->
-            <link type="text/css" rel="stylesheet" href="<?=$url;?>assets/css/rentacar.css">
-            <link type="text/css" rel="stylesheet" href="<?=$url;?>assets/css/dd.css"> 
-            <link type="text/css" rel="stylesheet" href="<?=$url;?>assets/css/popup.css"> 
+            <link type="text/css" rel="stylesheet" href="<?=$url;?>assets/css/excursionsbooking.css">
+            <link type="text/css" rel="stylesheet" href="<?=$url;?>assets/css/customer.css">  
 
 
             <!-- IT-Montenegro Rentacar JS       -->
 
-            <script type="text/javascript" src="<?=$url?>assets/js/jquery.dd.js"></script>   
+            <script type="text/javascript" src="<?=$url?>assets/js/jquery.history.js"></script>   
+            <script type="text/javascript" src="<?=$url?>assets/js/excursions/booking/booking.js"></script>   
+            <script type="text/javascript" src="<?=$url?>assets/js/jquery.idTabs.min.js"></script>   
 
             <? endif; ?>
 
@@ -142,7 +145,7 @@
     </head>
 
     <body>
-        <? //echo $page.'/'.$sub; ?>
+        <? echo $page.'/'.$sub; ?>
         <div id="wrap">
 
             <div id="header" class="clearfix"><? $this->load->view('header')?></div>
@@ -169,8 +172,6 @@
             </div>
 
         </div>  
-
-        <? $this->load->view('rentacar/popup/popup'); ?>
 
     </body>
 

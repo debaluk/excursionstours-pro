@@ -752,11 +752,6 @@ h3{
 .widefat * {
     word-wrap: break-word;
 }
-#fix-style input, select {
-    height: 27px;
-    line-height: 15px;
-    color: #333333;
-}
 table.display thead th {
     color: #414141 !important;
 }
@@ -1815,4 +1810,17 @@ td.column-order{
     margin-left: 43px;
     margin-top: 59px;
     position: absolute;
+}
+#loader h2 {
+    border-bottom: medium none !important;
+    font-style: italic !important;
+    margin: 0 !important;
+    padding:0 !important;
+    width: 108px;
+    line-height: 21px !important;
+     color: #848484 !important; 
+     text-shadow: none  !important;
+     leter-spacing:0 !important;
+     text-align: center !important;
+     margin-top:11px !important;  
 }

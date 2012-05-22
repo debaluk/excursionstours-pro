@@ -25,6 +25,8 @@
             'al' => 'Albanian'
             );
             
+            $this->data['language'] = $this->lang_ses->getLang();
+            
         }
 
         function index() { show_404(); }         

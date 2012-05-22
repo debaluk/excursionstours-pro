@@ -1,5 +1,5 @@
 
-<h2> <img src="<?=$url?>assets/img/titles/bookings_in_progress.png" /> </h2>
+<h2> <img src="<?=$url?>assets/img/titles/bookings_excursions.png" /> </h2>
 
 <div class="demo_jui">
 
@@ -27,7 +27,7 @@
 
 <div class="spacer"></div>
 
-<h2> <img src="<?=$url?>assets/img/titles/bookings_on_hold.png" /> </h2>
+<h2> <img src="<?=$url?>assets/img/titles/bookings_tours.png" /> </h2>
 
 <div class="demo_jui">
 
