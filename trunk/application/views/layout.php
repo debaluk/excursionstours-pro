@@ -122,7 +122,7 @@
             }
         ?>
 
-        <? if ($page=='excursions/booking'): ?>
+        <? if ($page=='excursions/booking' || $page=='tours/booking'): ?>
 
             <!-- IT-Montenegro Rentacar CSS       -->
             <link type="text/css" rel="stylesheet" href="<?=$url;?>assets/css/excursionsbooking.css">
@@ -132,20 +132,16 @@
             <!-- IT-Montenegro Rentacar JS       -->
 
             <script type="text/javascript" src="<?=$url?>assets/js/jquery.history.js"></script>   
-            <script type="text/javascript" src="<?=$url?>assets/js/excursions/booking/booking.js"></script>   
+            <script type="text/javascript" src="<?=$url?>assets/js/<?=$page?>/booking.js"></script>   
             <script type="text/javascript" src="<?=$url?>assets/js/jquery.idTabs.min.js"></script>   
 
             <? endif; ?>
 
-        <? if ($page=='rentacar' && $sub=='finish' ) : ?>
-            <script type="text/javascript" src="<?=$url?>assets/js/popup.js"></script> 
-            <script type="text/javascript" src="<?=$url?>assets/js/optional_accesories.js"></script> 
-            <? endif; ?>
 
     </head>
 
     <body>
-        <? echo $page.'/'.$sub; ?>
+        <? //echo $page.'/'.$sub; ?>
         <div id="wrap">
 
             <div id="header" class="clearfix"><? $this->load->view('header')?></div>

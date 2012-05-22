@@ -1,6 +1,6 @@
 
 //var system_url = 'http://sohotravel.it-montenegro.com/'; 
-var system_url = 'http://localhost/soho.it-montenegro.com/';
+var system_url = 'http://localhost/excursionstours-pro/'; 
 
 var result_div = 'content_exc';  
 var selected_date;
@@ -142,12 +142,12 @@ $(document).ready(function(){
 
     /*$('.selexcfromlist').live('click',function(){
 
-        var excid = $(this).attr('href');
-        excid = excid.replace(/^.*#/, '');
-        $.history.load(excid);
-        return false;
+    var excid = $(this).attr('href');
+    excid = excid.replace(/^.*#/, '');
+    $.history.load(excid);
+    return false;
     });*/
-    
+
     $('.exc_one').live('click',function(){
         //console.log('id='+this.id.replace(/^.*#/, ''))
         $.history.load(this.id.replace(/^.*#/, ''));     
@@ -201,7 +201,7 @@ $(document).ready(function(){
             },
             beforeShowDay: enableAllTheseDays ,
             showOn: 'button',
-            buttonImage: site_url+'assets/img/backgrounds/cal_orange.gif',
+            buttonImage: base_url+'assets/img/backgrounds/cal_orange.gif',
             buttonImageOnly: true
         });
 
@@ -448,7 +448,7 @@ $(document).ready(function(){
     function loadingfinal()
     {
         $.modal(
-        "<div><div id='loader'><div class='logo'><img src='"+system_url+"assets/img/logo.jpg'></div><div class='animate'><img src='"+system_url+"assets/img/backgrounds/loadingfinal.gif'></div><h2>Please wait...</h2></div></div>" , 
+        "<div><div id='loader'><div class='logo' style='margin-top:15px'><img src='"+system_url+"assets/img/logo.jpg'></div><div class='animate'><img src='"+system_url+"assets/img/backgrounds/loadingfinal.gif'></div><h2 style='width: 385px;'>Please wait...</h2></div></div>" , 
         {
             closeHTML: "",
             containerCss:{

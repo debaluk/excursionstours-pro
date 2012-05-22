@@ -434,7 +434,7 @@ $(document).ready(function(){
     function loadingfinal()
     {
         $.modal(
-        "<div><div id='loader'><div class='logo'><img src='"+system_url+"assets/img/logo.jpg'></div><div class='animate'><img src='"+system_url+"assets/img/backgrounds/loadingfinal.gif'></div><h2>Please wait...</h2></div></div>" , 
+        "<div><div id='loader'><div class='logo' style='margin-top:15px'><img src='"+system_url+"assets/img/logo.jpg'></div><div class='animate'><img src='"+system_url+"assets/img/backgrounds/loadingfinal.gif'></div><h2 style='width: 385px;'>Please wait...</h2></div></div>" , 
         {
             closeHTML: "",
             containerCss:{

@@ -1,10 +1,12 @@
 <?php
-    class Booking_m extends Model
+    class Booking_m extends CI_Model
     {       
-
+       private $fields = array('title','description','excursion_text','addition','pickup_location');
+        private $data;
+        
         function Booking_m()
         {
-            parent::Model();
+            parent::__construct(); 
         }
 
         function serach()
@@ -293,7 +295,7 @@
                 $this->data['t_nodays'] = $list['nodays'];
                 $this->data['t_pickup_location'] = $list['pickup_location'];
             } 
-            $response = $this->load->view('tours/booking/total', '', TRUE);  
+            $response = $this->load->view('tours/booking/total',  $this->data, TRUE);  
             $this->encode_json_get(array('success'=>'success','html'=>$response,'book_id'=>$newid)); 
         }
 

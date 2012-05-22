@@ -8,7 +8,7 @@
             <br>
             <label for="eb_freetext">Free text:</label>
             <br>
-            <input type="text" id="eb_freetext" name="eb_freetext" style="width: 177px; margin-bottom: 6px; border:1px solid #C0C0C0; color:#000080;"/> <br class="clearing" />
+            <input type="text" id="eb_freetext" name="eb_freetext" style="width: 177px; margin-bottom: 6px; border:1px solid #C0C0C0;"/> <br class="clearing" />
 
             <label for="exc_sort">Sort by:</label>
             <br>

@@ -11,7 +11,7 @@
     'core.css' => 'css',
     'demo_table_jui.css' => 'css',
     'jqueryslidemenu.css' => 'css',
-    'jquery-ui-1.8.4.custom.css' => 'css',
+    'jquery-ui.css' => 'css',
     /*'jquery-ui.css' => 'css',   */
     'jquery.min.js' => 'js',
     'jqueryslidemenu.js' => 'js',
