@@ -27,7 +27,13 @@
         <!--DISPLAY Assets CSS & JS --> 
         <?  
             $this->montenegrin->display();
-        ?> 
+        ?>
+        
+        <?if($page.'/'.$sub == 'gallery/add_gallery_images'){?> 
+        <link href="<?=base_url()?>assets/css/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css"> 
+        <?}else{?>
+        <link href="<?=base_url()?>assets/css/jquery-ui.css" rel="stylesheet" type="text/css"> 
+        <?}?>
 
         <? if (($page=='excursions' && ($sub=='edit_v' || $sub=='add_v')) || ($page=='tours' && ($sub=='edit_v' || $sub=='add_v'))): ?>
             <!--TINY MCE EDITOR-->
@@ -106,10 +112,6 @@
 
                 case 'reservations/view_all_reservations':?>
                 <script type="text/javascript" src="<?=$url?>assets/js/reservations/reservations.js"></script> 
-                <?break;
-
-                case 'cars/view_all_cars';?>
-                <script type="text/javascript" src="<?=$url?>assets/js/cars/view.js"></script> 
                 <?break;
 
                 case 'cars/edit_car';?>
