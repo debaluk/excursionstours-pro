@@ -1,0 +1,1819 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+caption{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+    color: black;
+    background: white;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: "";
+}
+
+blockquote, q {
+    quotes: "" "";
+}
+/*
++  CLEAR FLOATS
+---------------------------------------------------------------------------- */
+
+.clearfix:after { 
+    content: "."; display: block; height: 0; clear: both; visibility: hidden;
+}
+.clearfix {    
+    display: inline-block;
+}
+/* Hides from IE-mac \*/ * html .clearfix { height: 1%;}
+.clearfix {
+    display: block;
+}
+.spacer{
+    width: 100%;
+    height: 0;
+    background: none;
+    clear: both;
+}
+a {
+    color:#414141;
+    cursor:pointer;
+    outline-style:none;
+    text-decoration:none;
+    font-weight: bold;
+}
+img {
+    border: none;
+}
+input, select, textarea{
+    color:#000000;
+    border:1px solid #D3D3D3;
+    font-size:15px;
+    margin: 1px;
+}
+html, body {
+    border:0 none;   
+    text-align:center;
+    font-family : Arial, Helvetica; 
+}
+body {
+    font-size: 12px;
+    color: #848484;
+    font-size: 11px;
+    line-height: 16px;
+    text-decoration: none;
+    background: url(../img/bg.png) repeat-x; 
+} 
+h1,h2,h3,h4{
+    font-weight:normal; 
+    margin-bottom:15px;   
+    /*text-shadow:#FFF 1px 1px 1px;*/
+}
+
+h1{
+    color:#E77817;
+    font-size:24px;
+    letter-spacing:-0.03em;
+    line-height: 24px;
+}
+
+/*h2{
+font-size: 18px;
+border-bottom: 1px solid #EEEEEE;
+padding-bottom:4px;
+width:410px;
+}
+*/
+h3{
+    font-size: 16px;
+}
+
+br{
+    padding:0; margin:0;
+}
+textarea, input, select {
+    margin: 1px;
+    padding: 3px;
+}
+a {
+    color: #414141;
+    font-weight: normal;
+}
+a:hover, a:active, a:focus {
+    color: #D54E21;
+}
+#header_holder {
+    background:none repeat scroll 0 0 #252525;
+    /*border-bottom:1px solid #282828;*/
+    overflow:hidden;
+}  
+#header {
+    /*background:none repeat scroll 0 0 #252525;
+    height:66px;
+    margin:auto;
+    width:960px;*/
+    position: relative;
+    height: 139px;
+} 
+#logo{
+    display: inline-block;
+    padding: 30px 0 0;
+    text-decoration: none;
+    width: 100px;
+    /*height: 55px;*/
+}
+#logo a{
+    display: block;
+}
+#headerinfo{
+    float:right;
+    width: 220px;
+    text-align: right;
+    margin-right:16px;
+}
+
+/******************************************************************
+*   MODAL STYLER
+*******************************************************************/ 
+
+.simplemodal-container{
+    background: #FFF;
+    -moz-border-radius:5px 5px 5px 5px;
+    -moz-box-shadow:0 0 18px rgba(0, 0, 0, 0.4);
+    border:3px solid transparent;
+}    
+#simplemodal-data{
+    padding: 10px;
+}
+#simplemodal-data a{
+    text-decoration: none;
+    color: #fff;
+    line-height:16px;
+} 
+.simplemodal-container h2{  
+    text-align:center;
+}
+.simplemodal-container .logo{
+    margin:0 auto;  
+    width:380px;
+    text-align:center;
+}
+.simplemodal-container .animate{ 
+    text-align:center;
+}
+
+a#nav-logout{
+    display: block;
+    height: 23px;
+    text-indent:-4999px;
+    background:url(../img/nav/nav_clientlogout.jpg) no-repeat scroll left top transparent;
+    margin-left: 140px;
+}
+a#nav-logout:hover{
+    background-position: 0 -23px;
+}
+
+#clearline {
+    height:65px;
+    /*overflow:hidden;*/
+}
+#cltext {
+    background:none repeat scroll 0 0 #252525;    
+    margin:0 auto auto;    
+    width:960px;
+    text-align: left;
+    height: 25px;
+
+}
+#cltext span{
+    margin:6px 10px;
+    font-size: 13px;
+    color:#e5e5e5;
+    float: left;
+}
+#clgraph {
+    background:url(../img/backgrounds/clbottom.gif) no-repeat scroll 0 0 transparent;
+    height:3px;
+    margin:auto;
+    width:960px;
+}
+.submenu{
+    float: right;
+    /*width: 564px;*/
+}
+#wrap{
+    width: 960px;
+    margin: auto;
+    overflow: hidden;
+    text-align: left;
+}
+#content{
+    overflow: hidden;
+    margin: 13px 0 0 0;
+}
+
+.pager{
+    background:none repeat scroll 0 0 #414141;
+    border:1px solid #DEDEDE;
+    border-top: none;
+    height:auto;
+    overflow:hidden;
+    /*padding:2px 0;*/
+    text-align:center;
+    width: 960px;
+}
+.pager form{
+    line-height: 20px;
+}
+.pager .pagedisplay, .pager .pagesize{
+    border-bottom: medium none;
+    font-size: 11px;
+    text-align: center;
+    width: 60px;
+    text-indent: 0;
+}
+
+.descdiv{
+    line-height: 20px;
+    margin-left: 15px;
+    text-align:justify;
+}
+/*----        Other        ----*/
+.required{
+    color:#C30;
+}
+
+#infomessage{
+    font-size:11px;
+    border-left:3px solid #dedede;
+    padding:2px 0px 2px 10px;
+    display:none;
+    margin:10px 0px 10px 2px;
+    line-height:24px;
+}
+
+.infomessage{
+    font-size:11px;
+    padding:2px 0px 2px 10px;
+    margin:10px 0px 10px 10px;
+    line-height:24px;
+}
+
+/*        FORMS        */
+.inputbox{
+    padding:3px;
+    border:1px solid #DEDEDE;
+    width:400px;
+    border-left:3px solid #DEDEDE;
+    color:#444;
+    font-size:18px;
+    margin-top: 2px;
+}
+
+textarea.inputbox{
+    font-size: 12px;
+}
+
+select.inputbox{
+    /*padding: 1px;
+    font-size: 12px;*/
+}
+
+.inputdivline{
+    margin-bottom:15px;
+    overflow:hidden;
+}
+
+.inputdivline .hint{
+    color:#888;
+    font-size:12px;
+    font-style:italic;
+}
+
+.hint{
+    color:#888;
+    font-size:12px;
+    font-style:italic;
+    display: inline-block;
+}
+
+/*              Indicator           */
+#loadingdiv, .loadingdiv{
+    display: none;
+    background: url(../img/backgrounds/icons/loading.gif) no-repeat top left;
+    height: 16px;
+    padding: 3px 0px 3px 20px;
+    font-size: 10px;
+    color: #222;
+}
+.footer{
+    margin-top: 30px; 
+    margin-bottom: 30px; 
+    font-size: 10px; 
+    color: rgb(68, 68, 68); 
+    overflow: hidden; 
+    padding: 10px; 
+    text-align: left;
+    margin:auto;
+    width:960px;
+}
+.o_text{
+    width: 70px;
+}
+#footer {
+    background:url(../img/system-logo-small.png) no-repeat scroll right 5px transparent !important;
+    border-top:1px solid #F2F2F2;
+    margin:0 auto;
+    margin-top:30px;
+    overflow:hidden;
+    padding:16px 0 48px;
+    width:960px;
+}
+p#footer_copyright {
+    float:left;
+    font-size:11px;
+    padding-top:6px;
+    text-align:right;
+}
+#footer_nav {
+    float:left;
+    margin-left:10px;
+    text-align:right;
+    width:700px;
+}
+#footer_nav li {
+    border-left:1px solid #DADADA;
+    display:block;
+    float:left;
+    font-size:11px;
+    line-height:19px;
+    padding:4px 12px;
+}
+#footer a {
+    /*border-bottom:1px solid #D8D8D8;*/
+    color:#888888;
+    padding:4px 0 0;
+    text-decoration:none;
+}
+#footer a:hover {
+    color:#444444;
+}
+#sidebar {
+    float:left;
+    width:220px;
+}
+.sidebarbox {
+    font-size:11px;
+    line-height:20px;
+    margin-bottom:40px;
+    padding:10px;
+}
+#incontent {
+    float:left;
+    margin-left:20px;
+    width:700px;
+}
+
+/* this is administration code */
+
+.lineinput{
+    display: block;
+    margin: 10px 0px;
+}
+
+.inputbox, .selectbox{
+    padding: 4px 7px;     
+    border-left: 3px solid #D3D3D3;
+}
+.inputbox{
+    width: 350px; 
+}
+.selectbox{
+    width: 368px;
+}
+.greenbtn{
+    background: none repeat scroll 0 0 #414141;
+    border: medium none;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 4px;
+    padding: 5px;
+    text-indent: 0;
+}
+.objasnjenje{
+    font-style: italic;
+    font-size: 11px;
+    color: #666666;
+}
+table.tablesorter tbody td.exc_title{
+    color:#E77817;
+    font-size:16px;
+    letter-spacing:-0.03em;
+    line-height: 34px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+table.tablesorter tbody td.exc_info,table.tablesorter tbody td.actiontd{
+    vertical-align: middle;
+}
+/****************************************************  
+Grids and Buttons
+****************************************************/
+.delete_grid, .edit_grid, .cancel_grid, .add_foto{
+    display:inline-block;
+    height:16px;
+    /*text-indent:-9999em;*/
+    width:49px;
+}
+.edit_grid{
+    /*background:url("../img/backgrounds/buttons/uredi.gif") no-repeat scroll 0 0 transparent;*/
+    }.delete_grid{
+    /*background:url("../img/backgrounds/buttons/obrisi.gif") no-repeat scroll 0 0 transparent;*/
+    }.cancel_grid{
+    /*background:url("../img/backgrounds/buttons/otkazi.gif") no-repeat scroll 0 0 transparent;*/
+    width:89px;
+}
+.demoHeaders { margin-top: 2em; } 
+
+.t_title{
+    float: left;
+    margin-left: 5px;
+}
+.t_component{
+    float: left;
+}
+.t_component input{
+    visibility:hidden;
+    width:2px;
+}
+.action{
+
+}
+.action_td{
+    background-color:#EAEBDB;
+    text-align:center;
+}
+#excrows a{
+    text-decoration: underline;
+}
+#excrows a:hover{
+    text-decoration: none;
+}
+#trrows a{
+    text-decoration: underline;
+}
+#trrows a:hover{
+    text-decoration: none;
+}
+.transakcija {
+    display:inline-block;
+    height:16px;
+    text-indent:-9999em;
+}
+.dmsok {
+    background:url("../img/backgrounds/buttons/dms_transakcija.gif") no-repeat scroll 0 0 transparent;
+    width:96px;
+}
+.dmsreverse {
+    background:url("../img/backgrounds/buttons/dms_povracaj.gif") no-repeat scroll 0 0 transparent;
+    width:96px;
+}
+.sbutton {
+    background-color: transparent;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border: 0 none;
+    cursor: pointer;
+    display: inline;
+    height: 15px;
+    margin: 0;
+    padding: 0;
+    width: 41px;
+    text-indent: -9999px;
+}
+.sbtndodaj {
+    background-image: url("../img/backgrounds/sdodaj.gif");
+}
+.sbutton:hover {
+    background-position: 0 -15px;
+}
+ul.tagList {
+    margin: 3px 0 0;
+    overflow: hidden;
+    padding: 0;
+    width: 415px;
+}
+.tagList li {
+    background: none repeat scroll 0 0 #EFEFEF;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    font-size: 11px;
+    margin: 2px 3px 0 0;
+    padding: 2px 10px 2px 4px;
+}
+.left{
+    float: left;
+}
+#wpbody-content .metabox-holder {
+    padding-top: 10px;
+}
+#footer {
+    background: none;
+}
+
+/*CONTENT STYLE*/
+
+.icon32 {
+    float: left;
+    height: 34px;
+    margin: 7px 8px 0 0;
+    width: 36px;
+}
+.icon16 {
+    float: left;
+    height: 18px;
+    margin: -6px 0 0 -8px;
+    padding: 6px;
+    width: 18px;
+}
+.icon32.icon-page, #icon-edit-pages, #icon-page {
+    background: url("../img/backgnds/icons32.png") no-repeat scroll -312px -5px transparent;
+}
+.icon32.icon-page, #icon-edit-accommodation, #icon-page {
+    background: url("../img/backgnds/icons32.png") no-repeat scroll -139px -5px transparent;
+}
+.icon32.icon-post, #icon-edit, #icon-post {
+    background: url("../img/backgnds/icons32.png") no-repeat scroll -552px -5px transparent;
+}
+
+h2,.subtitle,.input {
+}
+h2, .subtitle {
+    font-weight: normal;
+    margin: 0;
+
+    color: #E77817;
+    letter-spacing: -0.03em;
+    text-shadow: -1px 1px #C3C1C2;
+
+}
+h2 {
+    font-size: 26px;
+    line-height: 29px;
+    padding: 9px 15px 13px 0;
+}
+.add-new-h2 {
+    border: 0 none;
+    font-family: sans-serif;
+    font-size: 12px;
+    margin-left: 4px;
+    padding: 3px 8px;
+    position: relative;
+    text-decoration: none;
+    top: -3px;
+    background: none repeat scroll 0 0 #F1F1F1;
+    font-weight: normal;
+}
+.add-new-h2:hover{
+    color:#D54E21 !important;
+}
+div.updated, div.error, .add-new-h2, textarea, input[type="text"], input[type="password"], input[type="file"], input[type="button"], input[type="submit"], input[type="reset"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], select, .tablenav .tablenav-pages a, .tablenav-pages span.current, #titlediv #title, .postbox, #postcustomstuff table, #postcustomstuff input, #postcustomstuff textarea, .imgedit-menu div, .plugin-update-tr .update-message, #poststuff .inside .the-tagcloud, .login form, #login_error, .login .message, #menu-management .menu-edit, .nav-menus-php .list-container, .menu-item-handle, .link-to-original, .nav-menus-php .major-publishing-actions .form-invalid, .press-this #message, #TB_window, .tbtitle, .highlight, .feature-filter, #widget-list .widget-top, .editwidget .widget-inside {
+    border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: 1px;
+}
+div.updated, div.error {
+    margin: 5px 0 15px;
+    padding: 0 0.6em;
+    background-color: #FFFFE0;
+    border-color: #E6DB55;
+    width: 682px;
+}
+div.updated p, div.error p {
+    /*margin: 0.5em 0;*/
+    padding: 2px;
+    line-height: 32px;
+}
+.titlediv {
+    border-color: #DFDFDF;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 0 #FFFFFF inset;
+    margin-bottom: 20px; 
+}
+h3{
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+    padding: 7px 10px;
+}
+.titlediv #title {
+    /*font-size: 1.7em; */
+    line-height: 100%;
+    outline: medium none;
+    padding: 3px 8px;
+    width: 100%;
+}
+.form-element{
+    width: 680px !important;
+    padding: 3px 8px !important;
+    font-size: 16px;
+}
+#publishing-action {
+    float: left;
+    height:43px;
+    line-height: 43px;
+    text-align: left;
+}
+#delete-action {
+    float: left;
+    line-height: 25px;
+    text-align: left;
+    vertical-align: middle;
+    margin-right: 9px;
+}
+.button-primary{
+    -moz-box-sizing: content-box;
+    border-radius: 11px 11px 11px 11px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    font-size: 12px !important;
+    line-height: 13px;
+    padding: 3px 8px;
+    text-decoration: none;
+    background: url("../img/backgnds/button-grad.png") repeat-x scroll left top #21759B;
+    background: none #414141;
+    border-color: #414141;
+    color: #FFFFFF;
+    font-weight: bold;
+    /*text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);*/
+    min-width: 80px;
+    text-align: center;
+}
+.submitdelete{
+    border-bottom-color: #FF0000;
+    color: #FF0000;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding: 1px 2px;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 12px;
+}
+.submitdelete:hover{
+    border-bottom-color: #FF0000; 
+    background-color: #FF0000;
+    color: #FFFFFF;   
+}
+#message{
+    display: none;
+    float: right;
+    margin-left: 13px;
+    margin-top: -7px;
+    position: relative;
+}
+
+/*TABLE STYLES*/
+
+.widefat, div.updated, div.error,.add-new-h2, textarea, input[type="text"], input[type="password"], input[type="file"], input[type="button"], input[type="submit"], input[type="reset"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], select, .tablenav .tablenav-pages a, .tablenav-pages span.current, #titlediv #title, .postbox, #postcustomstuff table, #postcustomstuff input, #postcustomstuff textarea, .imgedit-menu div, .plugin-update-tr .update-message, #poststuff .inside .the-tagcloud, .login form, #login_error, .login .message, #menu-management .menu-edit, .nav-menus-php .list-container, .menu-item-handle, .link-to-original, .nav-menus-php .major-publishing-actions .form-invalid, .press-this #message, #TB_window, .tbtitle, .highlight, .feature-filter, #widget-list .widget-top, .editwidget .widget-inside {
+    border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: 1px;
+}
+.add-new-h2{
+    border: 0;
+}
+.widefat {
+    border-spacing: 0;
+    clear: both;
+    margin: 0;
+    width: 100%;
+    background-color: #F9F9F9;
+    border-color: #DFDFDF;
+    border-bottom: 0;
+}
+.widefat thead tr th, .widefat tfoot tr th {
+    background-color: #F1F1F1;
+    background-image: -moz-linear-gradient(center top , #F9F9F9, #ECECEC);
+}
+.widefat td, .widefat th {
+    border-bottom-color: #DFDFDF;
+    border-top-color: #FFFFFF;  
+    border-style: solid;
+    border-width: 1px 0;
+}
+.widefat th {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.3em;
+    padding: 7px 7px 8px;
+    text-align: left;
+}
+.widefat td {
+    color: #333;
+    font-size: 12px;
+    padding: 8px 7px;
+    vertical-align: top;
+}
+.widefat * {
+    word-wrap: break-word;
+}
+#fix-style input, select {
+    height: 27px;
+    line-height: 15px;
+    color: #333333;
+}
+table.display thead th {
+    color: #414141 !important;
+}
+table.display thead th.sortfalse {
+    cursor: default;
+}
+.w130{
+    width: 130px;
+}
+#ajax-loading{
+    margin: 5px 0 0 5px;
+    position: absolute;
+}
+.dashboard div{background: url(../img/backgnds/menu.png) no-repeat -59px -32px transparent;  }
+.unitinfo div{background: url(../img/backgnds/menu.png) no-repeat -152px -32px transparent;  }
+.accommodation div{background: url(../img/backgnds/menu.png) no-repeat -1px -32px transparent;  }
+.transaction div{background: url(../img/backgnds/menu.png) no-repeat -89px -32px transparent;  }
+.itmontenegro div{background: url(../img/backgnds/menu.png) no-repeat -303px -32px transparent;  }
+#myslidemenu ul li div{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    margin-top: 2px;
+    margin-left: 7px;
+}
+.error{
+    border-color: red;
+}
+#langs{
+    float:right;
+    margin-top:66px;
+}
+#langs ul li{
+    float:left
+}
+#langs ul li a{
+    font-weight: normal;
+    margin: 0 -1px;
+    display: block;
+    position: relative;
+}
+#system-slogan{
+    left: 365px;
+    position: absolute;
+    top: 37px;
+}
+#logo {
+
+    padding: 13px 0 0;
+}
+#myslidemenu .last{
+    border-right: none;
+}
+#myslidemenu {
+    margin: 14px 0 24px 0 !important;
+}
+.th-action{
+    width:141px !important
+}
+tr.even{
+    background-color: #FFF !important;
+}
+table.display thead th {
+    cursor:default !important;
+}
+strong{
+    font-weight: bold;
+}
+#postdivrich{
+    margin-top: 23px;
+}
+#poststuff{
+    margin-bottom: 23px;
+}
+#example .tr-odd{
+    background-color: #FFF;
+}
+#slider{
+    margin-top:23px
+}
+#slider .submit{
+    margin-top:23px
+}
+#slider caption, th, td {
+    line-height: 28px;
+}
+#slider td{
+    padding-left: 23px;
+}
+#gallerydiv{
+    padding:13px 13px !important;
+    border-color:#dfdfdf
+}
+#gallerydiv h3 {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 15px;
+    margin: 0;
+    padding: 7px 10px 13px 0;
+}
+#gallerydiv .submit{
+    margin-top: 23px;
+}
+#gallerydiv th{
+    line-height: 33px;
+}
+#fix-style input{
+    height:19px
+}
+#pro-listimages .tr-odd{
+    background-color: #FFF;
+}
+
+/*TABLE STYLE 2 YAHOO*/
+table.display thead th {
+    border-right: 1px solid #DFDFDF;
+}
+.widefat th {
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 23px;
+    padding: 0 7px;
+    text-transform: uppercase;
+}
+.widefat td {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #454545;
+    font-size: 12px;
+    padding: 0 7px;
+    vertical-align: top;
+    line-height: 23px;
+    border-right: 1px solid #DFDFDF;
+    border-top: 0 none;
+}
+#post input[type="text"]{
+    border-width: 0
+}
+.qtrans_title_input {
+    font-size: 17px !important;
+    line-height: 17px  !important;
+    padding: 1px 0  !important;
+}
+.postarea{
+    margin-bottom:5px
+}
+#updategallery td{
+    padding:7px 4px 1px 7px;
+}
+#updategallery .column-thumbnail{
+    padding:6px 7px 0 7px;
+    width:105px
+}
+tr:hover td, tr:hover td a{
+    /*background: #6A6A6A !important;
+    color:#FFF */
+}
+tr.last, th.last, td.last{
+    border-right: 0 !important;
+}
+tr.center, th.center, td.center{
+    text-align: center;
+}
+td.res-from-to{
+    font-size: 11px !important;
+}
+td.res-status{
+    text-align: center;
+    vertical-align: middle;
+}
+td.actiontd{
+    width: 141px;
+}
+td.actiontd a, .widgetSection a{
+    padding: 0 2px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 11px;
+}
+td.actiontd a:hover, .widgetSection a:hover{ 
+    text-decoration: none;
+}
+.spacer{
+    height: 23px;
+}
+.widgetSection{
+    padding:0 !important; 
+    width:290px !important; 
+    height: 150px !important; 
+    background-color:#FFFFFF !important; 
+    margin:13px 0 20px !important; 
+    display:none; 
+    border: 1px solid #DFDFDF !important;
+}
+.widgetSection td{
+    border: 0;
+    line-height: 13px !important;
+}
+.ui-datepicker-calendar td{
+    border: 0;
+    line-height: 15px !important;
+}
+.widgetSection .changedates {
+    float: left;
+    margin: 20px 0 0 5px;
+}
+.widgetSection .description {
+    color: #666666;
+    font-size: 11px;
+    font-style: italic;
+}
+.widgetSection #closedates {
+    float: left;
+    margin: 20px 0 0 75px;
+}
+.widgetSection h4{
+    padding: 3px 5px;   
+    background-color: #F1F1F1;
+    background-image: -moz-linear-gradient(center top , #F9F9F9, #ECECEC);
+    width:280px ;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #DFDFDF !important; 
+}
+.widgetSection input, .widgetSection select {
+    color: #333333;
+    height: 19px;
+    line-height: 22px;
+    font-size: 12px;
+}
+.widgetSection select {
+    height: 27px;
+}
+.widgetSection img {
+    margin-left: 3px;
+}
+#modaleditor .widgetSection{
+    padding: 0pt; width: 270px; height: 150px; background-color: rgb(255, 255, 255); margin: 0; border-bottom: 3px solid rgb(231, 120, 23); display: block; width: 220px !important
+}
+#content321{
+    padding-top: 9px;
+}
+tr.odd td{
+    background: #fafafa;
+}
+.va-middle{
+    vertical-align: middle !important;
+}
+label{
+    font-size: 12px;
+    line-height: 17px;
+}
+.inputbox{
+    width: 370px !important;
+}
+.lineinput input[type="checkbox"]{
+    margin-left: 9px;
+}
+.lineinput input[type="checkbox"].first{
+    margin-left: 0;
+}
+.lineinput {
+    font-size: 12px;
+    line-height: 17px;
+}
+
+
+/*
+CSS FIX
+
+*/
+/*#myslidemenu ul li a span {
+font-size: 14px;
+padding: 12px 40px 11px;
+white-space: nowrap;
+font-weight: normal;
+background-repeat: no-repeat;
+display: block;
+background-position: 12px 10px;
+}
+
+
+
+.jqueryslidemenu ul li a {
+padding:0 23px !important;
+line-height: 18px !important;
+text-transform: capitalize !important;
+}
+.downarrowclass {
+top: 19px !important;
+} */
+
+
+/*----------------------------------------------------------------------*/
+/* Icons Dark
+/*----------------------------------------------------------------------*/
+/*
+#myslidemenu ul li.i_abacus a span, .i_abacus{ background-image: url(../img/icons/dark/abacus.png);}
+#myslidemenu ul li.i_access_denied a span, .i_access_denied{ background-image: url(../img/icons/dark/access_denied.png);}
+#myslidemenu ul li.i_address_book a span, .i_address_book{ background-image: url(../img/icons/dark/address_book.png);}
+#myslidemenu ul li.i_admin_user a span, .i_admin_user{ background-image: url(../img/icons/dark/admin_user.png);}
+#myslidemenu ul li.i_admin_user_2 a span, .i_admin_user_2{ background-image: url(../img/icons/dark/admin_user_2.png);}
+#myslidemenu ul li.i_airplane a span, .i_airplane{ background-image: url(../img/icons/dark/airplane.png);}
+#myslidemenu ul li.i_alarm a span, .i_alarm{ background-image: url(../img/icons/dark/alarm.png);}
+#myslidemenu ul li.i_alarm_2 a span, .i_alarm_2{ background-image: url(../img/icons/dark/alarm_2.png);}
+#myslidemenu ul li.i_alarm_clock a span, .i_alarm_clock{ background-image: url(../img/icons/dark/alarm_clock.png);}
+#myslidemenu ul li.i_alert a span, .i_alert{ background-image: url(../img/icons/dark/alert.png);}
+#myslidemenu ul li.i_android a span, .i_android{ background-image: url(../img/icons/dark/android.png);}
+#myslidemenu ul li.i_application a span, .i_application{ background-image: url(../img/icons/dark/application.png);}
+#myslidemenu ul li.i_archive a span, .i_archive{ background-image: url(../img/icons/dark/archive.png);}
+#myslidemenu ul li.i_arrow_down a span, .i_arrow_down{ background-image: url(../img/icons/dark/arrow_down.png);}
+#myslidemenu ul li.i_arrow_down_left a span, .i_arrow_down_left{ background-image: url(../img/icons/dark/arrow_down_left.png);}
+#myslidemenu ul li.i_arrow_down_right a span, .i_arrow_down_right{ background-image: url(../img/icons/dark/arrow_down_right.png);}
+#myslidemenu ul li.i_arrow_left a span, .i_arrow_left{ background-image: url(../img/icons/dark/arrow_left.png);}
+#myslidemenu ul li.i_arrow_right a span, .i_arrow_right{ background-image: url(../img/icons/dark/arrow_right.png);}
+#myslidemenu ul li.i_arrow_up a span, .i_arrow_up{ background-image: url(../img/icons/dark/arrow_up.png);}
+#myslidemenu ul li.i_arrow_up_left a span, .i_arrow_up_left{ background-image: url(../img/icons/dark/arrow_up_left.png);}
+#myslidemenu ul li.i_arrow_up_right a span, .i_arrow_up_right{ background-image: url(../img/icons/dark/arrow_up_right.png);}
+#myslidemenu ul li.i_bag a span, .i_bag{ background-image: url(../img/icons/dark/bag.png);}
+#myslidemenu ul li.i_balloons a span, .i_balloons{ background-image: url(../img/icons/dark/balloons.png);}
+#myslidemenu ul li.i_bandaid a span, .i_bandaid{ background-image: url(../img/icons/dark/bandaid.png);}
+#myslidemenu ul li.i_battery a span, .i_battery{ background-image: url(../img/icons/dark/battery.png);}
+#myslidemenu ul li.i_battery_33 a span, .i_battery_33{ background-image: url(../img/icons/dark/battery_33.png);}
+#myslidemenu ul li.i_battery_66 a span, .i_battery_66{ background-image: url(../img/icons/dark/battery_66.png);}
+#myslidemenu ul li.i_battery_empty a span, .i_battery_empty{ background-image: url(../img/icons/dark/battery_empty.png);}
+#myslidemenu ul li.i_battery_full a span, .i_battery_full{ background-image: url(../img/icons/dark/battery_full.png);}
+#myslidemenu ul li.i_bended_arrow_down a span, .i_bended_arrow_down{ background-image: url(../img/icons/dark/bended_arrow_down.png);}
+#myslidemenu ul li.i_bended_arrow_left a span, .i_bended_arrow_left{ background-image: url(../img/icons/dark/bended_arrow_left.png);}
+#myslidemenu ul li.i_bended_arrow_right a span, .i_bended_arrow_right{ background-image: url(../img/icons/dark/bended_arrow_right.png);}
+#myslidemenu ul li.i_bended_arrow_up a span, .i_bended_arrow_up{ background-image: url(../img/icons/dark/bended_arrow_up.png);}
+#myslidemenu ul li.i_big_brush a span, .i_big_brush{ background-image: url(../img/icons/dark/big_brush.png);}
+#myslidemenu ul li.i_blackberry a span, .i_blackberry{ background-image: url(../img/icons/dark/blackberry.png);}
+#myslidemenu ul li.i_blocks_images a span, .i_blocks_images{ background-image: url(../img/icons/dark/blocks_images.png);}
+#myslidemenu ul li.i_blu-ray a span, .i_blu-ray{ background-image: url(../img/icons/dark/blu-ray.png);}
+#myslidemenu ul li.i_bluetooth a span, .i_bluetooth{ background-image: url(../img/icons/dark/bluetooth.png);}
+#myslidemenu ul li.i_bluetooth_2 a span, .i_bluetooth_2{ background-image: url(../img/icons/dark/bluetooth_2.png);}
+#myslidemenu ul li.i_book a span, .i_book{ background-image: url(../img/icons/dark/book.png);}
+#myslidemenu ul li.i_book_large a span, .i_book_large{ background-image: url(../img/icons/dark/book_large.png);}
+#myslidemenu ul li.i_books a span, .i_books{ background-image: url(../img/icons/dark/books.png);}
+#myslidemenu ul li.i_breadcrumb a span, .i_breadcrumb{ background-image: url(../img/icons/dark/breadcrumb.png);}
+#myslidemenu ul li.i_brush a span, .i_brush{ background-image: url(../img/icons/dark/brush.png);}
+#myslidemenu ul li.i_buildings a span, .i_buildings{ background-image: url(../img/icons/dark/buildings.png);}
+#myslidemenu ul li.i_bulls_eye a span, .i_bulls_eye{ background-image: url(../img/icons/dark/bulls_eye.png);}
+#myslidemenu ul li.i_calculator a span, .i_calculator{ background-image: url(../img/icons/dark/calculator.png);}
+#myslidemenu ul li.i_calendar a span, .i_calendar{ background-image: url(../img/icons/dark/calendar.png);}
+#myslidemenu ul li.i_calendar_day a span, .i_calendar_day{ background-image: url(../img/icons/dark/calendar_day.png);}
+#myslidemenu ul li.i_camera a span, .i_camera{ background-image: url(../img/icons/dark/camera.png);}
+#myslidemenu ul li.i_camera_2 a span, .i_camera_2{ background-image: url(../img/icons/dark/camera_2.png);}
+#myslidemenu ul li.i_car a span, .i_car{ background-image: url(../img/icons/dark/car.png);}
+#myslidemenu ul li.i_cash_register a span, .i_cash_register{ background-image: url(../img/icons/dark/cash_register.png);}
+#myslidemenu ul li.i_cassette a span, .i_cassette{ background-image: url(../img/icons/dark/cassette.png);}
+#myslidemenu ul li.i_cat a span, .i_cat{ background-image: url(../img/icons/dark/cat.png);}
+#myslidemenu ul li.i_cd a span, .i_cd{ background-image: url(../img/icons/dark/cd.png);}
+#myslidemenu ul li.i_chair a span, .i_chair{ background-image: url(../img/icons/dark/chair.png);}
+#myslidemenu ul li.i_chart a span, .i_chart{ background-image: url(../img/icons/dark/chart.png);}
+#myslidemenu ul li.i_chart_2 a span, .i_chart_2{ background-image: url(../img/icons/dark/chart_2.png);}
+#myslidemenu ul li.i_chart_3 a span, .i_chart_3{ background-image: url(../img/icons/dark/chart_3.png);}
+#myslidemenu ul li.i_chart_4 a span, .i_chart_4{ background-image: url(../img/icons/dark/chart_4.png);}
+#myslidemenu ul li.i_chart_5 a span, .i_chart_5{ background-image: url(../img/icons/dark/chart_5.png);}
+#myslidemenu ul li.i_chart_6 a span, .i_chart_6{ background-image: url(../img/icons/dark/chart_6.png);}
+#myslidemenu ul li.i_chart_7 a span, .i_chart_7{ background-image: url(../img/icons/dark/chart_7.png);}
+#myslidemenu ul li.i_chart_8 a span, .i_chart_8{ background-image: url(../img/icons/dark/chart_8.png);}
+#myslidemenu ul li.i_chemical a span, .i_chemical{ background-image: url(../img/icons/dark/chemical.png);}
+#myslidemenu ul li.i_chrome a span, .i_chrome{ background-image: url(../img/icons/dark/chrome.png);}
+#myslidemenu ul li.i_clipboard a span, .i_clipboard{ background-image: url(../img/icons/dark/clipboard.png);}
+#myslidemenu ul li.i_clock a span, .i_clock{ background-image: url(../img/icons/dark/clock.png);}
+#myslidemenu ul li.i_cloud a span, .i_cloud{ background-image: url(../img/icons/dark/cloud.png);}
+#myslidemenu ul li.i_cloud_download a span, .i_cloud_download{ background-image: url(../img/icons/dark/cloud_download.png);}
+#myslidemenu ul li.i_cloud_upload a span, .i_cloud_upload{ background-image: url(../img/icons/dark/cloud_upload.png);}
+#myslidemenu ul li.i_cog a span, .i_cog{ background-image: url(../img/icons/dark/cog.png);}
+#myslidemenu ul li.i_cog_2 a span, .i_cog_2{ background-image: url(../img/icons/dark/cog_2.png);}
+#myslidemenu ul li.i_cog_3 a span, .i_cog_3{ background-image: url(../img/icons/dark/cog_3.png);}
+#myslidemenu ul li.i_cog_4 a span, .i_cog_4{ background-image: url(../img/icons/dark/cog_4.png);}
+#myslidemenu ul li.i_collapse a span, .i_collapse{ background-image: url(../img/icons/dark/collapse.png);}
+#myslidemenu ul li.i_companies a span, .i_companies{ background-image: url(../img/icons/dark/companies.png);}
+#myslidemenu ul li.i_compress a span, .i_compress{ background-image: url(../img/icons/dark/compress.png);}
+#myslidemenu ul li.i_copy a span, .i_copy{ background-image: url(../img/icons/dark/copy.png);}
+#myslidemenu ul li.i_coverflow a span, .i_coverflow{ background-image: url(../img/icons/dark/coverflow.png);}
+#myslidemenu ul li.i_create_write a span, .i_create_write{ background-image: url(../img/icons/dark/create_write.png);}
+#myslidemenu ul li.i_cross a span, .i_cross{ background-image: url(../img/icons/dark/cross.png);}
+#myslidemenu ul li.i_cup a span, .i_cup{ background-image: url(../img/icons/dark/cup.png);}
+#myslidemenu ul li.i_cursor a span, .i_cursor{ background-image: url(../img/icons/dark/cursor.png);}
+#myslidemenu ul li.i_delicious a span, .i_delicious{ background-image: url(../img/icons/dark/delicious.png);}
+#myslidemenu ul li.i_desk a span, .i_desk{ background-image: url(../img/icons/dark/desk.png);}
+#myslidemenu ul li.i_digg a span, .i_digg{ background-image: url(../img/icons/dark/digg.png);}
+#myslidemenu ul li.i_digg_2 a span, .i_digg_2{ background-image: url(../img/icons/dark/digg_2.png);}
+#myslidemenu ul li.i_document a span, .i_document{ background-image: url(../img/icons/dark/document.png);}
+#myslidemenu ul li.i_document_add a span, .i_document_add{ background-image: url(../img/icons/dark/document_add.png);}
+#myslidemenu ul li.i_document_delete a span, .i_document_delete{ background-image: url(../img/icons/dark/document_delete.png);}
+#myslidemenu ul li.i_documents a span, .i_documents{ background-image: url(../img/icons/dark/documents.png);}
+#myslidemenu ul li.i_download a span, .i_download{ background-image: url(../img/icons/dark/download.png);}
+#myslidemenu ul li.i_download_to_computer a span, .i_download_to_computer{ background-image: url(../img/icons/dark/download_to_computer.png);}
+#myslidemenu ul li.i_dress a span, .i_dress{ background-image: url(../img/icons/dark/dress.png);}
+#myslidemenu ul li.i_dribbble a span, .i_dribbble{ background-image: url(../img/icons/dark/dribbble.png);}
+#myslidemenu ul li.i_dribbble_2 a span, .i_dribbble_2{ background-image: url(../img/icons/dark/dribbble_2.png);}
+#myslidemenu ul li.i_dropbox a span, .i_dropbox{ background-image: url(../img/icons/dark/dropbox.png);}
+#myslidemenu ul li.i_drupal a span, .i_drupal{ background-image: url(../img/icons/dark/drupal.png);}
+#myslidemenu ul li.i_duplicate a span, .i_duplicate{ background-image: url(../img/icons/dark/duplicate.png);}
+#myslidemenu ul li.i_dvd a span, .i_dvd{ background-image: url(../img/icons/dark/dvd.png);}
+#myslidemenu ul li.i_eject a span, .i_eject{ background-image: url(../img/icons/dark/eject.png);}
+#myslidemenu ul li.i_electricty_input a span, .i_electricty_input{ background-image: url(../img/icons/dark/electricty_input.png);}
+#myslidemenu ul li.i_electricty_plug a span, .i_electricty_plug{ background-image: url(../img/icons/dark/electricty_plug.png);}
+#myslidemenu ul li.i_empty a span, .i_empty{ background-image: url(../img/icons/dark/empty.png);}
+#myslidemenu ul li.i_excel_document a span, .i_excel_document{ background-image: url(../img/icons/dark/excel_document.png);}
+#myslidemenu ul li.i_excel_documents a span, .i_excel_documents{ background-image: url(../img/icons/dark/excel_documents.png);}
+#myslidemenu ul li.i_exclamation a span, .i_exclamation{ background-image: url(../img/icons/dark/exclamation.png);}
+#myslidemenu ul li.i_exit a span, .i_exit{ background-image: url(../img/icons/dark/exit.png);}
+#myslidemenu ul li.i_expand a span, .i_expand{ background-image: url(../img/icons/dark/expand.png);}
+#myslidemenu ul li.i_expose a span, .i_expose{ background-image: url(../img/icons/dark/expose.png);}
+#myslidemenu ul li.i_expression_engine a span, .i_expression_engine{ background-image: url(../img/icons/dark/expression_engine.png);}
+#myslidemenu ul li.i_eyedropper a span, .i_eyedropper{ background-image: url(../img/icons/dark/eyedropper.png);}
+#myslidemenu ul li.i_facebook a span, .i_facebook{ background-image: url(../img/icons/dark/facebook.png);}
+#myslidemenu ul li.i_facebook_like a span, .i_facebook_like{ background-image: url(../img/icons/dark/facebook_like.png);}
+#myslidemenu ul li.i_fax a span, .i_fax{ background-image: url(../img/icons/dark/fax.png);}
+#myslidemenu ul li.i_female a span, .i_female{ background-image: url(../img/icons/dark/female.png);}
+#myslidemenu ul li.i_female_contour a span, .i_female_contour{ background-image: url(../img/icons/dark/female_contour.png);}
+#myslidemenu ul li.i_file_cabinet a span, .i_file_cabinet{ background-image: url(../img/icons/dark/file_cabinet.png);}
+#myslidemenu ul li.i_film a span, .i_film{ background-image: url(../img/icons/dark/film.png);}
+#myslidemenu ul li.i_film_2 a span, .i_film_2{ background-image: url(../img/icons/dark/film_2.png);}
+#myslidemenu ul li.i_filmcamera a span, .i_filmcamera{ background-image: url(../img/icons/dark/filmcamera.png);}
+#myslidemenu ul li.i_finish_flag a span, .i_finish_flag{ background-image: url(../img/icons/dark/finish_flag.png);}
+#myslidemenu ul li.i_firefox a span, .i_firefox{ background-image: url(../img/icons/dark/firefox.png);}
+#myslidemenu ul li.i_flag a span, .i_flag{ background-image: url(../img/icons/dark/flag.png);}
+#myslidemenu ul li.i_flag_2 a span, .i_flag_2{ background-image: url(../img/icons/dark/flag_2.png);}
+#myslidemenu ul li.i_folder a span, .i_folder{ background-image: url(../img/icons/dark/folder.png);}
+#myslidemenu ul li.i_folder_add a span, .i_folder_add{ background-image: url(../img/icons/dark/folder_add.png);}
+#myslidemenu ul li.i_folder_closed a span, .i_folder_closed{ background-image: url(../img/icons/dark/folder_closed.png);}
+#myslidemenu ul li.i_folder_delete a span, .i_folder_delete{ background-image: url(../img/icons/dark/folder_delete.png);}
+#myslidemenu ul li.i_folder_download a span, .i_folder_download{ background-image: url(../img/icons/dark/folder_download.png);}
+#myslidemenu ul li.i_folder_lock a span, .i_folder_lock{ background-image: url(../img/icons/dark/folder_lock.png);}
+#myslidemenu ul li.i_folder_love a span, .i_folder_love{ background-image: url(../img/icons/dark/folder_love.png);}
+#myslidemenu ul li.i_folder_upload a span, .i_folder_upload{ background-image: url(../img/icons/dark/folder_upload.png);}
+#myslidemenu ul li.i_footprint a span, .i_footprint{ background-image: url(../img/icons/dark/footprint.png);}
+#myslidemenu ul li.i_forward a span, .i_forward{ background-image: url(../img/icons/dark/forward.png);}
+#myslidemenu ul li.i_fountain_pen a span, .i_fountain_pen{ background-image: url(../img/icons/dark/fountain_pen.png);}
+#myslidemenu ul li.i_frames a span, .i_frames{ background-image: url(../img/icons/dark/frames.png);}
+#myslidemenu ul li.i_fullscreen a span, .i_fullscreen{ background-image: url(../img/icons/dark/fullscreen.png);}
+#myslidemenu ul li.i_globe a span, .i_globe{ background-image: url(../img/icons/dark/globe.png);}
+#myslidemenu ul li.i_globe_2 a span, .i_globe_2{ background-image: url(../img/icons/dark/globe_2.png);}
+#myslidemenu ul li.i_google_buzz a span, .i_google_buzz{ background-image: url(../img/icons/dark/google_buzz.png);}
+#myslidemenu ul li.i_google_maps a span, .i_google_maps{ background-image: url(../img/icons/dark/google_maps.png);}
+#myslidemenu ul li.i_graph a span, .i_graph{ background-image: url(../img/icons/dark/graph.png);}
+#myslidemenu ul li.i_grid a span, .i_grid{ background-image: url(../img/icons/dark/grid.png);}
+#myslidemenu ul li.i_hd a span, .i_hd{ background-image: url(../img/icons/dark/hd.png);}
+#myslidemenu ul li.i_hd_2 a span, .i_hd_2{ background-image: url(../img/icons/dark/hd_2.png);}
+#myslidemenu ul li.i_hd_3 a span, .i_hd_3{ background-image: url(../img/icons/dark/hd_3.png);}
+#myslidemenu ul li.i_headphones a span, .i_headphones{ background-image: url(../img/icons/dark/headphones.png);}
+#myslidemenu ul li.i_help a span, .i_help{ background-image: url(../img/icons/dark/help.png);}
+#myslidemenu ul li.i_house a span, .i_house{ background-image: url(../img/icons/dark/house.png);}
+#myslidemenu ul li.i_house_2 a span, .i_house_2{ background-image: url(../img/icons/dark/house_2.png);}
+#myslidemenu ul li.i_ice_cream a span, .i_ice_cream{ background-image: url(../img/icons/dark/ice_cream.png);}
+#myslidemenu ul li.i_ice_cream_2 a span, .i_ice_cream_2{ background-image: url(../img/icons/dark/ice_cream_2.png);}
+#myslidemenu ul li.i_ichat a span, .i_ichat{ background-image: url(../img/icons/dark/ichat.png);}
+#myslidemenu ul li.i_imac a span, .i_imac{ background-image: url(../img/icons/dark/imac.png);}
+#myslidemenu ul li.i_image a span, .i_image{ background-image: url(../img/icons/dark/image.png);}
+#myslidemenu ul li.i_image_2 a span, .i_image_2{ background-image: url(../img/icons/dark/image_2.png);}
+#myslidemenu ul li.i_images a span, .i_images{ background-image: url(../img/icons/dark/images.png);}
+#myslidemenu ul li.i_images_2 a span, .i_images_2{ background-image: url(../img/icons/dark/images_2.png);}
+#myslidemenu ul li.i_inbox a span, .i_inbox{ background-image: url(../img/icons/dark/inbox.png);}
+#myslidemenu ul li.i_incomming a span, .i_incomming{ background-image: url(../img/icons/dark/incomming.png);}
+#myslidemenu ul li.i_information a span, .i_information{ background-image: url(../img/icons/dark/information.png);}
+#myslidemenu ul li.i_ipad a span, .i_ipad{ background-image: url(../img/icons/dark/ipad.png);}
+#myslidemenu ul li.i_iphone_3g a span, .i_iphone_3g{ background-image: url(../img/icons/dark/iphone_3g.png);}
+#myslidemenu ul li.i_iphone_4 a span, .i_iphone_4{ background-image: url(../img/icons/dark/iphone_4.png);}
+#myslidemenu ul li.i_ipod a span, .i_ipod{ background-image: url(../img/icons/dark/ipod.png);}
+#myslidemenu ul li.i_ipod_nano a span, .i_ipod_nano{ background-image: url(../img/icons/dark/ipod_nano.png);}
+#myslidemenu ul li.i_joomla a span, .i_joomla{ background-image: url(../img/icons/dark/joomla.png);}
+#myslidemenu ul li.i_key a span, .i_key{ background-image: url(../img/icons/dark/key.png);}
+#myslidemenu ul li.i_key_2 a span, .i_key_2{ background-image: url(../img/icons/dark/key_2.png);}
+#myslidemenu ul li.i_ladys_purse a span, .i_ladys_purse{ background-image: url(../img/icons/dark/ladys_purse.png);}
+#myslidemenu ul li.i_lamp a span, .i_lamp{ background-image: url(../img/icons/dark/lamp.png);}
+#myslidemenu ul li.i_laptop a span, .i_laptop{ background-image: url(../img/icons/dark/laptop.png);}
+#myslidemenu ul li.i_lastfm a span, .i_lastfm{ background-image: url(../img/icons/dark/lastfm.png);}
+#myslidemenu ul li.i_lemonade_stand a span, .i_lemonade_stand{ background-image: url(../img/icons/dark/lemonade_stand.png);}
+#myslidemenu ul li.i_light_bulb a span, .i_light_bulb{ background-image: url(../img/icons/dark/light_bulb.png);}
+#myslidemenu ul li.i_link a span, .i_link{ background-image: url(../img/icons/dark/link.png);}
+#myslidemenu ul li.i_link_2 a span, .i_link_2{ background-image: url(../img/icons/dark/link_2.png);}
+#myslidemenu ul li.i_linux a span, .i_linux{ background-image: url(../img/icons/dark/linux.png);}
+#myslidemenu ul li.i_list a span, .i_list{ background-image: url(../img/icons/dark/list.png);}
+#myslidemenu ul li.i_list_image a span, .i_list_image{ background-image: url(../img/icons/dark/list_image.png);}
+#myslidemenu ul li.i_list_images a span, .i_list_images{ background-image: url(../img/icons/dark/list_images.png);}
+#myslidemenu ul li.i_loading_bar a span, .i_loading_bar{ background-image: url(../img/icons/dark/loading_bar.png);}
+#myslidemenu ul li.i_locked a span, .i_locked{ background-image: url(../img/icons/dark/locked.png);}
+#myslidemenu ul li.i_locked_2 a span, .i_locked_2{ background-image: url(../img/icons/dark/locked_2.png);}
+#myslidemenu ul li.i_macos a span, .i_macos{ background-image: url(../img/icons/dark/macos.png);}
+#myslidemenu ul li.i_magic_mouse a span, .i_magic_mouse{ background-image: url(../img/icons/dark/magic_mouse.png);}
+#myslidemenu ul li.i_magnifying_glass a span, .i_magnifying_glass{ background-image: url(../img/icons/dark/magnifying_glass.png);}
+#myslidemenu ul li.i_mail a span, .i_mail{ background-image: url(../img/icons/dark/mail.png);}
+#myslidemenu ul li.i_male a span, .i_male{ background-image: url(../img/icons/dark/male.png);}
+#myslidemenu ul li.i_male_contour a span, .i_male_contour{ background-image: url(../img/icons/dark/male_contour.png);}
+#myslidemenu ul li.i_map a span, .i_map{ background-image: url(../img/icons/dark/map.png);}
+#myslidemenu ul li.i_marker a span, .i_marker{ background-image: url(../img/icons/dark/marker.png);}
+#myslidemenu ul li.i_maximize a span, .i_maximize{ background-image: url(../img/icons/dark/maximize.png);}
+#myslidemenu ul li.i_medical_case a span, .i_medical_case{ background-image: url(../img/icons/dark/medical_case.png);}
+#myslidemenu ul li.i_megaphone a span, .i_megaphone{ background-image: url(../img/icons/dark/megaphone.png);}
+#myslidemenu ul li.i_microphone a span, .i_microphone{ background-image: url(../img/icons/dark/microphone.png);}
+#myslidemenu ul li.i_mighty_mouse a span, .i_mighty_mouse{ background-image: url(../img/icons/dark/mighty_mouse.png);}
+#myslidemenu ul li.i_minimize a span, .i_minimize{ background-image: url(../img/icons/dark/minimize.png);}
+#myslidemenu ul li.i_minus a span, .i_minus{ background-image: url(../img/icons/dark/minus.png);}
+#myslidemenu ul li.i_mobile_phone a span, .i_mobile_phone{ background-image: url(../img/icons/dark/mobile_phone.png);}
+#myslidemenu ul li.i_mobypicture a span, .i_mobypicture{ background-image: url(../img/icons/dark/mobypicture.png);}
+#myslidemenu ul li.i_money a span, .i_money{ background-image: url(../img/icons/dark/money.png);}
+#myslidemenu ul li.i_money_2 a span, .i_money_2{ background-image: url(../img/icons/dark/money_2.png);}
+#myslidemenu ul li.i_monitor a span, .i_monitor{ background-image: url(../img/icons/dark/monitor.png);}
+#myslidemenu ul li.i_mouse a span, .i_mouse{ background-image: url(../img/icons/dark/mouse.png);}
+#myslidemenu ul li.i_myspace a span, .i_myspace{ background-image: url(../img/icons/dark/myspace.png);}
+#myslidemenu ul li.i_next a span, .i_next{ background-image: url(../img/icons/dark/next.png);}
+#myslidemenu ul li.i_note_book a span, .i_note_book{ background-image: url(../img/icons/dark/note_book.png);}
+#myslidemenu ul li.i_outgoing a span, .i_outgoing{ background-image: url(../img/icons/dark/outgoing.png);}
+#myslidemenu ul li.i_pacman a span, .i_pacman{ background-image: url(../img/icons/dark/pacman.png);}
+#myslidemenu ul li.i_pacman_ghost a span, .i_pacman_ghost{ background-image: url(../img/icons/dark/pacman_ghost.png);}
+#myslidemenu ul li.i_paint_brush a span, .i_paint_brush{ background-image: url(../img/icons/dark/paint_brush.png);}
+#myslidemenu ul li.i_pants a span, .i_pants{ background-image: url(../img/icons/dark/pants.png);}
+#myslidemenu ul li.i_paperclip a span, .i_paperclip{ background-image: url(../img/icons/dark/paperclip.png);}
+#myslidemenu ul li.i_paste a span, .i_paste{ background-image: url(../img/icons/dark/paste.png);}
+#myslidemenu ul li.i_pause a span, .i_pause{ background-image: url(../img/icons/dark/pause.png);}
+#myslidemenu ul li.i_paypal a span, .i_paypal{ background-image: url(../img/icons/dark/paypal.png);}
+#myslidemenu ul li.i_paypal_2 a span, .i_paypal_2{ background-image: url(../img/icons/dark/paypal_2.png);}
+#myslidemenu ul li.i_paypal_3 a span, .i_paypal_3{ background-image: url(../img/icons/dark/paypal_3.png);}
+#myslidemenu ul li.i_pdf_document a span, .i_pdf_document{ background-image: url(../img/icons/dark/pdf_document.png);}
+#myslidemenu ul li.i_pdf_documents a span, .i_pdf_documents{ background-image: url(../img/icons/dark/pdf_documents.png);}
+#myslidemenu ul li.i_pencil a span, .i_pencil{ background-image: url(../img/icons/dark/pencil.png);}
+#myslidemenu ul li.i_phone a span, .i_phone{ background-image: url(../img/icons/dark/phone.png);}
+#myslidemenu ul li.i_phone_2 a span, .i_phone_2{ background-image: url(../img/icons/dark/phone_2.png);}
+#myslidemenu ul li.i_phone_hook a span, .i_phone_hook{ background-image: url(../img/icons/dark/phone_hook.png);}
+#myslidemenu ul li.i_piggy_bank a span, .i_piggy_bank{ background-image: url(../img/icons/dark/piggy_bank.png);}
+#myslidemenu ul li.i_plane_suitecase a span, .i_plane_suitecase{ background-image: url(../img/icons/dark/plane_suitecase.png);}
+#myslidemenu ul li.i_play a span, .i_play{ background-image: url(../img/icons/dark/play.png);}
+#myslidemenu ul li.i_plixi a span, .i_plixi{ background-image: url(../img/icons/dark/plixi.png);}
+#myslidemenu ul li.i_plus a span, .i_plus{ background-image: url(../img/icons/dark/plus.png);}
+#myslidemenu ul li.i_post_card a span, .i_post_card{ background-image: url(../img/icons/dark/post_card.png);}
+#myslidemenu ul li.i_power a span, .i_power{ background-image: url(../img/icons/dark/power.png);}
+#myslidemenu ul li.i_powerpoint_document a span, .i_powerpoint_document{ background-image: url(../img/icons/dark/powerpoint_document.png);}
+#myslidemenu ul li.i_powerpoint_documents a span, .i_powerpoint_documents{ background-image: url(../img/icons/dark/powerpoint_documents.png);}
+#myslidemenu ul li.i_presentation a span, .i_presentation{ background-image: url(../img/icons/dark/presentation.png);}
+#myslidemenu ul li.i_prev a span, .i_prev{ background-image: url(../img/icons/dark/prev.png);}
+#myslidemenu ul li.i_preview a span, .i_preview{ background-image: url(../img/icons/dark/preview.png);}
+#myslidemenu ul li.i_price_tag a span, .i_price_tag{ background-image: url(../img/icons/dark/price_tag.png);}
+#myslidemenu ul li.i_price_tags a span, .i_price_tags{ background-image: url(../img/icons/dark/price_tags.png);}
+#myslidemenu ul li.i_printer a span, .i_printer{ background-image: url(../img/icons/dark/printer.png);}
+#myslidemenu ul li.i_question a span, .i_question{ background-image: url(../img/icons/dark/question.png);}
+#myslidemenu ul li.i_radio a span, .i_radio{ background-image: url(../img/icons/dark/radio.png);}
+#myslidemenu ul li.i_record a span, .i_record{ background-image: url(../img/icons/dark/record.png);}
+#myslidemenu ul li.i_recycle a span, .i_recycle{ background-image: url(../img/icons/dark/recycle.png);}
+#myslidemenu ul li.i_refresh a span, .i_refresh{ background-image: url(../img/icons/dark/refresh.png);}
+#myslidemenu ul li.i_refresh_2 a span, .i_refresh_2{ background-image: url(../img/icons/dark/refresh_2.png);}
+#myslidemenu ul li.i_refresh_3 a span, .i_refresh_3{ background-image: url(../img/icons/dark/refresh_3.png);}
+#myslidemenu ul li.i_refresh_4 a span, .i_refresh_4{ background-image: url(../img/icons/dark/refresh_4.png);}
+#myslidemenu ul li.i_repeat a span, .i_repeat{ background-image: url(../img/icons/dark/repeat.png);}
+#myslidemenu ul li.i_rewind a span, .i_rewind{ background-image: url(../img/icons/dark/rewind.png);}
+#myslidemenu ul li.i_robot a span, .i_robot{ background-image: url(../img/icons/dark/robot.png);}
+#myslidemenu ul li.i_rss a span, .i_rss{ background-image: url(../img/icons/dark/rss.png);}
+#myslidemenu ul li.i_ruler a span, .i_ruler{ background-image: url(../img/icons/dark/ruler.png);}
+#myslidemenu ul li.i_ruler_2 a span, .i_ruler_2{ background-image: url(../img/icons/dark/ruler_2.png);}
+#myslidemenu ul li.i_running_man a span, .i_running_man{ background-image: url(../img/icons/dark/running_man.png);}
+#myslidemenu ul li.i_safari a span, .i_safari{ background-image: url(../img/icons/dark/safari.png);}
+#myslidemenu ul li.i_scan_label a span, .i_scan_label{ background-image: url(../img/icons/dark/scan_label.png);}
+#myslidemenu ul li.i_scissors a span, .i_scissors{ background-image: url(../img/icons/dark/scissors.png);}
+#myslidemenu ul li.i_sd a span, .i_sd{ background-image: url(../img/icons/dark/sd.png);}
+#myslidemenu ul li.i_sd_2 a span, .i_sd_2{ background-image: url(../img/icons/dark/sd_2.png);}
+#myslidemenu ul li.i_sd_3 a span, .i_sd_3{ background-image: url(../img/icons/dark/sd_3.png);}
+#myslidemenu ul li.i_settings a span, .i_settings{ background-image: url(../img/icons/dark/settings.png);}
+#myslidemenu ul li.i_settings_2 a span, .i_settings_2{ background-image: url(../img/icons/dark/settings_2.png);}
+#myslidemenu ul li.i_shopping_bag a span, .i_shopping_bag{ background-image: url(../img/icons/dark/shopping_bag.png);}
+#myslidemenu ul li.i_shopping_basket a span, .i_shopping_basket{ background-image: url(../img/icons/dark/shopping_basket.png);}
+#myslidemenu ul li.i_shopping_basket_2 a span, .i_shopping_basket_2{ background-image: url(../img/icons/dark/shopping_basket_2.png);}
+#myslidemenu ul li.i_shopping_cart a span, .i_shopping_cart{ background-image: url(../img/icons/dark/shopping_cart.png);}
+#myslidemenu ul li.i_shopping_cart_2 a span, .i_shopping_cart_2{ background-image: url(../img/icons/dark/shopping_cart_2.png);}
+#myslidemenu ul li.i_shopping_cart_3 a span, .i_shopping_cart_3{ background-image: url(../img/icons/dark/shopping_cart_3.png);}
+#myslidemenu ul li.i_shopping_cart_4 a span, .i_shopping_cart_4{ background-image: url(../img/icons/dark/shopping_cart_4.png);}
+#myslidemenu ul li.i_shuffle a span, .i_shuffle{ background-image: url(../img/icons/dark/shuffle.png);}
+#myslidemenu ul li.i_sign_post a span, .i_sign_post{ background-image: url(../img/icons/dark/sign_post.png);}
+#myslidemenu ul li.i_skype a span, .i_skype{ background-image: url(../img/icons/dark/skype.png);}
+#myslidemenu ul li.i_sleeveless_shirt a span, .i_sleeveless_shirt{ background-image: url(../img/icons/dark/sleeveless_shirt.png);}
+#myslidemenu ul li.i_socks a span, .i_socks{ background-image: url(../img/icons/dark/socks.png);}
+#myslidemenu ul li.i_sound a span, .i_sound{ background-image: url(../img/icons/dark/sound.png);}
+#myslidemenu ul li.i_speech_bubble a span, .i_speech_bubble{ background-image: url(../img/icons/dark/speech_bubble.png);}
+#myslidemenu ul li.i_speech_bubble_2 a span, .i_speech_bubble_2{ background-image: url(../img/icons/dark/speech_bubble_2.png);}
+#myslidemenu ul li.i_speech_bubbles a span, .i_speech_bubbles{ background-image: url(../img/icons/dark/speech_bubbles.png);}
+#myslidemenu ul li.i_speech_bubbles_2 a span, .i_speech_bubbles_2{ background-image: url(../img/icons/dark/speech_bubbles_2.png);}
+#myslidemenu ul li.i_sport_shirt a span, .i_sport_shirt{ background-image: url(../img/icons/dark/sport_shirt.png);}
+#myslidemenu ul li.i_stop a span, .i_stop{ background-image: url(../img/icons/dark/stop.png);}
+#myslidemenu ul li.i_stop_watch a span, .i_stop_watch{ background-image: url(../img/icons/dark/stop_watch.png);}
+#myslidemenu ul li.i_strategy a span, .i_strategy{ background-image: url(../img/icons/dark/strategy.png);}
+#myslidemenu ul li.i_strategy_2 a span, .i_strategy_2{ background-image: url(../img/icons/dark/strategy_2.png);}
+#myslidemenu ul li.i_stubleupon a span, .i_stubleupon{ background-image: url(../img/icons/dark/stubleupon.png);}
+#myslidemenu ul li.i_suitecase a span, .i_suitecase{ background-image: url(../img/icons/dark/suitecase.png);}
+#myslidemenu ul li.i_sweater a span, .i_sweater{ background-image: url(../img/icons/dark/sweater.png);}
+#myslidemenu ul li.i_t-shirt a span, .i_t-shirt{ background-image: url(../img/icons/dark/t-shirt.png);}
+#myslidemenu ul li.i_table a span, .i_table{ background-image: url(../img/icons/dark/table.png);}
+#myslidemenu ul li.i_tag a span, .i_tag{ background-image: url(../img/icons/dark/tag.png);}
+#myslidemenu ul li.i_tags a span, .i_tags{ background-image: url(../img/icons/dark/tags.png);}
+#myslidemenu ul li.i_television a span, .i_television{ background-image: url(../img/icons/dark/television.png);}
+#myslidemenu ul li.i_tick a span, .i_tick{ background-image: url(../img/icons/dark/tick.png);}
+#myslidemenu ul li.i_timer a span, .i_timer{ background-image: url(../img/icons/dark/timer.png);}
+#myslidemenu ul li.i_trashcan a span, .i_trashcan{ background-image: url(../img/icons/dark/trashcan.png);}
+#myslidemenu ul li.i_trashcan_2 a span, .i_trashcan_2{ background-image: url(../img/icons/dark/trashcan_2.png);}
+#myslidemenu ul li.i_travel_suitecase a span, .i_travel_suitecase{ background-image: url(../img/icons/dark/travel_suitecase.png);}
+#myslidemenu ul li.i_tree a span, .i_tree{ background-image: url(../img/icons/dark/tree.png);}
+#myslidemenu ul li.i_triangle_double_down a span, .i_triangle_double_down{ background-image: url(../img/icons/dark/triangle_double_down.png);}
+#myslidemenu ul li.i_triangle_double_left a span, .i_triangle_double_left{ background-image: url(../img/icons/dark/triangle_double_left.png);}
+#myslidemenu ul li.i_triangle_double_right a span, .i_triangle_double_right{ background-image: url(../img/icons/dark/triangle_double_right.png);}
+#myslidemenu ul li.i_triangle_double_up a span, .i_triangle_double_up{ background-image: url(../img/icons/dark/triangle_double_up.png);}
+#myslidemenu ul li.i_triangle_down a span, .i_triangle_down{ background-image: url(../img/icons/dark/triangle_down.png);}
+#myslidemenu ul li.i_triangle_down_left a span, .i_triangle_down_left{ background-image: url(../img/icons/dark/triangle_down_left.png);}
+#myslidemenu ul li.i_triangle_down_right a span, .i_triangle_down_right{ background-image: url(../img/icons/dark/triangle_down_right.png);}
+#myslidemenu ul li.i_triangle_left a span, .i_triangle_left{ background-image: url(../img/icons/dark/triangle_left.png);}
+#myslidemenu ul li.i_triangle_left_right a span, .i_triangle_left_right{ background-image: url(../img/icons/dark/triangle_left_right.png);}
+#myslidemenu ul li.i_triangle_right a span, .i_triangle_right{ background-image: url(../img/icons/dark/triangle_right.png);}
+#myslidemenu ul li.i_triangle_up a span, .i_triangle_up{ background-image: url(../img/icons/dark/triangle_up.png);}
+#myslidemenu ul li.i_triangle_up_down a span, .i_triangle_up_down{ background-image: url(../img/icons/dark/triangle_up_down.png);}
+#myslidemenu ul li.i_triangle_up_left a span, .i_triangle_up_left{ background-image: url(../img/icons/dark/triangle_up_left.png);}
+#myslidemenu ul li.i_triangle_up_right a span, .i_triangle_up_right{ background-image: url(../img/icons/dark/triangle_up_right.png);}
+#myslidemenu ul li.i_trolly a span, .i_trolly{ background-image: url(../img/icons/dark/trolly.png);}
+#myslidemenu ul li.i_truck a span, .i_truck{ background-image: url(../img/icons/dark/truck.png);}
+#myslidemenu ul li.i_tumbler a span, .i_tumbler{ background-image: url(../img/icons/dark/tumbler.png);}
+#myslidemenu ul li.i_twitter a span, .i_twitter{ background-image: url(../img/icons/dark/twitter.png);}
+#myslidemenu ul li.i_twitter_2 a span, .i_twitter_2{ background-image: url(../img/icons/dark/twitter_2.png);}
+#myslidemenu ul li.i_typo a span, .i_typo{ background-image: url(../img/icons/dark/typo.png);}
+#myslidemenu ul li.i_umbrella a span, .i_umbrella{ background-image: url(../img/icons/dark/umbrella.png);}
+#myslidemenu ul li.i_under_construction a span, .i_under_construction{ background-image: url(../img/icons/dark/under_construction.png);}
+#myslidemenu ul li.i_unlocked a span, .i_unlocked{ background-image: url(../img/icons/dark/unlocked.png);}
+#myslidemenu ul li.i_upload a span, .i_upload{ background-image: url(../img/icons/dark/upload.png);}
+#myslidemenu ul li.i_user a span, .i_user{ background-image: url(../img/icons/dark/user.png);}
+#myslidemenu ul li.i_user_2 a span, .i_user_2{ background-image: url(../img/icons/dark/user_2.png);}
+#myslidemenu ul li.i_user_comment a span, .i_user_comment{ background-image: url(../img/icons/dark/user_comment.png);}
+#myslidemenu ul li.i_users a span, .i_users{ background-image: url(../img/icons/dark/users.png);}
+#myslidemenu ul li.i_users_2 a span, .i_users_2{ background-image: url(../img/icons/dark/users_2.png);}
+#myslidemenu ul li.i_v-card a span, .i_v-card{ background-image: url(../img/icons/dark/v-card.png);}
+#myslidemenu ul li.i_v-card_2 a span, .i_v-card_2{ background-image: url(../img/icons/dark/v-card_2.png);}
+#myslidemenu ul li.i_vault a span, .i_vault{ background-image: url(../img/icons/dark/vault.png);}
+#myslidemenu ul li.i_vimeo a span, .i_vimeo{ background-image: url(../img/icons/dark/vimeo.png);}
+#myslidemenu ul li.i_vimeo_2 a span, .i_vimeo_2{ background-image: url(../img/icons/dark/vimeo_2.png);}
+#myslidemenu ul li.i_walking_man a span, .i_walking_man{ background-image: url(../img/icons/dark/walking_man.png);}
+#myslidemenu ul li.i_wifi_signal a span, .i_wifi_signal{ background-image: url(../img/icons/dark/wifi_signal.png);}
+#myslidemenu ul li.i_wifi_signal_2 a span, .i_wifi_signal_2{ background-image: url(../img/icons/dark/wifi_signal_2.png);}
+#myslidemenu ul li.i_windows a span, .i_windows{ background-image: url(../img/icons/dark/windows.png);}
+#myslidemenu ul li.i_winner_podium a span, .i_winner_podium{ background-image: url(../img/icons/dark/winner_podium.png);}
+#myslidemenu ul li.i_wizard a span, .i_wizard{ background-image: url(../img/icons/dark/wizard.png);}
+#myslidemenu ul li.i_word_document a span, .i_word_document{ background-image: url(../img/icons/dark/word_document.png);}
+#myslidemenu ul li.i_word_documents a span, .i_word_documents{ background-image: url(../img/icons/dark/word_documents.png);}
+#myslidemenu ul li.i_wordpress a span, .i_wordpress{ background-image: url(../img/icons/dark/wordpress.png);}
+#myslidemenu ul li.i_wordpress_2 a span, .i_wordpress_2{ background-image: url(../img/icons/dark/wordpress_2.png);}
+#myslidemenu ul li.i_youtube a span, .i_youtube{ background-image: url(../img/icons/dark/youtube.png);}
+#myslidemenu ul li.i_youtube_2 a span, .i_youtube_2{ background-image: url(../img/icons/dark/youtube_2.png);}
+#myslidemenu ul li.i_zip_file a span, .i_zip_file{ background-image: url(../img/icons/dark/zip_file.png);}
+#myslidemenu ul li.i_zip_files a span, .i_zip_files{ background-image: url(../img/icons/dark/zip_files.png);}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------------------*/
+/* Icons Light
+/*----------------------------------------------------------------------*/
+
+#myslidemenu ul li.i_abacus a span, .i_abacus{ background-image: url(../img/icons/light/abacus.png);}
+#myslidemenu ul li.i_access_denied a span, .i_access_denied{ background-image: url(../img/icons/light/access_denied.png) !important;}
+#myslidemenu ul li.i_address_book a span, .i_address_book{ background-image: url(../img/icons/light/address_book.png);}
+#myslidemenu ul li.i_admin_user a span, .i_admin_user{ background-image: url(../img/icons/light/admin_user.png);}
+#myslidemenu ul li.i_admin_user_2 a span, .i_admin_user_2{ background-image: url(../img/icons/light/admin_user_2.png);}
+#myslidemenu ul li.i_airplane a span, .i_airplane{ background-image: url(../img/icons/light/airplane.png);}
+#myslidemenu ul li.i_alarm a span, .i_alarm{ background-image: url(../img/icons/light/alarm.png);}
+#myslidemenu ul li.i_alarm_2 a span, .i_alarm_2{ background-image: url(../img/icons/light/alarm_2.png);}
+#myslidemenu ul li.i_alarm_clock a span, .i_alarm_clock{ background-image: url(../img/icons/light/alarm_clock.png);}
+#myslidemenu ul li.i_alert a span, .i_alert{ background-image: url(../img/icons/light/alert.png);}
+#myslidemenu ul li.i_android a span, .i_android{ background-image: url(../img/icons/light/android.png);}
+#myslidemenu ul li.i_application a span, .i_application{ background-image: url(../img/icons/light/application.png);}
+#myslidemenu ul li.i_archive a span, .i_archive{ background-image: url(../img/icons/light/archive.png);}
+#myslidemenu ul li.i_arrow_down a span, .i_arrow_down{ background-image: url(../img/icons/light/arrow_down.png);}
+#myslidemenu ul li.i_arrow_down_left a span, .i_arrow_down_left{ background-image: url(../img/icons/light/arrow_down_left.png);}
+#myslidemenu ul li.i_arrow_down_right a span, .i_arrow_down_right{ background-image: url(../img/icons/light/arrow_down_right.png);}
+#myslidemenu ul li.i_arrow_left a span, .i_arrow_left{ background-image: url(../img/icons/light/arrow_left.png);}
+#myslidemenu ul li.i_arrow_right a span, .i_arrow_right{ background-image: url(../img/icons/light/arrow_right.png);}
+#myslidemenu ul li.i_arrow_up a span, .i_arrow_up{ background-image: url(../img/icons/light/arrow_up.png);}
+#myslidemenu ul li.i_arrow_up_left a span, .i_arrow_up_left{ background-image: url(../img/icons/light/arrow_up_left.png);}
+#myslidemenu ul li.i_arrow_up_right a span, .i_arrow_up_right{ background-image: url(../img/icons/light/arrow_up_right.png);}
+#myslidemenu ul li.i_bag a span, .i_bag{ background-image: url(../img/icons/light/bag.png);}
+#myslidemenu ul li.i_balloons a span, .i_balloons{ background-image: url(../img/icons/light/balloons.png);}
+#myslidemenu ul li.i_bandaid a span, .i_bandaid{ background-image: url(../img/icons/light/bandaid.png);}
+#myslidemenu ul li.i_battery a span, .i_battery{ background-image: url(../img/icons/light/battery.png);}
+#myslidemenu ul li.i_battery_33 a span, .i_battery_33{ background-image: url(../img/icons/light/battery_33.png);}
+#myslidemenu ul li.i_battery_66 a span, .i_battery_66{ background-image: url(../img/icons/light/battery_66.png);}
+#myslidemenu ul li.i_battery_empty a span, .i_battery_empty{ background-image: url(../img/icons/light/battery_empty.png);}
+#myslidemenu ul li.i_battery_full a span, .i_battery_full{ background-image: url(../img/icons/light/battery_full.png);}
+#myslidemenu ul li.i_bended_arrow_down a span, .i_bended_arrow_down{ background-image: url(../img/icons/light/bended_arrow_down.png);}
+#myslidemenu ul li.i_bended_arrow_left a span, .i_bended_arrow_left{ background-image: url(../img/icons/light/bended_arrow_left.png);}
+#myslidemenu ul li.i_bended_arrow_right a span, .i_bended_arrow_right{ background-image: url(../img/icons/light/bended_arrow_right.png);}
+#myslidemenu ul li.i_bended_arrow_up a span, .i_bended_arrow_up{ background-image: url(../img/icons/light/bended_arrow_up.png);}
+#myslidemenu ul li.i_big_brush a span, .i_big_brush{ background-image: url(../img/icons/light/big_brush.png);}
+#myslidemenu ul li.i_blackberry a span, .i_blackberry{ background-image: url(../img/icons/light/blackberry.png);}
+#myslidemenu ul li.i_blocks_images a span, .i_blocks_images{ background-image: url(../img/icons/light/blocks_images.png);}
+#myslidemenu ul li.i_blu-ray a span, .i_blu-ray{ background-image: url(../img/icons/light/blu-ray.png);}
+#myslidemenu ul li.i_bluetooth a span, .i_bluetooth{ background-image: url(../img/icons/light/bluetooth.png);}
+#myslidemenu ul li.i_bluetooth_2 a span, .i_bluetooth_2{ background-image: url(../img/icons/light/bluetooth_2.png);}
+#myslidemenu ul li.i_book a span, .i_book{ background-image: url(../img/icons/light/book.png) !important ;}
+#myslidemenu ul li.i_book_large a span, .i_book_large{ background-image: url(../img/icons/light/book_large.png);}
+#myslidemenu ul li.i_books a span, .i_books{ background-image: url(../img/icons/light/books.png);}
+#myslidemenu ul li.i_breadcrumb a span, .i_breadcrumb{ background-image: url(../img/icons/light/breadcrumb.png);}
+#myslidemenu ul li.i_brush a span, .i_brush{ background-image: url(../img/icons/light/brush.png);}
+#myslidemenu ul li.i_buildings a span, .i_buildings{ background-image: url(../img/icons/light/buildings.png);}
+#myslidemenu ul li.i_bulls_eye a span, .i_bulls_eye{ background-image: url(../img/icons/light/bulls_eye.png);}
+#myslidemenu ul li.i_calculator a span, .i_calculator{ background-image: url(../img/icons/light/calculator.png);}
+#myslidemenu ul li.i_calendar a span, .i_calendar{ background-image: url(../img/icons/light/calendar.png);}
+#myslidemenu ul li.i_calendar_day a span, .i_calendar_day{ background-image: url(../img/icons/light/calendar_day.png);}
+#myslidemenu ul li.i_camera a span, .i_camera{ background-image: url(../img/icons/light/camera.png);}
+#myslidemenu ul li.i_camera_2 a span, .i_camera_2{ background-image: url(../img/icons/light/camera_2.png);}
+#myslidemenu ul li.i_car a span, .i_car{ background-image: url(../img/icons/light/car.png);}
+#myslidemenu ul li.i_cash_register a span, .i_cash_register{ background-image: url(../img/icons/light/cash_register.png);}
+#myslidemenu ul li.i_cassette a span, .i_cassette{ background-image: url(../img/icons/light/cassette.png);}
+#myslidemenu ul li.i_cat a span, .i_cat{ background-image: url(../img/icons/light/cat.png);}
+#myslidemenu ul li.i_cd a span, .i_cd{ background-image: url(../img/icons/light/cd.png);}
+#myslidemenu ul li.i_chair a span, .i_chair{ background-image: url(../img/icons/light/chair.png);}
+#myslidemenu ul li.i_chart a span, .i_chart{ background-image: url(../img/icons/light/chart.png);}
+#myslidemenu ul li.i_chart_2 a span, .i_chart_2{ background-image: url(../img/icons/light/chart_2.png);}
+#myslidemenu ul li.i_chart_3 a span, .i_chart_3{ background-image: url(../img/icons/light/chart_3.png);}
+#myslidemenu ul li.i_chart_4 a span, .i_chart_4{ background-image: url(../img/icons/light/chart_4.png);}
+#myslidemenu ul li.i_chart_5 a span, .i_chart_5{ background-image: url(../img/icons/light/chart_5.png);}
+#myslidemenu ul li.i_chart_6 a span, .i_chart_6{ background-image: url(../img/icons/light/chart_6.png);}
+#myslidemenu ul li.i_chart_7 a span, .i_chart_7{ background-image: url(../img/icons/light/chart_7.png);}
+#myslidemenu ul li.i_chart_8 a span, .i_chart_8{ background-image: url(../img/icons/light/chart_8.png);}
+#myslidemenu ul li.i_chemical a span, .i_chemical{ background-image: url(../img/icons/light/chemical.png);}
+#myslidemenu ul li.i_chrome a span, .i_chrome{ background-image: url(../img/icons/light/chrome.png);}
+#myslidemenu ul li.i_clipboard a span, .i_clipboard{ background-image: url(../img/icons/light/clipboard.png);}
+#myslidemenu ul li.i_clock a span, .i_clock{ background-image: url(../img/icons/light/clock.png);}
+#myslidemenu ul li.i_cloud a span, .i_cloud{ background-image: url(../img/icons/light/cloud.png);}
+#myslidemenu ul li.i_cloud_download a span, .i_cloud_download{ background-image: url(../img/icons/light/cloud_download.png);}
+#myslidemenu ul li.i_cloud_upload a span, .i_cloud_upload{ background-image: url(../img/icons/light/cloud_upload.png);}
+#myslidemenu ul li.i_cog a span, .i_cog{ background-image: url(../img/icons/light/cog.png);}
+#myslidemenu ul li.i_cog_2 a span, .i_cog_2{ background-image: url(../img/icons/light/cog_2.png);}
+#myslidemenu ul li.i_cog_3 a span, .i_cog_3{ background-image: url(../img/icons/light/cog_3.png);}
+#myslidemenu ul li.i_cog_4 a span, .i_cog_4{ background-image: url(../img/icons/light/cog_4.png);}
+#myslidemenu ul li.i_collapse a span, .i_collapse{ background-image: url(../img/icons/light/collapse.png);}
+#myslidemenu ul li.i_companies a span, .i_companies{ background-image: url(../img/icons/light/companies.png);}
+#myslidemenu ul li.i_compress a span, .i_compress{ background-image: url(../img/icons/light/compress.png);}
+#myslidemenu ul li.i_copy a span, .i_copy{ background-image: url(../img/icons/light/copy.png);}
+#myslidemenu ul li.i_coverflow a span, .i_coverflow{ background-image: url(../img/icons/light/coverflow.png);}
+#myslidemenu ul li.i_create_write a span, .i_create_write{ background-image: url(../img/icons/light/create_write.png);}
+#myslidemenu ul li.i_cross a span, .i_cross{ background-image: url(../img/icons/light/cross.png);}
+#myslidemenu ul li.i_cup a span, .i_cup{ background-image: url(../img/icons/light/cup.png);}
+#myslidemenu ul li.i_cursor a span, .i_cursor{ background-image: url(../img/icons/light/cursor.png);}
+#myslidemenu ul li.i_delicious a span, .i_delicious{ background-image: url(../img/icons/light/delicious.png);}
+#myslidemenu ul li.i_desk a span, .i_desk{ background-image: url(../img/icons/light/desk.png);}
+#myslidemenu ul li.i_digg a span, .i_digg{ background-image: url(../img/icons/light/digg.png);}
+#myslidemenu ul li.i_digg_2 a span, .i_digg_2{ background-image: url(../img/icons/light/digg_2.png);}
+#myslidemenu ul li.i_document a span, .i_document{ background-image: url(../img/icons/light/document.png);}
+#myslidemenu ul li.i_document_add a span, .i_document_add{ background-image: url(../img/icons/light/document_add.png);}
+#myslidemenu ul li.i_document_delete a span, .i_document_delete{ background-image: url(../img/icons/light/document_delete.png);}
+#myslidemenu ul li.i_documents a span, .i_documents{ background-image: url(../img/icons/light/documents.png);}
+#myslidemenu ul li.i_download a span, .i_download{ background-image: url(../img/icons/light/download.png);}
+#myslidemenu ul li.i_download_to_computer a span, .i_download_to_computer{ background-image: url(../img/icons/light/download_to_computer.png);}
+#myslidemenu ul li.i_dress a span, .i_dress{ background-image: url(../img/icons/light/dress.png);}
+#myslidemenu ul li.i_dribbble a span, .i_dribbble{ background-image: url(../img/icons/light/dribbble.png);}
+#myslidemenu ul li.i_dribbble_2 a span, .i_dribbble_2{ background-image: url(../img/icons/light/dribbble_2.png);}
+#myslidemenu ul li.i_dropbox a span, .i_dropbox{ background-image: url(../img/icons/light/dropbox.png);}
+#myslidemenu ul li.i_drupal a span, .i_drupal{ background-image: url(../img/icons/light/drupal.png);}
+#myslidemenu ul li.i_duplicate a span, .i_duplicate{ background-image: url(../img/icons/light/duplicate.png);}
+#myslidemenu ul li.i_dvd a span, .i_dvd{ background-image: url(../img/icons/light/dvd.png);}
+#myslidemenu ul li.i_eject a span, .i_eject{ background-image: url(../img/icons/light/eject.png);}
+#myslidemenu ul li.i_electricty_input a span, .i_electricty_input{ background-image: url(../img/icons/light/electricty_input.png);}
+#myslidemenu ul li.i_electricty_plug a span, .i_electricty_plug{ background-image: url(../img/icons/light/electricty_plug.png);}
+#myslidemenu ul li.i_empty a span, .i_empty{ background-image: url(../img/icons/light/empty.png);}
+#myslidemenu ul li.i_excel_document a span, .i_excel_document{ background-image: url(../img/icons/light/excel_document.png);}
+#myslidemenu ul li.i_excel_documents a span, .i_excel_documents{ background-image: url(../img/icons/light/excel_documents.png);}
+#myslidemenu ul li.i_exclamation a span, .i_exclamation{ background-image: url(../img/icons/light/exclamation.png);}
+#myslidemenu ul li.i_exit a span, .i_exit{ background-image: url(../img/icons/light/exit.png);}
+#myslidemenu ul li.i_expand a span, .i_expand{ background-image: url(../img/icons/light/expand.png);}
+#myslidemenu ul li.i_expose a span, .i_expose{ background-image: url(../img/icons/light/expose.png);}
+#myslidemenu ul li.i_expression_engine a span, .i_expression_engine{ background-image: url(../img/icons/light/expression_engine.png);}
+#myslidemenu ul li.i_eyedropper a span, .i_eyedropper{ background-image: url(../img/icons/light/eyedropper.png);}
+#myslidemenu ul li.i_facebook a span, .i_facebook{ background-image: url(../img/icons/light/facebook.png);}
+#myslidemenu ul li.i_facebook_like a span, .i_facebook_like{ background-image: url(../img/icons/light/facebook_like.png);}
+#myslidemenu ul li.i_fax a span, .i_fax{ background-image: url(../img/icons/light/fax.png);}
+#myslidemenu ul li.i_female a span, .i_female{ background-image: url(../img/icons/light/female.png);}
+#myslidemenu ul li.i_female_contour a span, .i_female_contour{ background-image: url(../img/icons/light/female_contour.png);}
+#myslidemenu ul li.i_file_cabinet a span, .i_file_cabinet{ background-image: url(../img/icons/light/file_cabinet.png);}
+#myslidemenu ul li.i_film a span, .i_film{ background-image: url(../img/icons/light/film.png);}
+#myslidemenu ul li.i_film_2 a span, .i_film_2{ background-image: url(../img/icons/light/film_2.png);}
+#myslidemenu ul li.i_filmcamera a span, .i_filmcamera{ background-image: url(../img/icons/light/filmcamera.png);}
+#myslidemenu ul li.i_finish_flag a span, .i_finish_flag{ background-image: url(../img/icons/light/finish_flag.png);}
+#myslidemenu ul li.i_firefox a span, .i_firefox{ background-image: url(../img/icons/light/firefox.png);}
+#myslidemenu ul li.i_flag a span, .i_flag{ background-image: url(../img/icons/light/flag.png) !important;}
+#myslidemenu ul li.i_flag_2 a span, .i_flag_2{ background-image: url(../img/icons/light/flag_2.png) !important;}
+#myslidemenu ul li.i_folder a span, .i_folder{ background-image: url(../img/icons/light/folder.png);}
+#myslidemenu ul li.i_folder_add a span, .i_folder_add{ background-image: url(../img/icons/light/folder_add.png);}
+#myslidemenu ul li.i_folder_closed a span, .i_folder_closed{ background-image: url(../img/icons/light/folder_closed.png);}
+#myslidemenu ul li.i_folder_delete a span, .i_folder_delete{ background-image: url(../img/icons/light/folder_delete.png);}
+#myslidemenu ul li.i_folder_download a span, .i_folder_download{ background-image: url(../img/icons/light/folder_download.png);}
+#myslidemenu ul li.i_folder_lock a span, .i_folder_lock{ background-image: url(../img/icons/light/folder_lock.png);}
+#myslidemenu ul li.i_folder_love a span, .i_folder_love{ background-image: url(../img/icons/light/folder_love.png);}
+#myslidemenu ul li.i_folder_upload a span, .i_folder_upload{ background-image: url(../img/icons/light/folder_upload.png);}
+#myslidemenu ul li.i_footprint a span, .i_footprint{ background-image: url(../img/icons/light/footprint.png);}
+#myslidemenu ul li.i_forward a span, .i_forward{ background-image: url(../img/icons/light/forward.png);}
+#myslidemenu ul li.i_fountain_pen a span, .i_fountain_pen{ background-image: url(../img/icons/light/fountain_pen.png);}
+#myslidemenu ul li.i_frames a span, .i_frames{ background-image: url(../img/icons/light/frames.png);}
+#myslidemenu ul li.i_fullscreen a span, .i_fullscreen{ background-image: url(../img/icons/light/fullscreen.png);}
+#myslidemenu ul li.i_globe a span, .i_globe{ background-image: url(../img/icons/light/globe.png);}
+#myslidemenu ul li.i_globe_2 a span, .i_globe_2{ background-image: url(../img/icons/light/globe_2.png);}
+#myslidemenu ul li.i_google_buzz a span, .i_google_buzz{ background-image: url(../img/icons/light/google_buzz.png);}
+#myslidemenu ul li.i_google_maps a span, .i_google_maps{ background-image: url(../img/icons/light/google_maps.png);}
+#myslidemenu ul li.i_graph a span, .i_graph{ background-image: url(../img/icons/light/graph.png);}
+#myslidemenu ul li.i_grid a span, .i_grid{ background-image: url(../img/icons/light/grid.png);}
+#myslidemenu ul li.i_hd a span, .i_hd{ background-image: url(../img/icons/light/hd.png);}
+#myslidemenu ul li.i_hd_2 a span, .i_hd_2{ background-image: url(../img/icons/light/hd_2.png);}
+#myslidemenu ul li.i_hd_3 a span, .i_hd_3{ background-image: url(../img/icons/light/hd_3.png);}
+#myslidemenu ul li.i_headphones a span, .i_headphones{ background-image: url(../img/icons/light/headphones.png);}
+#myslidemenu ul li.i_help a span, .i_help{ background-image: url(../img/icons/light/help.png);}
+#myslidemenu ul li.i_house a span, .i_house{ background-image: url(../img/icons/light/house.png);}
+#myslidemenu ul li.i_house_2 a span, .i_house_2{ background-image: url(../img/icons/light/house_2.png);}
+#myslidemenu ul li.i_ice_cream a span, .i_ice_cream{ background-image: url(../img/icons/light/ice_cream.png);}
+#myslidemenu ul li.i_ice_cream_2 a span, .i_ice_cream_2{ background-image: url(../img/icons/light/ice_cream_2.png);}
+#myslidemenu ul li.i_ichat a span, .i_ichat{ background-image: url(../img/icons/light/ichat.png);}
+#myslidemenu ul li.i_imac a span, .i_imac{ background-image: url(../img/icons/light/imac.png);}
+#myslidemenu ul li.i_image a span, .i_image{ background-image: url(../img/icons/light/image.png);}
+#myslidemenu ul li.i_image_2 a span, .i_image_2{ background-image: url(../img/icons/light/image_2.png);}
+#myslidemenu ul li.i_images a span, .i_images{ background-image: url(../img/icons/light/images.png);}
+#myslidemenu ul li.i_images_2 a span, .i_images_2{ background-image: url(../img/icons/light/images_2.png);}
+#myslidemenu ul li.i_inbox a span, .i_inbox{ background-image: url(../img/icons/light/inbox.png);}
+#myslidemenu ul li.i_incomming a span, .i_incomming{ background-image: url(../img/icons/light/incomming.png);}
+#myslidemenu ul li.i_information a span, .i_information{ background-image: url(../img/icons/light/information.png);}
+#myslidemenu ul li.i_ipad a span, .i_ipad{ background-image: url(../img/icons/light/ipad.png);}
+#myslidemenu ul li.i_iphone_3g a span, .i_iphone_3g{ background-image: url(../img/icons/light/iphone_3g.png);}
+#myslidemenu ul li.i_iphone_4 a span, .i_iphone_4{ background-image: url(../img/icons/light/iphone_4.png);}
+#myslidemenu ul li.i_ipod a span, .i_ipod{ background-image: url(../img/icons/light/ipod.png);}
+#myslidemenu ul li.i_ipod_nano a span, .i_ipod_nano{ background-image: url(../img/icons/light/ipod_nano.png);}
+#myslidemenu ul li.i_joomla a span, .i_joomla{ background-image: url(../img/icons/light/joomla.png);}
+#myslidemenu ul li.i_key a span, .i_key{ background-image: url(../img/icons/light/key.png);}
+#myslidemenu ul li.i_key_2 a span, .i_key_2{ background-image: url(../img/icons/light/key_2.png);}
+#myslidemenu ul li.i_ladys_purse a span, .i_ladys_purse{ background-image: url(../img/icons/light/ladys_purse.png);}
+#myslidemenu ul li.i_lamp a span, .i_lamp{ background-image: url(../img/icons/light/lamp.png);}
+#myslidemenu ul li.i_laptop a span, .i_laptop{ background-image: url(../img/icons/light/laptop.png);}
+#myslidemenu ul li.i_lastfm a span, .i_lastfm{ background-image: url(../img/icons/light/lastfm.png);}
+#myslidemenu ul li.i_lemonade_stand a span, .i_lemonade_stand{ background-image: url(../img/icons/light/lemonade_stand.png);}
+#myslidemenu ul li.i_light_bulb a span, .i_light_bulb{ background-image: url(../img/icons/light/light_bulb.png);}
+#myslidemenu ul li.i_link a span, .i_link{ background-image: url(../img/icons/light/link.png);}
+#myslidemenu ul li.i_link_2 a span, .i_link_2{ background-image: url(../img/icons/light/link_2.png);}
+#myslidemenu ul li.i_linux a span, .i_linux{ background-image: url(../img/icons/light/linux.png);}
+#myslidemenu ul li.i_list a span, .i_list{ background-image: url(../img/icons/light/list.png);}
+#myslidemenu ul li.i_list_image a span, .i_list_image{ background-image: url(../img/icons/light/list_image.png);}
+#myslidemenu ul li.i_list_images a span, .i_list_images{ background-image: url(../img/icons/light/list_images.png);}
+#myslidemenu ul li.i_loading_bar a span, .i_loading_bar{ background-image: url(../img/icons/light/loading_bar.png);}
+#myslidemenu ul li.i_locked a span, .i_locked{ background-image: url(../img/icons/light/locked.png);}
+#myslidemenu ul li.i_locked_2 a span, .i_locked_2{ background-image: url(../img/icons/light/locked_2.png);}
+#myslidemenu ul li.i_macos a span, .i_macos{ background-image: url(../img/icons/light/macos.png);}
+#myslidemenu ul li.i_magic_mouse a span, .i_magic_mouse{ background-image: url(../img/icons/light/magic_mouse.png);}
+#myslidemenu ul li.i_magnifying_glass a span, .i_magnifying_glass{ background-image: url(../img/icons/light/magnifying_glass.png);}
+#myslidemenu ul li.i_mail a span, .i_mail{ background-image: url(../img/icons/light/mail.png);}
+#myslidemenu ul li.i_male a span, .i_male{ background-image: url(../img/icons/light/male.png);}
+#myslidemenu ul li.i_male_contour a span, .i_male_contour{ background-image: url(../img/icons/light/male_contour.png);}
+#myslidemenu ul li.i_map a span, .i_map{ background-image: url(../img/icons/light/map.png);}
+#myslidemenu ul li.i_marker a span, .i_marker{ background-image: url(../img/icons/light/marker.png);}
+#myslidemenu ul li.i_maximize a span, .i_maximize{ background-image: url(../img/icons/light/maximize.png);}
+#myslidemenu ul li.i_medical_case a span, .i_medical_case{ background-image: url(../img/icons/light/medical_case.png);}
+#myslidemenu ul li.i_megaphone a span, .i_megaphone{ background-image: url(../img/icons/light/megaphone.png);}
+#myslidemenu ul li.i_microphone a span, .i_microphone{ background-image: url(../img/icons/light/microphone.png);}
+#myslidemenu ul li.i_mighty_mouse a span, .i_mighty_mouse{ background-image: url(../img/icons/light/mighty_mouse.png);}
+#myslidemenu ul li.i_minimize a span, .i_minimize{ background-image: url(../img/icons/light/minimize.png);}
+#myslidemenu ul li.i_minus a span, .i_minus{ background-image: url(../img/icons/light/minus.png);}
+#myslidemenu ul li.i_mobile_phone a span, .i_mobile_phone{ background-image: url(../img/icons/light/mobile_phone.png);}
+#myslidemenu ul li.i_mobypicture a span, .i_mobypicture{ background-image: url(../img/icons/light/mobypicture.png);}
+#myslidemenu ul li.i_money a span, .i_money{ background-image: url(../img/icons/light/money.png);}
+#myslidemenu ul li.i_money_2 a span, .i_money_2{ background-image: url(../img/icons/light/money_2.png);}
+#myslidemenu ul li.i_monitor a span, .i_monitor{ background-image: url(../img/icons/light/monitor.png);}
+#myslidemenu ul li.i_mouse a span, .i_mouse{ background-image: url(../img/icons/light/mouse.png);}
+#myslidemenu ul li.i_myspace a span, .i_myspace{ background-image: url(../img/icons/light/myspace.png);}
+#myslidemenu ul li.i_next a span, .i_next{ background-image: url(../img/icons/light/next.png);}
+#myslidemenu ul li.i_note_book a span, .i_note_book{ background-image: url(../img/icons/light/note_book.png);}
+#myslidemenu ul li.i_outgoing a span, .i_outgoing{ background-image: url(../img/icons/light/outgoing.png);}
+#myslidemenu ul li.i_pacman a span, .i_pacman{ background-image: url(../img/icons/light/pacman.png);}
+#myslidemenu ul li.i_pacman_ghost a span, .i_pacman_ghost{ background-image: url(../img/icons/light/pacman_ghost.png);}
+#myslidemenu ul li.i_paint_brush a span, .i_paint_brush{ background-image: url(../img/icons/light/paint_brush.png);}
+#myslidemenu ul li.i_pants a span, .i_pants{ background-image: url(../img/icons/light/pants.png);}
+#myslidemenu ul li.i_paperclip a span, .i_paperclip{ background-image: url(../img/icons/light/paperclip.png);}
+#myslidemenu ul li.i_paste a span, .i_paste{ background-image: url(../img/icons/light/paste.png);}
+#myslidemenu ul li.i_pause a span, .i_pause{ background-image: url(../img/icons/light/pause.png);}
+#myslidemenu ul li.i_paypal a span, .i_paypal{ background-image: url(../img/icons/light/paypal.png);}
+#myslidemenu ul li.i_paypal_2 a span, .i_paypal_2{ background-image: url(../img/icons/light/paypal_2.png);}
+#myslidemenu ul li.i_paypal_3 a span, .i_paypal_3{ background-image: url(../img/icons/light/paypal_3.png);}
+#myslidemenu ul li.i_pdf_document a span, .i_pdf_document{ background-image: url(../img/icons/light/pdf_document.png);}
+#myslidemenu ul li.i_pdf_documents a span, .i_pdf_documents{ background-image: url(../img/icons/light/pdf_documents.png);}
+#myslidemenu ul li.i_pencil a span, .i_pencil{ background-image: url(../img/icons/light/pencil.png);}
+#myslidemenu ul li.i_phone a span, .i_phone{ background-image: url(../img/icons/light/phone.png);}
+#myslidemenu ul li.i_phone_2 a span, .i_phone_2{ background-image: url(../img/icons/light/phone_2.png);}
+#myslidemenu ul li.i_phone_hook a span, .i_phone_hook{ background-image: url(../img/icons/light/phone_hook.png);}
+#myslidemenu ul li.i_piggy_bank a span, .i_piggy_bank{ background-image: url(../img/icons/light/piggy_bank.png);}
+#myslidemenu ul li.i_plane_suitecase a span, .i_plane_suitecase{ background-image: url(../img/icons/light/plane_suitecase.png);}
+#myslidemenu ul li.i_play a span, .i_play{ background-image: url(../img/icons/light/play.png);}
+#myslidemenu ul li.i_plixi a span, .i_plixi{ background-image: url(../img/icons/light/plixi.png);}
+#myslidemenu ul li.i_plus a span, .i_plus{ background-image: url(../img/icons/light/plus.png);}
+#myslidemenu ul li.i_post_card a span, .i_post_card{ background-image: url(../img/icons/light/post_card.png);}
+#myslidemenu ul li.i_power a span, .i_power{ background-image: url(../img/icons/light/power.png);}
+#myslidemenu ul li.i_powerpoint_document a span, .i_powerpoint_document{ background-image: url(../img/icons/light/powerpoint_document.png);}
+#myslidemenu ul li.i_powerpoint_documents a span, .i_powerpoint_documents{ background-image: url(../img/icons/light/powerpoint_documents.png);}
+#myslidemenu ul li.i_presentation a span, .i_presentation{ background-image: url(../img/icons/light/presentation.png);}
+#myslidemenu ul li.i_prev a span, .i_prev{ background-image: url(../img/icons/light/prev.png);}
+#myslidemenu ul li.i_preview a span, .i_preview{ background-image: url(../img/icons/light/preview.png);}
+#myslidemenu ul li.i_price_tag a span, .i_price_tag{ background-image: url(../img/icons/light/price_tag.png);}
+#myslidemenu ul li.i_price_tags a span, .i_price_tags{ background-image: url(../img/icons/light/price_tags.png);}
+#myslidemenu ul li.i_printer a span, .i_printer{ background-image: url(../img/icons/light/printer.png);}
+#myslidemenu ul li.i_question a span, .i_question{ background-image: url(../img/icons/light/question.png);}
+#myslidemenu ul li.i_radio a span, .i_radio{ background-image: url(../img/icons/light/radio.png);}
+#myslidemenu ul li.i_record a span, .i_record{ background-image: url(../img/icons/light/record.png);}
+#myslidemenu ul li.i_recycle a span, .i_recycle{ background-image: url(../img/icons/light/recycle.png);}
+#myslidemenu ul li.i_refresh a span, .i_refresh{ background-image: url(../img/icons/light/refresh.png);}
+#myslidemenu ul li.i_refresh_2 a span, .i_refresh_2{ background-image: url(../img/icons/light/refresh_2.png);}
+#myslidemenu ul li.i_refresh_3 a span, .i_refresh_3{ background-image: url(../img/icons/light/refresh_3.png);}
+#myslidemenu ul li.i_refresh_4 a span, .i_refresh_4{ background-image: url(../img/icons/light/refresh_4.png);}
+#myslidemenu ul li.i_repeat a span, .i_repeat{ background-image: url(../img/icons/light/repeat.png);}
+#myslidemenu ul li.i_rewind a span, .i_rewind{ background-image: url(../img/icons/light/rewind.png);}
+#myslidemenu ul li.i_robot a span, .i_robot{ background-image: url(../img/icons/light/robot.png);}
+#myslidemenu ul li.i_rss a span, .i_rss{ background-image: url(../img/icons/light/rss.png);}
+#myslidemenu ul li.i_ruler a span, .i_ruler{ background-image: url(../img/icons/light/ruler.png);}
+#myslidemenu ul li.i_ruler_2 a span, .i_ruler_2{ background-image: url(../img/icons/light/ruler_2.png);}
+#myslidemenu ul li.i_running_man a span, .i_running_man{ background-image: url(../img/icons/light/running_man.png);}
+#myslidemenu ul li.i_safari a span, .i_safari{ background-image: url(../img/icons/light/safari.png);}
+#myslidemenu ul li.i_scan_label a span, .i_scan_label{ background-image: url(../img/icons/light/scan_label.png);}
+#myslidemenu ul li.i_scissors a span, .i_scissors{ background-image: url(../img/icons/light/scissors.png);}
+#myslidemenu ul li.i_sd a span, .i_sd{ background-image: url(../img/icons/light/sd.png);}
+#myslidemenu ul li.i_sd_2 a span, .i_sd_2{ background-image: url(../img/icons/light/sd_2.png);}
+#myslidemenu ul li.i_sd_3 a span, .i_sd_3{ background-image: url(../img/icons/light/sd_3.png);}
+#myslidemenu ul li.i_settings a span, .i_settings{ background-image: url(../img/icons/light/settings.png);}
+#myslidemenu ul li.i_settings_2 a span, .i_settings_2{ background-image: url(../img/icons/light/settings_2.png);}
+#myslidemenu ul li.i_shopping_bag a span, .i_shopping_bag{ background-image: url(../img/icons/light/shopping_bag.png);}
+#myslidemenu ul li.i_shopping_basket a span, .i_shopping_basket{ background-image: url(../img/icons/light/shopping_basket.png);}
+#myslidemenu ul li.i_shopping_basket_2 a span, .i_shopping_basket_2{ background-image: url(../img/icons/light/shopping_basket_2.png);}
+#myslidemenu ul li.i_shopping_cart a span, .i_shopping_cart{ background-image: url(../img/icons/light/shopping_cart.png);}
+#myslidemenu ul li.i_shopping_cart_2 a span, .i_shopping_cart_2{ background-image: url(../img/icons/light/shopping_cart_2.png);}
+#myslidemenu ul li.i_shopping_cart_3 a span, .i_shopping_cart_3{ background-image: url(../img/icons/light/shopping_cart_3.png);}
+#myslidemenu ul li.i_shopping_cart_4 a span, .i_shopping_cart_4{ background-image: url(../img/icons/light/shopping_cart_4.png);}
+#myslidemenu ul li.i_shuffle a span, .i_shuffle{ background-image: url(../img/icons/light/shuffle.png);}
+#myslidemenu ul li.i_sign_post a span, .i_sign_post{ background-image: url(../img/icons/light/sign_post.png);}
+#myslidemenu ul li.i_skype a span, .i_skype{ background-image: url(../img/icons/light/skype.png);}
+#myslidemenu ul li.i_sleeveless_shirt a span, .i_sleeveless_shirt{ background-image: url(../img/icons/light/sleeveless_shirt.png);}
+#myslidemenu ul li.i_socks a span, .i_socks{ background-image: url(../img/icons/light/socks.png);}
+#myslidemenu ul li.i_sound a span, .i_sound{ background-image: url(../img/icons/light/sound.png);}
+#myslidemenu ul li.i_speech_bubble a span, .i_speech_bubble{ background-image: url(../img/icons/light/speech_bubble.png);}
+#myslidemenu ul li.i_speech_bubble_2 a span, .i_speech_bubble_2{ background-image: url(../img/icons/light/speech_bubble_2.png);}
+#myslidemenu ul li.i_speech_bubbles a span, .i_speech_bubbles{ background-image: url(../img/icons/light/speech_bubbles.png);}
+#myslidemenu ul li.i_speech_bubbles_2 a span, .i_speech_bubbles_2{ background-image: url(../img/icons/light/speech_bubbles_2.png);}
+#myslidemenu ul li.i_sport_shirt a span, .i_sport_shirt{ background-image: url(../img/icons/light/sport_shirt.png);}
+#myslidemenu ul li.i_stop a span, .i_stop{ background-image: url(../img/icons/light/stop.png);}
+#myslidemenu ul li.i_stop_watch a span, .i_stop_watch{ background-image: url(../img/icons/light/stop_watch.png);}
+#myslidemenu ul li.i_strategy a span, .i_strategy{ background-image: url(../img/icons/light/strategy.png);}
+#myslidemenu ul li.i_strategy_2 a span, .i_strategy_2{ background-image: url(../img/icons/light/strategy_2.png);}
+#myslidemenu ul li.i_stubleupon a span, .i_stubleupon{ background-image: url(../img/icons/light/stubleupon.png);}
+#myslidemenu ul li.i_suitecase a span, .i_suitecase{ background-image: url(../img/icons/light/suitecase.png);}
+#myslidemenu ul li.i_sweater a span, .i_sweater{ background-image: url(../img/icons/light/sweater.png);}
+#myslidemenu ul li.i_t-shirt a span, .i_t-shirt{ background-image: url(../img/icons/light/t-shirt.png);}
+#myslidemenu ul li.i_table a span, .i_table{ background-image: url(../img/icons/light/table.png);}
+#myslidemenu ul li.i_tag a span, .i_tag{ background-image: url(../img/icons/light/tag.png);}
+#myslidemenu ul li.i_tags a span, .i_tags{ background-image: url(../img/icons/light/tags.png);}
+#myslidemenu ul li.i_television a span, .i_television{ background-image: url(../img/icons/light/television.png);}
+#myslidemenu ul li.i_tick a span, .i_tick{ background-image: url(../img/icons/light/tick.png);}
+#myslidemenu ul li.i_timer a span, .i_timer{ background-image: url(../img/icons/light/timer.png);}
+#myslidemenu ul li.i_trashcan a span, .i_trashcan{ background-image: url(../img/icons/light/trashcan.png);}
+#myslidemenu ul li.i_trashcan_2 a span, .i_trashcan_2{ background-image: url(../img/icons/light/trashcan_2.png);}
+#myslidemenu ul li.i_travel_suitecase a span, .i_travel_suitecase{ background-image: url(../img/icons/light/travel_suitecase.png);}
+#myslidemenu ul li.i_tree a span, .i_tree{ background-image: url(../img/icons/light/tree.png);}
+#myslidemenu ul li.i_triangle_double_down a span, .i_triangle_double_down{ background-image: url(../img/icons/light/triangle_double_down.png);}
+#myslidemenu ul li.i_triangle_double_left a span, .i_triangle_double_left{ background-image: url(../img/icons/light/triangle_double_left.png);}
+#myslidemenu ul li.i_triangle_double_right a span, .i_triangle_double_right{ background-image: url(../img/icons/light/triangle_double_right.png);}
+#myslidemenu ul li.i_triangle_double_up a span, .i_triangle_double_up{ background-image: url(../img/icons/light/triangle_double_up.png);}
+#myslidemenu ul li.i_triangle_down a span, .i_triangle_down{ background-image: url(../img/icons/light/triangle_down.png);}
+#myslidemenu ul li.i_triangle_down_left a span, .i_triangle_down_left{ background-image: url(../img/icons/light/triangle_down_left.png);}
+#myslidemenu ul li.i_triangle_down_right a span, .i_triangle_down_right{ background-image: url(../img/icons/light/triangle_down_right.png);}
+#myslidemenu ul li.i_triangle_left a span, .i_triangle_left{ background-image: url(../img/icons/light/triangle_left.png);}
+#myslidemenu ul li.i_triangle_left_right a span, .i_triangle_left_right{ background-image: url(../img/icons/light/triangle_left_right.png);}
+#myslidemenu ul li.i_triangle_right a span, .i_triangle_right{ background-image: url(../img/icons/light/triangle_right.png);}
+#myslidemenu ul li.i_triangle_up a span, .i_triangle_up{ background-image: url(../img/icons/light/triangle_up.png);}
+#myslidemenu ul li.i_triangle_up_down a span, .i_triangle_up_down{ background-image: url(../img/icons/light/triangle_up_down.png);}
+#myslidemenu ul li.i_triangle_up_left a span, .i_triangle_up_left{ background-image: url(../img/icons/light/triangle_up_left.png);}
+#myslidemenu ul li.i_triangle_up_right a span, .i_triangle_up_right{ background-image: url(../img/icons/light/triangle_up_right.png);}
+#myslidemenu ul li.i_trolly a span, .i_trolly{ background-image: url(../img/icons/light/trolly.png);}
+#myslidemenu ul li.i_truck a span, .i_truck{ background-image: url(../img/icons/light/truck.png);}
+#myslidemenu ul li.i_tumbler a span, .i_tumbler{ background-image: url(../img/icons/light/tumbler.png);}
+#myslidemenu ul li.i_twitter a span, .i_twitter{ background-image: url(../img/icons/light/twitter.png);}
+#myslidemenu ul li.i_twitter_2 a span, .i_twitter_2{ background-image: url(../img/icons/light/twitter_2.png);}
+#myslidemenu ul li.i_typo a span, .i_typo{ background-image: url(../img/icons/light/typo.png);}
+#myslidemenu ul li.i_umbrella a span, .i_umbrella{ background-image: url(../img/icons/light/umbrella.png);}
+#myslidemenu ul li.i_under_construction a span, .i_under_construction{ background-image: url(../img/icons/light/under_construction.png);}
+#myslidemenu ul li.i_unlocked a span, .i_unlocked{ background-image: url(../img/icons/light/unlocked.png);}
+#myslidemenu ul li.i_upload a span, .i_upload{ background-image: url(../img/icons/light/upload.png);}
+#myslidemenu ul li.i_user a span, .i_user{ background-image: url(../img/icons/light/user.png);}
+#myslidemenu ul li.i_user_2 a span, .i_user_2{ background-image: url(../img/icons/light/user_2.png);}
+#myslidemenu ul li.i_user_comment a span, .i_user_comment{ background-image: url(../img/icons/light/user_comment.png);}
+#myslidemenu ul li.i_users a span, .i_users{ background-image: url(../img/icons/light/users.png);}
+#myslidemenu ul li.i_users_2 a span, .i_users_2{ background-image: url(../img/icons/light/users_2.png);}
+#myslidemenu ul li.i_v-card a span, .i_v-card{ background-image: url(../img/icons/light/v-card.png);}
+#myslidemenu ul li.i_v-card_2 a span, .i_v-card_2{ background-image: url(../img/icons/light/v-card_2.png);}
+#myslidemenu ul li.i_vault a span, .i_vault{ background-image: url(../img/icons/light/vault.png);}
+#myslidemenu ul li.i_vimeo a span, .i_vimeo{ background-image: url(../img/icons/light/vimeo.png);}
+#myslidemenu ul li.i_vimeo_2 a span, .i_vimeo_2{ background-image: url(../img/icons/light/vimeo_2.png);}
+#myslidemenu ul li.i_walking_man a span, .i_walking_man{ background-image: url(../img/icons/light/walking_man.png);}
+#myslidemenu ul li.i_wifi_signal a span, .i_wifi_signal{ background-image: url(../img/icons/light/wifi_signal.png);}
+#myslidemenu ul li.i_wifi_signal_2 a span, .i_wifi_signal_2{ background-image: url(../img/icons/light/wifi_signal_2.png);}
+#myslidemenu ul li.i_windows a span, .i_windows{ background-image: url(../img/icons/light/windows.png);}
+#myslidemenu ul li.i_winner_podium a span, .i_winner_podium{ background-image: url(../img/icons/light/winner_podium.png);}
+#myslidemenu ul li.i_wizard a span, .i_wizard{ background-image: url(../img/icons/light/wizard.png);}
+#myslidemenu ul li.i_word_document a span, .i_word_document{ background-image: url(../img/icons/light/word_document.png);}
+#myslidemenu ul li.i_word_documents a span, .i_word_documents{ background-image: url(../img/icons/light/word_documents.png);}
+#myslidemenu ul li.i_wordpress a span, .i_wordpress{ background-image: url(../img/icons/light/wordpress.png);}
+#myslidemenu ul li.i_wordpress_2 a span, .i_wordpress_2{ background-image: url(../img/icons/light/wordpress_2.png);}
+#myslidemenu ul li.i_youtube a span, .i_youtube{ background-image: url(../img/icons/light/youtube.png);}
+#myslidemenu ul li.i_youtube_2 a span, .i_youtube_2{ background-image: url(../img/icons/light/youtube_2.png);}
+#myslidemenu ul li.i_zip_file a span, .i_zip_file{ background-image: url(../img/icons/light/zip_file.png);}
+#myslidemenu ul li.i_zip_files a span, .i_zip_files{ background-image: url(../img/icons/light/zip_files.png);}
+
+
+
+
+.all_thumbnails_again{
+    line-height: 21px;
+}
+.all_thumbnails_again .description{
+    margin-top: 5px;
+}
+.all_thumbnails_again a{
+    line-height: 23px;
+    padding: 5px 8px;
+}
+.all_thumbnails_again a:hover, .all_thumbnails_again a:active, .all_thumbnails_again a:focus{
+    color: #FFF !important;
+    text-decoration: underline;
+    line-height: 23px;
+}
+td.column-thumbnail{
+    width:105px !important;
+    vertical-align: middle !important;
+    padding:5px 7px;
+    position: relative;
+}
+td.column-thumbnail a{
+    display: block;
+}
+td.column-order{
+    vertical-align: middle !important;
+    width:50px !important;
+}
+.column-order input{
+    width:50px !important;
+}
+#uploadvideo .v-left{
+    float: left;
+    width: 400px;
+}
+.yt-logo {
+     background: url(../img/yt-logo.png) no-repeat scroll left top transparent;
+    margin-left: 43px;
+    margin-top: 59px;
+    position: absolute;
+}

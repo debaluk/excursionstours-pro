@@ -1,0 +1,111 @@
+.qtrans_title_input {
+    border: 0 none;
+    font-size: 1.7em;
+    outline-style: none;
+    outline-width: medium;
+    padding: 0;
+    width: 100%;
+    color:#333333;
+    padding:1px 0
+}
+.qtrans_title_wrap {
+    border-color: #CCCCCC;
+    border-style: solid;
+    border-width: 1px;
+    padding: 2px 3px;
+}
+#qtrans_textarea_content {
+    -moz-box-sizing: border-box;
+    border: 0 none;
+    line-height: 150%;
+    margin: 0;
+    outline: medium none;
+    padding: 6px;
+    width: 100%;
+}
+.qtrans_title {
+    border-radius: 6px 6px 0 0;
+}
+.hide-if-no-js.wp-switch-editor.switch-tmce {
+    margin-left: 6px !important;
+}
+#qtranslate_debug {
+    height: 200px;
+    width: 100%;
+}
+#postexcerpt textarea {
+    height: 4em;
+    margin: 0;
+    width: 98%;
+}
+.qtranslate_lang_div {
+    cursor: pointer;
+    float: right;
+    height: 12px;
+    padding: 6px 5px 8px;
+    width: 18px;
+}
+.qtranslate_lang_div.active {
+    background: none repeat scroll 0 0 #DFDFDF;
+    border-left: 1px solid #D0D0D0;
+    border-right: 1px solid #F7F7F7;
+    padding: 6px 4px 8px;
+}
+p.error {
+    background-color: #FFEBE8;
+    border-color: #CC0000;
+    border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: 1px;
+    margin: 5px 15px 2px;
+    padding: 0 0.6em;
+}
+p.error a {
+    color: #CC0000;
+}
+#qs_boxes {
+    margin-right: 300px;
+}
+#qs_boxes .postbox h3.hndle, #submitboxcontainer .postbox h3.hndle {
+    cursor: auto;
+}
+#qs_boxes div.inside {
+    margin: 6px 6px 8px;
+}
+#submitboxcontainer {
+    float: right;
+    width: 280px;
+}
+#qs_content_preview {
+    height: 200px;
+    width: 100%;
+}
+.service_description {
+    margin-left: 20px;
+    margin-top: 0;
+}
+#qtranslate-services h4 {
+    margin-top: 0;
+}
+#qtranslate-services h5 {
+    margin-bottom: 0;
+}
+#qtranslate-services .description {
+    font-size: 11px;
+}
+#qtrans_select_translate {
+    margin-right: 11px;
+}
+.qs_status {
+    border: 0 none;
+}
+.qs_no-bottom-border {
+    border-bottom: 0 none !important;
+}
+#submitboxcontainer p {
+    margin: 6px;
+}
+.qs_submit {
+    padding: 6px;
+    text-align: right;
+}
