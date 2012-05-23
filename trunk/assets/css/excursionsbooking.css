@@ -706,6 +706,10 @@
     /*border-bottom:1px solid #f5c79f;*/
     padding:14px 10px 5px 45px;
 }
+#e321 .easystep_one img {
+    margin-top: 6px;
+    position: absolute;
+}
 #e321 .easystep_two {
     background:url(../img/backgrounds/number_two.gif) no-repeat scroll 10px 9px transparent;
     padding:14px 10px 10px 45px;
