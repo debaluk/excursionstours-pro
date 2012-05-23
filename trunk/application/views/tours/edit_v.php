@@ -150,7 +150,8 @@
         $('#addtour').live('submit',function(){
             var numItems = $('.tagName').length
             if(numItems==0){
-                alert ("Please select at least one departure date")
+                alert ("Please select at least one departure date");
+                return false;
             }
             $.ajax({
                 url: base_url+'tours/tours/update',
