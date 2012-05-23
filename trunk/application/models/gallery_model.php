@@ -75,10 +75,10 @@
             $path = str_replace(" ","_",$path);
 
             $this->db->insert('gallery', array(
-            'title' => trim($_POST['galleryname']),
-            'path' => "",
-            'pic_count' => 0
-            ));
+                    'title' => trim($_POST['galleryname']),
+                    'path' => "",
+                    'pic_count' => 0
+                ));
 
             if($this->db->affected_rows()>0){
 
@@ -165,11 +165,11 @@
             for($i=0;$i<$cnt;$i++){
 
                 $this->db->insert('pictures',array(
-                'filename' => $_POST['pictures'][$i],
-                'name' => $_POST['pic_titles'][$i],
-                'date_time' => time(),
-                'gallery_ID' => $_POST['galleryselect']                
-                ));
+                        'filename' => $_POST['pictures'][$i],
+                        'name' => $_POST['pic_titles'][$i],
+                        'date_time' => time(),
+                        'gallery_ID' => $_POST['galleryselect']                
+                    ));
 
                 foreach ($dimensions as $dimension):
 
@@ -191,21 +191,47 @@
             //update gallery table
             $this->db->where('ID',$_POST['galleryselect']);
             $this->db->update('gallery', array(
-            'pic_count' => $pic_count
-            ));
+                    'pic_count' => $pic_count
+                ));
 
             redirect(base_url().'gallery/view_all_galleries');
 
 
         }
 
-        function update_gallery(){
+        function update_gallery(){             
+
+            switch (substr($_POST['pageid'], 0, 1)) {
+
+                case 'e':
+                    $table = 'excursions';
+                    $excursions_ID = substr($_POST['pageid'], 2, strlen ($_POST['pageid']));
+                    $tours_ID = NULL;
+                    break;
+
+                case 't':
+                    $table = 'tours';
+                    $tours_ID = substr($_POST['pageid'], 2, strlen ($_POST['pageid']));
+                    $excursions_ID = NULL;
+                    break;
+
+                default:
+                    $table = NULL;
+                    $excursions_ID = NULL;
+                    $tours_ID = NULL;
+
+            }
 
             $this->db->where('ID',$_POST['gallery_ID']);
             $this->db->update('gallery', array(
-            'title' => $_POST['title'],
-            'posts_ID' =>  $_POST['pageid']!=0  ?  $_POST['pageid']  :  NULL
-            ));
+                    'title' => $_POST['title'],
+                    'excursions_id' =>  $excursions_ID,
+                    'tours_id' =>  $tours_ID,
+                    'table' => $table 
+                ));
+
+
+
 
             //if($this->db->affected_rows()>0){
             redirect(base_url().'gallery/view_all_galleries');
@@ -259,8 +285,8 @@
                 //update gallery table
                 $this->db->where('ID',$gallery_ID);
                 $this->db->update('gallery', array(
-                'pic_count' => $pic_count
-                ));
+                        'pic_count' => $pic_count
+                    ));
 
                 //delete image and thumbnails
                 $g_path =  $this->db->get_where('gallery', array('ID' => $gallery_ID))->row_array();
@@ -296,7 +322,7 @@
 
             //get video
             $video =  $this->db->get_where('videos', array('ID' => $video_ID))->row_array();  
-            
+
             //delete picture
             $this->db->where('ID',$video_ID);
             $this->db->delete('videos');
@@ -311,12 +337,12 @@
                 //update gallery table
                 $this->db->where('ID',$gallery_ID);
                 $this->db->update('gallery', array(
-                'vid_count' => $vid_count
-                ));
+                        'vid_count' => $vid_count
+                    ));
 
                 //delete image and thumbnails
                 $g_path =  $this->db->get_where('gallery', array('ID' => $gallery_ID))->row_array();
-                
+
                 unlink('./pro-gallery/'.$g_path['path'].'/videos/'.$video['link'].'.jpg');
 
                 //get dimensions
@@ -488,11 +514,11 @@
 
 
             $this->db->insert('videos',array(
-            'link' => $_POST['yt-link'],
-            'name' => $_POST['yt-name'],
-            'date_time' => time(),
-            'gallery_ID' => $_POST['galleryselect2']                
-            ));
+                    'link' => $_POST['yt-link'],
+                    'name' => $_POST['yt-name'],
+                    'date_time' => time(),
+                    'gallery_ID' => $_POST['galleryselect2']                
+                ));
 
 
             //count number of pictures in gallery
@@ -502,8 +528,8 @@
             //update gallery table
             $this->db->where('ID',$_POST['galleryselect2']);
             $this->db->update('gallery', array(
-            'vid_count' => $vid_count
-            ));
+                    'vid_count' => $vid_count
+                ));
 
             //get gallery path
             $this->db->where('ID',$_POST['galleryselect2']);
@@ -552,7 +578,7 @@
 
 
         }
-        
+
         function video_order(){
 
             $videos = $this->view_edit_videos($_POST['gallery_ID']);

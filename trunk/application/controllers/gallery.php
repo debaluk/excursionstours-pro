@@ -25,7 +25,7 @@ class Gallery extends navigator
         $data['gallery'] = $this->gallery_model->view_edit_gallery($gallery_ID);
         $data['pictures'] = $this->gallery_model->view_edit_pictures($gallery_ID);
         $data['videos'] = $this->gallery_model->view_edit_videos($gallery_ID);
-        $data['all_posts'] = $this->posts_model->view_all_posts();
+        //$data['all_posts'] = $this->posts_model->view_all_posts();
         $data['page_types'] = $this->posts_model->get_page_types();
         $this->core_site('gallery','edit_gallery',NULL,$data);
 

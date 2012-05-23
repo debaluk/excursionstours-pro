@@ -14,15 +14,15 @@
 
         }
 
-        function view_post($post_ID){
+        function view_post($post_TYPE, $post_ID){
 
-            RETURN $this->db->get_where('car',array('id'=>$post_ID))->row_array();
+            RETURN $this->db->get_where($post_TYPE,array('id' =>$post_ID))->row_array();
 
         }
 
         function view_related_post($post_TYPE){ // Page, arrangements, cars etc...
 
-            RETURN $this->db->where('user_id',7)->get($post_TYPE)->result_array();
+            RETURN $this->db->get($post_TYPE)->result_array();
 
         }
         

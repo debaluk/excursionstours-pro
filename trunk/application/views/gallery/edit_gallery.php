@@ -52,7 +52,7 @@
 
                                                 <? if($post['id']==$gallery['posts_ID']) $selected = 'selected="selected"'; ?>
 
-                                                <option <?=$selected?> value="<?=$post['id']?>" class="level-0"> <?=$post['title']?></option>
+                                                <option <?=$selected?> value="<?=substr($page_type, 0, 1).'_'.$post['id']?>" class="level-0"> <?=$post['title']?></option>
 
                                                 <? 
                                                     $selected ='';

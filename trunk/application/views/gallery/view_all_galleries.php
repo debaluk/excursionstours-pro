@@ -19,15 +19,19 @@
                 $k=1;
                 foreach($all_galleries as $gallery): ?> 
 
-                <?   
-                    if($gallery['posts_ID']!=NULL){    
-                        $post = $this->posts_model->view_post($gallery['posts_ID']);
+                <?  
+                //print_r($gallery); 
+                    if($gallery['table']!=NULL){   
+                    print_r($gallery['table']); 
+                        $post = $this->posts_model->view_post($gallery['table'], $gallery[$gallery['table'].'_id']);
+                        print_r($post);
+                        
                     }
                 ?>
 
                 <tr <?if($k%2==0)echo 'class="tr-odd"';?>>
                     <td><a href="<?=$url?>gallery/view_edit_gallery?gallery_ID=<?=$gallery['ID']?>" class="row-title"><?=$gallery['title']?></a></td>
-                    <td><?=$gallery['posts_ID']!=NULL  ?  $post['name']  :  'Not linked' ?></td>
+                    <td><?=$gallery['table']!=NULL  ?  $post['title']  :  'Not linked' ?></td>
                     <td><?=$gallery['pic_count']?></td>
                     <td><?=$gallery['vid_count']?></td>
                     <td class="center last">
