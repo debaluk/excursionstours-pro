@@ -13,18 +13,36 @@
 
     <div class="picturebox" style="padding-bottom: 0;">
     
-    <!--<img alt="<?=$tour['title']?>" src="<?=$server?>assets/img/tours/<?=$tour['id']?>.jpg" width="200" height="144">-->
     <?
-            $image = $this->db->get_where('tourimg',array('tours_id' => $tour['id']))->result_array();
-            if(isset($image)){
-                foreach($image as $img):
+
+            $gallery = $this->db->get_where('gallery', array('tours_id' => $tour['id']))->row_array();
+
+
+
+            if(isset($gallery['ID'])):
+
+                $this->db->order_by('order asc, ID asc');
+                $pictures = $this->db->get_where('pictures',array('gallery_ID'=>$gallery['ID']))->result_array();
+
+                //print_r($pictures);
+
+                foreach($pictures as $picture):
+
+                    $pic_arr = explode('.',$picture['filename']);
+                    $thumb_filename = 'thumbnail/'.$pic_arr[0].'_200x150_exacttop.'.$pic_arr[1];
+                    $big_filename = 'thumbnail/'.$pic_arr[0].'_800x600_exacttop.'.$pic_arr[1];                                    
+
+
                 ?>
-                <div style="margin-bottom: 10px;">
-                <img src="<?=base_url()?>assets/img/tours/<?=$img['url']?>.jpg" alt="<?=$tour['title']?>" />
-                </div>
+
+                <a rel="lightbox" title="<?=$tour['title']?>" href="<?=base_url()?>pro-gallery/<?=$gallery['path']?>/<?=$big_filename?>" >
+                    <img alt="<?=$tour['title']?>" src="<?=base_url()?>pro-gallery/<?=$gallery['path']?>/<?=$thumb_filename?>">
+                </a>
+
                 <?
                     endforeach;
-            }else echo "No image";
+
+                endif;
         ?>
     
     </div>
@@ -216,10 +234,26 @@
                 </div>        
             </div>    
 
-        </div>
-
+        </div> 
 
 
     </div>
     <br class="clearing">
     <?}?>      
+<script type="text/javascript">
+    $(function() {
+
+            $('a[rel=lightbox]').lightBox({
+                    overlayBgColor: '#000',
+                    overlayOpacity: 0.6,
+                    imageLoading: base_url+'assets/img/lightbox/loading.gif',
+                    imageBtnClose: base_url+'assets/img/lightbox/close.gif',
+                    imageBtnPrev: base_url+'assets/img/lightbox/prev.gif',
+                    imageBtnNext: base_url+'assets/img/lightbox/next.gif',
+                    imageBlank : base_url+'assets/img/lightbox/blank.gif',
+                    containerResizeSpeed: 350,
+                    txtImage: 'Image',
+                    txtOf: 'of'
+            });
+    });
+</script>

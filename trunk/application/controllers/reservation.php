@@ -25,7 +25,7 @@ class Reservation extends navigator
         * set local language
         */
         $this->load->library('translate');
-        $this->translate->setLang('me');
+        $this->translate->setLang($this->lang_ses->getLang());
         $this->load->model('reservation_model');
     }
 
@@ -115,6 +115,16 @@ class Reservation extends navigator
     function trstatus()
     {
         $this->reservation_model->update_status_tr();
+    }
+    
+    /*
+    * Mjenja trenutnoi jezik na sistemu
+    */
+    function change_lang(){
+        
+        $this->lang_ses->setLang($_POST['lang']);
+        echo json_encode(true);
+        
     }
 
 }

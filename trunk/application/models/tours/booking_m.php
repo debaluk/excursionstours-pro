@@ -1,9 +1,9 @@
 <?php
     class Booking_m extends CI_Model
     {       
-       private $fields = array('title','description','excursion_text','addition','pickup_location');
+         private $fields = array('title','description','tour_text','addition','pickup_location');
         private $data;
-        
+
         function Booking_m()
         {
             parent::__construct(); 
@@ -46,46 +46,77 @@
             }else{
                 $where = "WHERE (status = 1)";
             } 
-            
+
             $order = $order_by.' '.$direction;  
-            
-            $upit = "SELECT tours.*, JS.description AS 'JS1', JS.price AS 'Cena Jednokrevetne',
-            DS.description AS 'DS1', DS.price AS 'Cena Dvokrevetne' 
-            FROM tours LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Jednokrevetna') JS ON tours.id = JS.id_ture
-            LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Dvokrevetna') DS ON tours.id = DS.id_ture ".$where.' ORDER BY '.$order;
+
+            $upit = "SELECT 
+            tours.*, JS.description AS 'JS1', JS.price AS 'Cena Jednokrevetne',
+            DS.description AS 'DS1', DS.price AS 'Cena Dvokrevetne',
+            gallery.path as g_path, pictures.filename as f_name
+            FROM tours 
+            LEFT JOIN (
+            SELECT * FROM tours_room_type WHERE description = 'Jednokrevetna'
+            ) JS ON tours.id = JS.id_ture
+            LEFT JOIN (
+            SELECT * FROM tours_room_type WHERE description = 'Dvokrevetna'
+            ) DS ON tours.id = DS.id_ture
+            LEFT JOIN gallery ON tours.id = gallery.`tours_id`
+            LEFT JOIN pictures ON gallery.ID = pictures.gallery_ID
+            AND pictures.ID=
+            (
+            SELECT pictures.ID
+            FROM pictures
+            WHERE pictures.gallery_ID = gallery.ID
+            ORDER BY pictures.order ASC, pictures.ID ASC
+            LIMIT 0, 1  
+            )
+            ".$where.' ORDER BY '.$order;
+
             $res = $this->db->query($upit)->result_array();
-            $this->firephp->fb('q: '.$this->db->last_query());  
+
+            foreach($res as $key=>$value){
+                //echo $value['title']; 
+
+                //Translate class
+                foreach($this->fields as $f){
+                    $res[$key][$f] = $this->translate->getArray($value[$f], TRUE);
+                    if($res[$key][$f]=='')$res[$key][$f]='-Please translate-';
+                }
+
+
+            } 
+
             return  $res; 
 
-            $res = $this->db->get('tours')->result_array();
-
-
-            $this->firephp->fb($this->db->last_query());
-
-            return $res;
         }   
 
         function details()
         {            
             $id = $_GET['id']; 
-            
+
             $upit = "SELECT tours.*, JS.description AS 'JS1', JS.price AS 'Cena Jednokrevetne',
             DS.description AS 'DS1', DS.price AS 'Cena Dvokrevetne' 
             FROM tours LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Jednokrevetna') JS ON tours.id = JS.id_ture
             LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Dvokrevetna') DS ON tours.id = DS.id_ture WHERE tours.id=".$id;
             $res = $this->db->query($upit)->result_array();
-            //$this->firephp->fb('q: '.$this->db->last_query());  
+            
+            //Translate class
+            foreach($this->fields as $f){
+                //echo $res[$f]."<br>";
+                $res[0][$f] = $this->translate->getArray($res[0][$f], TRUE);
+            } 
+             
             return  $res; 
         } 
-        
+
         function readstartdate($id){
             $data = array();
             $query = $this->db->get_where('departure', array('tours_id' => $id))->result_array(); 
             $startdate = "";
             if($query)
-            foreach ($query as $key => $list) {
-                $data[] = date('n-j-Y', $list['startdate']);
-                
+                foreach ($query as $key => $list) {
+                    $data[] = date('n-j-Y', $list['startdate']);
+
             }
             return  $data; 
         }
@@ -168,11 +199,11 @@
                 if($customerid < 0)
                 {
                     $data = array(
-                    'title' => $_GET['a_title1'],
-                    'firstName' => $_GET['a_firstName1'],
-                    'lastName' => $_GET['a_lastName1'],   
-                    'email' => $_GET['email'],
-                    'what' => 2
+                        'title' => $_GET['a_title1'],
+                        'firstName' => $_GET['a_firstName1'],
+                        'lastName' => $_GET['a_lastName1'],   
+                        'email' => $_GET['email'],
+                        'what' => 2
                     ); 
 
                     if($this->db->insert('customers', $data)) {
@@ -186,28 +217,28 @@
 
                 if($response == "ok")
                 {
-                    
+
                     if($_GET['s_b_i']=='sohotravel.it-montenegro.com'){
                         $status = 1;
                     }else $status = 0;
-                    
+
                     $data = array(
-                    'tours_id' => $_GET['tid'],
-                    'customers_id' => $customerid,
-                    'userid' => '7',
-                    'date_from' => $_GET['date'],
-                    'num_of_day' => '1',                          
-                    'status' => $status,
+                        'tours_id' => $_GET['tid'],
+                        'customers_id' => $customerid,
+                        'userid' => '7',
+                        'date_from' => $_GET['date'],
+                        'num_of_day' => '1',                          
+                        'status' => $status,
 
-                    'noadult' => $_GET['noadult'],
-                    'noch' => $_GET['noch'],                         
-                    'noperson' => $_GET['persons'],
+                        'noadult' => $_GET['noadult'],
+                        'noch' => $_GET['noch'],                         
+                        'noperson' => $_GET['persons'],
 
-                    'chprice' => $_GET['chprice'],
-                    'adultprice' => $_GET['adultprice'],
-                    'totalprice' => $_GET['totalprice'],
-                    
-                    'source_info' => $_GET['s_b_i']       
+                        'chprice' => $_GET['chprice'],
+                        'adultprice' => $_GET['adultprice'],
+                        'totalprice' => $_GET['totalprice'],
+
+                        'source_info' => $_GET['s_b_i']       
 
                     );
 
@@ -278,7 +309,7 @@
             //Calculate SubToal
             $this->data['tb_adultprice_sub'] = $this->data['tb_noadult'] * $this->data['tb_adultprice']; 
             $this->data['tb_chprice_sub'] = $this->data['tb_noch'] * $this->data['tb_chprice']; 
-            
+
             //podaci o customeru
             $query = $this->db->get_where('customers', array('id' =>  $this->data['tb_customerid']))->result_array(); 
             foreach ($query as $key => $list) {
@@ -290,10 +321,15 @@
             //podaci o turi
             $query = $this->db->get_where('tours', array('id' =>  $this->data['tb_tid']))->result_array(); 
             foreach ($query as $key => $list) {
-                $this->data['t_title'] = $list['title'];
+                
+                //Translate class
+                $this->data['t_title'] = $this->translate->getArray($list['title'], TRUE);;
+                
                 $this->data['t_nonights']= $list['nonights'];
                 $this->data['t_nodays'] = $list['nodays'];
-                $this->data['t_pickup_location'] = $list['pickup_location'];
+                
+                //Translate class
+                $this->data['t_pickup_location'] = $this->translate->getArray($list['pickup_location'], TRUE);;
             } 
             $response = $this->load->view('tours/booking/total',  $this->data, TRUE);  
             $this->encode_json_get(array('success'=>'success','html'=>$response,'book_id'=>$newid)); 
@@ -303,19 +339,19 @@
             if(isset($_GET['jsoncall'])) {
 
                 $arr = preg_replace(
-                array('/\n/','/\r/','/\t/'),
-                array(''),
-                $arr);
+                    array('/\n/','/\r/','/\t/'),
+                    array(''),
+                    $arr);
                 echo $_GET['jsoncall'] . '(' . json_encode($arr) . ');';
 
             }else {
                 echo json_encode($arr);
             }
         }
-        
+
         /*MERCHANT DATA FUNCTIONS*/
         function read($booking_id){
-             return $this->db->get_where('tourbooking', array('id' => $booking_id))->row_array();
+            return $this->db->get_where('tourbooking', array('id' => $booking_id))->row_array();
         }
         function t_details_get($t_id){
             return $this->db->where('id',$t_id)->get('tours')->row_array();

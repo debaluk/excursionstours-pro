@@ -3,7 +3,7 @@
     {       
         private $fields = array('title','description','excursion_text','addition','pickup_location');
         private $data;
-        
+
         function Booking_m()
         {
             parent::__construct();
@@ -55,30 +55,55 @@
                 }
             }       
             $where = "status = 1";
-            
+
             if($day!='Any') $where.=' AND startWeekDay = "'.$day.'"';
-            
-            
-           $like = '';
+
+
+            $like = '';
             if((isset($freetext)and($freetext!=''))){
-                $like.=" AND (excursion_text LIKE '%".$freetext."%'";
+                $like.=" AND (excursions.excursion_text LIKE '%".$freetext."%'";
                 $like.=" OR ";
-                $like.="title LIKE '%".$freetext."%'"; 
+                $like.="excursions.title LIKE '%".$freetext."%'"; 
                 $like.=" OR ";
-                $like.="description LIKE '%".$freetext."%')"; 
+                $like.="excursions.description LIKE '%".$freetext."%')"; 
             } 
 
             //$this->db->where($where);
-            
+
             //"SELECT * FROM (`excursions`) WHERE `status` = 1 AND `excursion_text` LIKE '%rafting%' OR `title` LIKE '%rafting%' OR `description` LIKE '%rafting%' ORDER BY `id` ASC"
             $where .= $like;
 
             $this->db->where($where);
-            
+
             $this->db->order_by($order_by,$direction); 
 
-            $res = $this->db->get('excursions')->result_array();
-            
+            //$res = $this->db->get('excursions')->result_array();
+
+
+
+
+            $q = '
+            SELECT excursions.*, gallery.path as g_path, pictures.filename as f_name
+            FROM excursions
+            LEFT JOIN gallery ON excursions.id = gallery.`excursions_id`
+            LEFT JOIN pictures ON gallery.ID = pictures.gallery_ID
+            AND pictures.ID=
+            (
+            SELECT pictures.ID
+            FROM pictures
+            WHERE pictures.gallery_ID = gallery.ID
+            ORDER BY pictures.order ASC, pictures.ID ASC
+            LIMIT 0, 1  
+            )
+            WHERE '.$where.'
+            ORDER BY '.$order_by.' '.$direction.'
+            ';
+
+            $res = $this->db->query($q)->result_array();
+
+
+            //print_r($this->db->last_query());
+
             foreach($res as $key=>$value){
                 //echo $value['title']; 
 
@@ -189,11 +214,11 @@
                 if($customerid < 0)
                 {
                     $data = array(
-                    'title' => $_GET['a_title1'],
-                    'firstName' => $_GET['a_firstName1'],
-                    'lastName' => $_GET['a_lastName1'],   
-                    'email' => $_GET['email'],
-                    'what' => 2
+                        'title' => $_GET['a_title1'],
+                        'firstName' => $_GET['a_firstName1'],
+                        'lastName' => $_GET['a_lastName1'],   
+                        'email' => $_GET['email'],
+                        'what' => 2
                     ); 
 
                     if($this->db->insert('customers', $data)) {
@@ -210,24 +235,24 @@
                     if($_GET['s_b_i']=='sohotravel.it-montenegro.com'){
                         $status = 1;
                     }else $status = 0;
-                    
+
                     $data = array(
-                    'excursions_id' => $_GET['excid'],
-                    'customers_id' => $customerid,
-                    'userid' => '7',
-                    'date_from' => $_GET['date'],
-                    'num_of_day' => '1',                          
-                    'status' => $status,
+                        'excursions_id' => $_GET['excid'],
+                        'customers_id' => $customerid,
+                        'userid' => '7',
+                        'date_from' => $_GET['date'],
+                        'num_of_day' => '1',                          
+                        'status' => $status,
 
-                    'noadult' => $_GET['noadult'],
-                    'noch' => $_GET['noch'],                         
-                    'noperson' => $_GET['persons'],
+                        'noadult' => $_GET['noadult'],
+                        'noch' => $_GET['noch'],                         
+                        'noperson' => $_GET['persons'],
 
-                    'chprice' => $_GET['chprice'],
-                    'adultprice' => $_GET['adultprice'],
-                    'totalprice' => $_GET['totalprice'],        
-                    
-                    'source_info' => $_GET['s_b_i']
+                        'chprice' => $_GET['chprice'],
+                        'adultprice' => $_GET['adultprice'],
+                        'totalprice' => $_GET['totalprice'],        
+
+                        'source_info' => $_GET['s_b_i']
 
                     );
 
@@ -310,16 +335,16 @@
             //podaci o eskurziji
             $query = $this->db->get_where('excursions', array('id' =>  $this->data['eb_excid']))->result_array(); 
             foreach ($query as $key => $list) {
-                
+
                 //Translate class
                 $this->data['exc_title'] = $this->translate->getArray($list['title'], TRUE);
-                
+
                 $this->data['exc_startWeekDay']= $list['startWeekDay'];
                 $this->data['exc_excursion_text'] = $list['excursion_text'];
-                
+
                 //Translate class
                 $this->data['exc_addition'] = $this->translate->getArray($list['addition'], TRUE);
-                
+
                 $this->data['exc_adultPrice'] = $list['adultPrice'];
                 $this->data['exc_childPrice'] = $list['childPrice'];
                 $this->data['exc_transportsid'] = $list['transportsid'];
@@ -337,19 +362,19 @@
             if(isset($_GET['jsoncall'])) {
 
                 $arr = preg_replace(
-                array('/\n/','/\r/','/\t/'),
-                array(''),
-                $arr);
+                    array('/\n/','/\r/','/\t/'),
+                    array(''),
+                    $arr);
                 echo $_GET['jsoncall'] . '(' . json_encode($arr) . ');';
 
             }else {
                 echo json_encode($arr);
             }
         }
-        
+
         /*MERCHANT DATA FUNCTIONS*/
         function read($booking_id){
-             return $this->db->get_where('excursionbooking', array('id' => $booking_id))->row_array();
+            return $this->db->get_where('excursionbooking', array('id' => $booking_id))->row_array();
         }
         function exc_details_get($exc_id){
             return $this->db->where('id',$exc_id)->get('excursions')->row_array();

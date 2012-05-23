@@ -1,24 +1,28 @@
 <div class="hold_exc">    
     <div class="exc">
         <div style="margin-top:6px;"></div>
-        
+
 
         <div id="exc_list">     
             <ul>
                 <? 
                     $i = 0;
                     foreach($excursions as $excursion){
-                    $i++;    
+                        $i++;    
                     ?>  
                     <li class="exc_one" id="#ed<?=$excursion['id']?>" <? if($i==3 || $i==6 || $i==9 || $i==12)echo 'style="margin-right:0"';?>>
 
                         <?
-                            $image = $this->db->get_where('excimg',array('excursions_id' => $excursion['id']))->result_array();
-                            if(isset($image[0]['url'])){
+                            if(isset($excursion['g_path'])):
+
+                                $pic_arr = explode('.',$excursion['f_name']);
+                                $thumb_filename = 'thumbnail/'.$pic_arr[0].'_200x150_exacttop.'.$pic_arr[1];
+
                             ?>
-                            <img src="<?=base_url()?>assets/img/excursions/<?=$image[0]['url']?>.jpg" alt="<?=$excursion['title']?>" width="200" />
+                            <img src="<?=base_url()?>pro-gallery/<?=$excursion['g_path']?>/<?=$thumb_filename?>" alt="excursion_<?=$excursion['id']?>" />
                             <?
-                            }else echo "No image";
+
+                                endif;
                         ?>
 
 
@@ -46,7 +50,7 @@
                         </div>
                     </li> 
                     <?
-                        
+
                         if($i==3 || $i==6 || $i==9 || $i==12)echo '<br style="clear: both;" />';
                 }?>
             </ul>

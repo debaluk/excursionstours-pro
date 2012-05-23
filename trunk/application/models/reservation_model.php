@@ -28,6 +28,7 @@
         function readStatus0() {
             $res = $this->db->query($this->queryexc0." ORDER BY t1.date_from DESC")->result_array();
 
+            //Translate Class
             foreach($res as $key=>$value){
                 //echo $value['title']; 
 
@@ -43,24 +44,46 @@
             $queryexc0f = $this->queryexc0 . " and t1.date_from='" . $excdate . "'";
 
             $res = $this->db->query($queryexc0f)->result_array(); 
+            
+            //Translate Class
             foreach($res as $key=>$value){
                 //echo $value['title']; 
 
                 $res[$key]['title'] = $this->translate->getArray($value['title'], TRUE);
                 if($res[$key]['title']=='')$res[$key]['title']='-Please translate-';
             }
+            
             return $res;
         }
 
         function readStatus1() {
-            return $this->db->query($this->queryexc1." ORDER BY t1.date_from DESC")->result_array();
+            $res = $this->db->query($this->queryexc1." ORDER BY t1.date_from DESC")->result_array();
+            
+            //Translate Class
+            foreach($res as $key=>$value){
+                //echo $value['title']; 
+
+                $res[$key]['title'] = $this->translate->getArray($value['title'], TRUE);
+                if($res[$key]['title']=='')$res[$key]['title']='-Please translate-';
+            }
+
+            return $res;
+            
         }  
         function filterStatus1() {
             $trdate = $_POST['trdate']; 
             $queryexc0f = $this->queryexc1 . " and t1.date_from='" . $trdate . "'";
 
             $res = $this->db->query($queryexc0f)->result_array(); 
-            $this->firephp->fb($this->db->last_query());
+            
+             //Translate Class
+            foreach($res as $key=>$value){
+                //echo $value['title']; 
+
+                $res[$key]['title'] = $this->translate->getArray($value['title'], TRUE);
+                if($res[$key]['title']=='')$res[$key]['title']='-Please translate-';
+            }
+            
             return $res;
         }  
 

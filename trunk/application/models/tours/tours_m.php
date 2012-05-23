@@ -7,6 +7,7 @@
     class tours_m extends CI_Model {
 
         public $errors;
+        private $fields = array('title','description','tour_text','addition','pickup_location');
 
         function tours_m () {
             parent::__construct();
@@ -14,6 +15,12 @@
 
         function create(){
             if($this->validate('create')){
+                
+                //Translate class                 
+                foreach($this->fields as $f){
+                    $_POST[$f] = $this->translate->updatePost("", $_POST[$f]);
+                }
+                
                 $tdata = array(
                 'title'=>$this->input->post('title'),
                 'nodays'=>$this->input->post('nodays'),
@@ -82,7 +89,13 @@
             FROM tours LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Jednokrevetna') JS ON tours.id = JS.id_ture
             LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Dvokrevetna') DS ON tours.id = DS.id_ture WHERE tours.id=".$id;
             $res = $this->db->query($upit)->row_array();
-            $this->firephp->fb('q: '.$this->db->last_query());  
+            
+            //Translate class
+            foreach($this->fields as $f){
+                //echo $res[$f]."<br>";
+                $res[$f] = $this->translate->getArray($res[$f], TRUE);
+            } 
+             
             return  $res; 
         }
 
@@ -92,7 +105,19 @@
             FROM tours LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Jednokrevetna') JS ON tours.id = JS.id_ture
             LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Dvokrevetna') DS ON tours.id = DS.id_ture";
             $res = $this->db->query($upit)->result_array();
-            $this->firephp->fb('q: '.$this->db->last_query());  
+            
+            foreach($res as $key=>$value){
+                //echo $value['title']; 
+
+                //Translate class
+                foreach($this->fields as $f){
+                    $res[$key][$f] = $this->translate->getArray($value[$f], TRUE);
+                    if($res[$key][$f]=='')$res[$key][$f]='-Please translate-';
+                }
+
+
+            }
+            
             return  $res;  
 
         }
@@ -120,12 +145,22 @@
                 unset($_POST['twobed']);
                 unset($_POST['startdate']);
 
-                //SELECT SIFRA FOR JEDNOKREVETNA AND DVOKREVETNA SOBA
-                $sifra_onebad = $this->db->query('SELECT id FROM room_type WHERE naziv = "Jednokrevetna soba"')->row('id');
-                $sifra_twobed = $this->db->query('SELECT id FROM room_type WHERE naziv = "Dvokrevetna soba"')->row('id');          
-
+                         
+                
+                $post = $this->db->get_where('tours', array('id'=> $_POST['id']))->result_array();
+                
+                //Translate class
+                foreach($this->fields as $f){
+                    $_POST[$f] = $this->translate->updatePost($post[0][$f], $_POST[$f]);
+                }  
+                
                 $this->db->where('id', $_POST['id']);
-                $this->db->update('tours', $_POST);
+                $this->db->update('tours', $_POST); 
+                
+                
+                 //SELECT SIFRA FOR JEDNOKREVETNA AND DVOKREVETNA SOBA
+                $sifra_onebad = $this->db->query('SELECT id FROM room_type WHERE naziv = "Jednokrevetna soba"')->row('id');
+                $sifra_twobed = $this->db->query('SELECT id FROM room_type WHERE naziv = "Dvokrevetna soba"')->row('id');
 
                 //UPDATE JEDNOKREVETNA SOBA PRICE
                 $data = array('price' => $onebed_price);

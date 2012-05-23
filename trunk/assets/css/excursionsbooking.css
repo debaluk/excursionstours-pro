@@ -271,6 +271,10 @@
     margin: 10px;
     border:1px solid #CCCCCC;
 }
+#e321 .excursions .picturebox a{
+    display:block;
+    padding-bottom:10px
+}
 #e321 .excursions #searchtop {
     background-image:url(../img/backgrounds/Search-panel_top.png);
     background-repeat:no-repeat;

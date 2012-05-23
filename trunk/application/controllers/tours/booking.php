@@ -18,7 +18,10 @@
             parent::__construct(); 
             $this->load->model('tours/booking_m','toursbooking');
 
-             $this->data['language'] = $this->lang_ses->getLang();
+            $this->data['server'] = 'http://sohotravel.it-montenegro.com/';
+            $this->data['server'] = 'http://localhost/excursionstours-pro/';
+
+            $this->data['language'] = $this->lang_ses->getLang();
 
             /*Class*/
             $this->load->library('translate');
@@ -29,10 +32,10 @@
 
         function index($page='tours') 
         {
-            
+
             $this->data['page'] = $page; 
             $this->data['title'] = 'SOHO Group - Montenegro | Booking';
-  
+
             $this->core_site('tours/booking',$page,NULL,$this->data);    
 
         }
@@ -67,9 +70,9 @@
             $this->data['tours'] = $this->toursbooking->details(); 
             $html = $this->load->view('tours/booking/details',$this->data,TRUE);                       
             $html = preg_replace(
-            array('/\n/','/\r/','/\t/'),
-            array(''),
-            $html);
+                array('/\n/','/\r/','/\t/'),
+                array(''),
+                $html);
             $startdates = $this->toursbooking->readstartdate($_GET['id']);
             echo $_GET['jsoncall'] . '(' . json_encode(array('html'=>$html, 'dates'=>$startdates)) . ');';        
         }      
@@ -101,9 +104,9 @@
             if(isset($_GET['jsoncall'])) {
 
                 $html = preg_replace(
-                array('/\n/','/\r/','/\t/'),
-                array(''),
-                $html);
+                    array('/\n/','/\r/','/\t/'),
+                    array(''),
+                    $html);
                 echo $_GET['jsoncall'] . '(' . json_encode(array('html'=>$html)) . ');';
 
             }else {

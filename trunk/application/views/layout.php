@@ -143,7 +143,7 @@
     </head>
 
     <body>
-        <? echo $page.'/'.$sub; ?>
+        <? //echo $page.'/'.$sub; ?>
         <div id="wrap">
 
             <div id="header" class="clearfix"><? $this->load->view('header')?></div>

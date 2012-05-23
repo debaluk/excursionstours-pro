@@ -10,15 +10,18 @@
                     $i++;                         
                         ?>  
                     <li class="exc_one" id="#ed<?=$tour['id']?>" <? if($i==3 || $i==6 || $i==9 || $i==12)echo 'style="margin-right:0"';?>>
-                        <!--<img alt="<?=$tour['title']?>" src="<?=$server?>assets/img/tours/<?=$tour['id']?>.jpg">-->
                         
-                        <?
-                            $image = $this->db->get_where('tourimg',array('tours_id' => $tour['id']))->result_array();
-                            if(isset($image[0]['url'])){
+                         <?
+                            if(isset($tour['g_path'])):
+
+                                $pic_arr = explode('.',$tour['f_name']);
+                                $thumb_filename = 'thumbnail/'.$pic_arr[0].'_200x150_exacttop.'.$pic_arr[1];
+
                             ?>
-                            <img src="<?=base_url()?>assets/img/tours/<?=$image[0]['url']?>.jpg" alt="<?=$tour['title']?>" width="200" />
+                            <img src="<?=base_url()?>pro-gallery/<?=$tour['g_path']?>/<?=$thumb_filename?>" alt="excursion_<?=$tour['id']?>" style="padding: 1px; border: 1px solid #f1f1f1;" />
                             <?
-                            }else echo "No image";
+
+                                endif;
                         ?>
                         
                         <h3 class="e_title"><?=$tour['title']?></h3>
