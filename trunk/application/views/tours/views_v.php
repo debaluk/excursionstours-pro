@@ -1,5 +1,5 @@
 
-<h2> <img src="<?=$url?>assets/img/titles/all_tourss.png" /> </h2>
+<h2> <img src="<?=$url?>assets/img/titles/all_tours.png" /> </h2>
 
 <div class="demo_jui">
 
