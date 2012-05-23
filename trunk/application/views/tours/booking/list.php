@@ -7,33 +7,32 @@
                 <? 
                     $i = 0; 
                     foreach($tours as $tour){
-                    $i++;                         
-                        ?>  
+                        $i++;                         
+                    ?>  
                     <li class="exc_one" id="#ed<?=$tour['id']?>" <? if($i==3 || $i==6 || $i==9 || $i==12)echo 'style="margin-right:0"';?>>
-                        
-                         <?
+
+                        <?
                             if(isset($tour['g_path'])):
 
                                 $pic_arr = explode('.',$tour['f_name']);
                                 $thumb_filename = 'thumbnail/'.$pic_arr[0].'_200x150_exacttop.'.$pic_arr[1];
 
                             ?>
-                            <img src="<?=base_url()?>pro-gallery/<?=$tour['g_path']?>/<?=$thumb_filename?>" alt="excursion_<?=$tour['id']?>" style="padding: 1px; border: 1px solid #f1f1f1;" />
+                            <img src="<?=base_url()?>pro-gallery/<?=$tour['g_path']?>/<?=$thumb_filename?>" alt="excursion_<?=$tour['id']?>" />
                             <?
 
                                 endif;
                         ?>
-                        
+
                         <h3 class="e_title"><?=$tour['title']?></h3>
                         <p>
                             <?
                                 $s= $tour['description'];
-                                echo $s;
-                                /*if( strlen($s) > 78){
+                                if( strlen($s) > 78){
                                     $s =  substr($s,0, 78);
                                     $s.='...';
                                     echo $s;
-                                }else  echo $s;*/
+                                }else  echo $s;
 
                             ?>
                         </p>
@@ -42,10 +41,10 @@
                                 letter-spacing: -0.3px;
                                 letter-spacing: -1.2px;
                             }
-                             #e321 .exc_one .price {
+                            #e321 .exc_one .price {
                                 line-height: 16px;
                             }
-                             #e321 .exc_one .ppp{
+                            #e321 .exc_one .ppp{
                                 font-size: 18px;
                                 line-height: 16px;
                             }
