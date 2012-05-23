@@ -24,13 +24,33 @@
                     <td class="column-thumbnail">
 
                         <?
-                            $image = $this->db->get_where('excimg',array('excursions_id' => $excursion['id']))->result_array();
-                            if(isset($image[0]['url'])){
-                            ?>
-                            <img src="<?=base_url()?>assets/img/excursions/<?=$image[0]['url']?>.jpg" alt="excursion_<?=$excursion['id']?>" style="padding: 1px; border: 1px solid #f1f1f1; width: 82px;" />
-                            <?
-                            }else echo "No image";
+
+                            $gallery = $this->db->get_where('gallery', array('excursions_id' => $excursion['id']))->row_array();
+
+
+
+                            if(isset($gallery['ID'])):
+
+                                $this->db->order_by('order asc, ID asc');
+                                $pictures = $this->db->get_where('pictures',array('gallery_ID'=>$gallery['ID']))->result_array();
+
+                                //print_r($pictures);
+
+                                if(isset($pictures[0]['filename'])){
+
+                                    $pic_arr = explode('.',$pictures[0]['filename']);
+                                    $thumb_filename = 'thumbnail/'.$pic_arr[0].'_105x79_exacttop.'.$pic_arr[1];
+
+                                ?>
+                                <img src="<?=$url?>pro-gallery/<?=$gallery['path']?>/<?=$thumb_filename?>" alt="excursion_<?=$excursion['id']?>" style="padding: 1px; border: 1px solid #f1f1f1;" />
+                                <?
+                                }else echo "No image";
+
+                                endif;
                         ?>
+
+
+
                     </td>
                     <td ><strong><?=$excursion['title']?></strong></td>
                     <td>
@@ -91,19 +111,19 @@
     $(document).ready(function(){
 
 
-        $('.delete_grid').live('click',function(){
-            if(confirm('Are you sure?')){
-                var id = $(this).attr('id').substr(3);
-                $.ajax({
-                    url : base_url+'excursions/excursions/delete',
-                    type: 'post',
-                    data: {id:id},
-                    dataType:'json',
-                    success: function(data){
-                        $('#ex_'+id).parent().parent().remove();
+            $('.delete_grid').live('click',function(){
+                    if(confirm('Are you sure?')){
+                        var id = $(this).attr('id').substr(3);
+                        $.ajax({
+                                url : base_url+'excursions/excursions/delete',
+                                type: 'post',
+                                data: {id:id},
+                                dataType:'json',
+                                success: function(data){
+                                    $('#ex_'+id).parent().parent().remove();
+                                }
+                        });
                     }
-                });
-            }
-        });
+            });
     });
 </script>

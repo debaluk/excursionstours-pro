@@ -22,14 +22,33 @@
                 <tr <? if($k%2==0) echo 'class="odd"'; ?>>
 
                     <td class="column-thumbnail">
-                        <?
-                            $image = $this->db->get_where('tourimg',array('tours_id' => $tour['id']))->result_array();
-                            if(isset($image[0]['url'])){
-                            ?>
-                            <img src="<?=base_url()?>assets/img/tours/<?=$image[0]['url']?>.jpg" alt="tour_<?=$tour['id']?>" style="padding: 1px; border: 1px solid #f1f1f1; width: 82px;" />
-                            <?
-                            }else echo "No image";
+                       
+                       <?
+
+                            $gallery = $this->db->get_where('gallery', array('tours_id' => $tour['id']))->row_array();
+
+
+
+                            if(isset($gallery['ID'])):
+
+                                $this->db->order_by('order asc, ID asc');
+                                $pictures = $this->db->get_where('pictures',array('gallery_ID'=>$gallery['ID']))->result_array();
+
+                                //print_r($pictures);
+
+                                if(isset($pictures[0]['filename'])){
+
+                                    $pic_arr = explode('.',$pictures[0]['filename']);
+                                    $thumb_filename = 'thumbnail/'.$pic_arr[0].'_105x79_exacttop.'.$pic_arr[1];
+
+                                ?>
+                                <img src="<?=$url?>pro-gallery/<?=$gallery['path']?>/<?=$thumb_filename?>" alt="tour_<?=$tour['id']?>" style="padding: 1px; border: 1px solid #f1f1f1;" />
+                                <?
+                                }else echo "No image";
+
+                                endif;
                         ?>
+                       
                     </td>
                     <td ><strong><?=$tour['title']?></strong></td>
                     <td>
