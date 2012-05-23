@@ -814,12 +814,25 @@
 .body-wrap big {
     font-size: 131.25%;
 }
-.body-wrap pre {
+ pre {
     background: none repeat scroll 0 0 #F4F4F4;
     font: 13px/1.5 "Courier 10 Pitch",Courier,monospace;
     margin-bottom: 1.625em;
     padding: 0.75em 1.625em;
 }
+
+.body-wrap pre {
+    background: none repeat scroll 0 0 #E77817;
+    font-size: 13px;
+    line-height: 1.5em;
+    font-family: Arial;
+    margin-bottom: 1.625em;
+    padding: 0.43em 1.625em;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 .body-wrap code, .body-wrap kbd, .body-wrap code var {
     font: 13px Monaco,Consolas,"Andale Mono","DejaVu Sans Mono",monospace;
 }

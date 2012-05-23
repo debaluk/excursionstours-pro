@@ -125,6 +125,17 @@ pre {
 	margin-bottom: 1.625em;
 	padding: 0.75em 1.625em;
 }
+pre {
+    background: none repeat scroll 0 0 #E77817;
+    font-size: 13px;
+    line-height: 1.5em;
+    font-family: Arial;
+    margin-bottom: 1.625em;
+    padding: 0.43em 1.625em;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 code, kbd, code var {
 	font: 13px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
