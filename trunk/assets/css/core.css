@@ -433,9 +433,11 @@ p#footer_copyright {
     text-indent: 0;
 }
 .objasnjenje{
-    font-style: italic;
+    color: #848484;
     font-size: 11px;
-    color: #666666;
+    font-style: italic;
+    padding: 5px 0 3px 3px;
+    text-align: right; 
 }
 table.tablesorter tbody td.exc_title{
     color:#E77817;
@@ -475,8 +477,11 @@ Grids and Buttons
     float: left;
 }
 .t_component input{
-    visibility:hidden;
-    width:2px;
+    margin: 0 0 3px -4px;
+    padding: 0;
+    position: relative;
+    visibility: hidden;
+    width: 2px;
 }
 .action{
 

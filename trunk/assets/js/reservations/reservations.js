@@ -30,7 +30,7 @@ $('documet').ready(function() {
                     filterDataExc(s_date);
                     //show selected date before table
                     var mesec = chosen_date.getMonth()+1;
-                    $('#filterdate').html("View excursion for date: " + chosen_date.getDate() + "." + mesec + "." + chosen_date.getFullYear()); 
+                    $('#filterdate_exc').html("View bookings for date: " + chosen_date.getDate() + "." + mesec + "." + chosen_date.getFullYear()); 
                 },
                 beforeShowDay: enableAllTheseDaysExc,
                 showOn: 'button',
@@ -172,7 +172,7 @@ $('documet').ready(function() {
                     filterDataTr(s_date);
                     //show selected date before table
                     var mesec = chosen_date.getMonth()+1;
-                    $('#filterdate').html("View excursion for date: " + chosen_date.getDate() + "." + mesec + "." + chosen_date.getFullYear()); 
+                    $('#filterdate_tr').html("View bookings for date: " + chosen_date.getDate() + "." + mesec + "." + chosen_date.getFullYear()); 
                 },
                 beforeShowDay: enableAllTheseDaysTr,
                 showOn: 'button',

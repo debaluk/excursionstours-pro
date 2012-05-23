@@ -26,7 +26,7 @@
         }
 
         function readStatus0() {
-            $res = $this->db->query($this->queryexc0." ORDER BY t1.date_from DESC")->result_array();
+            $res = $this->db->query($this->queryexc0." ORDER BY t1.date_from ASC")->result_array();
 
             //Translate Class
             foreach($res as $key=>$value){
@@ -57,7 +57,7 @@
         }
 
         function readStatus1() {
-            $res = $this->db->query($this->queryexc1." ORDER BY t1.date_from DESC")->result_array();
+            $res = $this->db->query($this->queryexc1." ORDER BY t1.date_from ASC")->result_array();
             
             //Translate Class
             foreach($res as $key=>$value){

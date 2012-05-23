@@ -3,6 +3,14 @@
 
 <div class="demo_jui">
 
+    <div>
+        <div class="t_component">
+            <input id="datefromexc" value="-- Date --">
+        </div>
+        <div id="filterdate_exc" class="t_title">View bookings for date: all dates</div>
+        <div style="clear: left;"></div>
+    </div>
+
     <table cellpadding="0" cellspacing="0" border="0" class="display wp-list-table widefat fixed posts" id="example">
         <thead>
             <tr>
@@ -22,15 +30,21 @@
 
         </tbody>
     </table>
+    <div class="objasnjenje">* Reservation are sorted by date.</div> 
 
 </div>
 
-<div class="spacer"></div>
 
 <h2> <img src="<?=$url?>assets/img/titles/bookings_tours.png" /> </h2>
 
 <div class="demo_jui">
-
+    <div>
+        <div class="t_component">
+            <input id="datefromtr" value="-- Date --">
+        </div>
+        <div id="filterdate_tr" class="t_title">View bookings for date: all dates</div>
+        <div style="clear: left;"></div>
+    </div>
     <table cellpadding="0" cellspacing="0" border="0" class="display wp-list-table widefat fixed posts" id="example">
         <thead>
             <tr>
@@ -49,6 +63,7 @@
 
         </tbody>
     </table>
+    <div class="objasnjenje">* Reservation are sorted by date.</div> 
 
 </div>
 
