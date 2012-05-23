@@ -22,9 +22,9 @@
                 <?  
                 //print_r($gallery); 
                     if($gallery['table']!=NULL){   
-                    print_r($gallery['table']); 
+                    //print_r($gallery['table']); 
                         $post = $this->posts_model->view_post($gallery['table'], $gallery[$gallery['table'].'_id']);
-                        print_r($post);
+                       // print_r($post);
                         
                     }
                 ?>

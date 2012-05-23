@@ -2,7 +2,7 @@
 require_once($application_folder."/controllers/navigator.php");
 class Gallery extends navigator 
 {
-
+    
     function __construct()
     {
         parent::__construct();

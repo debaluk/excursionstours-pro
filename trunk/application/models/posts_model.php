@@ -3,6 +3,7 @@
     class Posts_model extends CI_Model{
 
         var $page_TYPES = array('excursions','tours');
+        private $fields = array('title');
         
         function __construct(){
             parent::__construct();
@@ -16,13 +17,34 @@
 
         function view_post($post_TYPE, $post_ID){
 
-            RETURN $this->db->get_where($post_TYPE,array('id' =>$post_ID))->row_array();
-
+            $res = $this->db->get_where($post_TYPE,array('id' =>$post_ID))->row_array();
+            
+             //Translate class
+            foreach($this->fields as $f){
+                //echo $res[$f]."<br>";
+                $res[$f] = $this->translate->getArray($res[$f], TRUE);
+            }  
+            
+            RETURN $res;
         }
 
         function view_related_post($post_TYPE){ // Page, arrangements, cars etc...
 
-            RETURN $this->db->get($post_TYPE)->result_array();
+            $res = $this->db->get($post_TYPE)->result_array();
+            
+            foreach($res as $key=>$value){
+                //echo $value['title']; 
+
+                //Translate class
+                foreach($this->fields as $f){
+                    $res[$key][$f] = $this->translate->getArray($value[$f], TRUE);
+                    if($res[$key][$f]=='')$res[$key][$f]='-Please translate-';
+                }
+
+
+            }
+            
+            RETURN $res;
 
         }
         

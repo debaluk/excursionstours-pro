@@ -50,7 +50,7 @@
 
                                                 foreach($rows as $post):?>
 
-                                                <? if($post['id']==$gallery['posts_ID']) $selected = 'selected="selected"'; ?>
+                                                <? if($post['id']==$gallery[$page_type.'_id']) $selected = 'selected="selected"'; ?>
 
                                                 <option <?=$selected?> value="<?=substr($page_type, 0, 1).'_'.$post['id']?>" class="level-0"> <?=$post['title']?></option>
 
