@@ -5,6 +5,14 @@
 
         function excursions () {
             parent::__construct();
+            
+            /****************************************************
+            *  CHECK FOR LOGIN
+            ****************************************************/    
+            
+            if(!$this->session->userdata('logged_in')){
+                redirect(base_url());   
+            }
 
             /*MODELS*/
             $this->load->model('transports_m','transportsm');

@@ -6,6 +6,14 @@
 
             parent::__construct();
 
+            /****************************************************
+            *  CHECK FOR LOGIN
+            ****************************************************/    
+            
+            if(!$this->session->userdata('logged_in')){
+                redirect(base_url());   
+            }
+            
             // load models
             $this->load->model('tours/tours_m','toursm');
             $this->load->model('tours/toursroomtype_m','roomtypem');

@@ -6,6 +6,15 @@ class Gallery extends navigator
     function __construct()
     {
         parent::__construct();
+        
+        /****************************************************
+            *  CHECK FOR LOGIN
+            ****************************************************/    
+            
+            if(!$this->session->userdata('logged_in')){
+                redirect(base_url());   
+            }
+            
         /*
         * Class Translate
         * set local language
