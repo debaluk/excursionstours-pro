@@ -457,7 +457,7 @@
 
                         /* This is the correct way to loop over the directory. */
                         while (false !== ($entry = readdir($handle))) {
-                            if ($entry != "." && $entry != ".." && $entry != "thumbnail") {
+                            if ($entry != "." && $entry != ".." && $entry != "thumbnail"  && $entry != "videos") {
 
                                 foreach ($dimensions as $dimension):
 
