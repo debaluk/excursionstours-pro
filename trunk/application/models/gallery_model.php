@@ -253,11 +253,13 @@
 
             if($this->db->affected_rows()>0){
 
-                if($this->deleteDir("./pro-gallery/".$path)) {
-                    return TRUE;
-                }else{
-                    return FALSE;
-                }                
+                if($path!=''){
+                    if($this->deleteDir("./pro-gallery/".$path)) {
+                        return TRUE;
+                    }else{
+                        return FALSE;
+                    }             
+                }else return FALSE;   
             }else{
                 return FALSE;
             }
