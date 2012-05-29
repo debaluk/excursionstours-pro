@@ -78,7 +78,7 @@ class Login extends CI_Controller
 
     function validloginform() {
 
-        $this->form_validation->set_rules('email','<b>email</b>','trim|xss_clean|required');        
+        $this->form_validation->set_rules('email','<b>username</b>','trim|xss_clean|required');        
         $this->form_validation->set_rules('password','<b>password</b>','trim|xss_clean|required');
 
         $this->form_validation->set_message('required','Please enter %s!'); 
