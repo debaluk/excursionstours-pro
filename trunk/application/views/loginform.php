@@ -111,7 +111,7 @@
 
                 <div class="errors" <? if(validation_errors()=='' && !isset($logerror))echo'style="display:none;"';?>><?php echo validation_errors(); ?><?php if(isset($logerror))echo $logerror; ?></div>
 
-                <label for="email">E-mail:</label>
+                <label for="email">Username:</label>
                 <input type="text" name="email"  value="<?php echo set_value('email'); ?>" class="text"  />    
 
                 <label for="password">Password:</label>
