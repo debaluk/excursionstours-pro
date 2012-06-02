@@ -86,7 +86,7 @@
         <?if($tb_status==0){?>
         <div style="float: right; margin: 20px 0 0 0">
             <div class="atlas_btn" style="margin-right:0;">
-                <a href="<?=$sys_url?>payservice/test_pay/<?=$booking_id?>/tour" id="pay_by_credit_card" style="padding: 7px 6px 7px 0;">PAY BY CREDIT CARD</a>
+                <a href="<?=$sys_url?>service/pay/<?=$booking_id?>/tour/<?=$language?>" id="pay_by_credit_card" style="padding: 7px 6px 7px 0;">PAY BY CREDIT CARD</a>
             </div>
             <br class="clearing" /> 
         </div>
