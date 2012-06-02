@@ -19,7 +19,7 @@
             $this->load->model('excursions/booking_m','excursionsbooking');
 
             $this->data['server'] = 'http://sohotravel.it-montenegro.com/';
-            $this->data['server'] = 'http://localhost/excursionstours-pro/';
+            $this->data['server'] = 'http://localhost/excursionstours-pro/globtour/';
 
             $this->data['language'] = $this->lang_ses->getLang();
 
@@ -35,7 +35,7 @@
 
             $this->data['page'] = $page; 
             $this->data['days'] =  $this->excursionsbooking->exc_days(); 
-            $this->data['title'] = 'SOHO Group - Montenegro | Booking';
+            $this->data['title'] = 'Online Booking';
 
             $this->core_site('excursions/booking',$page,NULL,$this->data);      
 

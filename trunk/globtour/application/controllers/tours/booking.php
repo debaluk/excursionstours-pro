@@ -34,7 +34,7 @@
         {
 
             $this->data['page'] = $page; 
-            $this->data['title'] = 'SOHO Group - Montenegro | Booking';
+            $this->data['title'] = 'Online Booking';
 
             $this->core_site('tours/booking',$page,NULL,$this->data);    
 

@@ -1,5 +1,5 @@
 <p style="text-align: center;" id="footer_copyright">
-    &copy; 2012 NU SIT Bar - EXCURSIONS &amp; TOURS PRO 
+    &copy; 2012 NU SIT Bar
 </p>
 <!--<ul id="footer_nav">
     <li>
