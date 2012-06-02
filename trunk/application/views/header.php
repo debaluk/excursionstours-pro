@@ -69,7 +69,7 @@
             </ul>
         </li>
 
-        <li><a href="<?=base_url()?>settings/view_all_thimbnail_size">Settings</a>
+        <!--<li><a href="<?=base_url()?>settings/view_all_thimbnail_size">Settings</a>
             <ul>
                 <li><a href="<?=base_url()?>settings/view_all_thimbnail_size">Thumbnail size</a>
                     <ul>
@@ -79,7 +79,7 @@
                 </li>
 
             </ul>
-        </li>
+        </li> -->
 
         <li><a href="<?=base_url()?>transactions/view_all_transactions" class="last"><span>Transactions</span></a>
             <ul>
