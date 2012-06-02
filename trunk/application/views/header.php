@@ -69,17 +69,17 @@
             </ul>
         </li>
 
-        <!--<li><a href="<?=base_url()?>settings/view_all_thimbnail_size">Settings</a>
-        <ul>
-        <li><a href="<?=base_url()?>settings/view_all_thimbnail_size">Thumbnail size</a>
-        <ul>
-        <li><a href="<?=base_url()?>settings/view_all_thimbnail_size">All Sizes</a></li>
-        <li><a href="<?=base_url()?>settings/view_add_thimbnail_size" class="last">Add Size</a></li>
-        </ul>
-        </li>
+        <li><a href="<?=base_url()?>settings/view_all_thimbnail_size">Settings</a>
+            <ul>
+                <li><a href="<?=base_url()?>settings/view_all_thimbnail_size">Thumbnail size</a>
+                    <ul>
+                        <li><a href="<?=base_url()?>settings/view_all_thimbnail_size">All Sizes</a></li>
+                        <li><a href="<?=base_url()?>settings/view_add_thimbnail_size" class="last">Add Size</a></li>
+                    </ul>
+                </li>
 
-        </ul>
-        </li>-->
+            </ul>
+        </li>
 
         <li><a href="<?=base_url()?>transactions/view_all_transactions" class="last"><span>Transactions</span></a>
             <ul>

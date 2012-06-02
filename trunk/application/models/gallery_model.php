@@ -421,8 +421,9 @@
             $dimensions = $this->db->get_where('settings', array('name' => 'thumbnail_size'))->result_array();
 
             //print_r($dimensions);
-
-            $galleries = $this->db->get('gallery')->result_array();
+            $q = "SELECT * FROM `gallery` WHERE `table` = 'excursions' or `table` = 'tours'";
+            
+            $galleries = $this->db->query($q)->result_array();
 
             //No galiers and No pictures
             //No need to create thumbnail
