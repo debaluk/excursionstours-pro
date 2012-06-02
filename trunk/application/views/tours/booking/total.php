@@ -1,3 +1,8 @@
+<style type="text/css">
+    #content li {
+        color: #848484;
+    }
+</style>
 <input type="hidden" value="<?=$tb_newid;?>" id="book_id">
 <div class="box">
     <img alt="Globtour" src="<?=base_url()?>assets/img/logo.jpg" style="margin-left: 50px; margin-top: 50px;">
@@ -69,7 +74,7 @@
                 </tr>        
                 <tr>
                     <td colspan="2" style="border-bottom: none">
-                    <?if($tb_status==0){?>
+                        <?if($tb_status==0){?>
                             Booking is valid only if you pay by credit card! 
                             <?}else echo '&nbsp;'?>
                     </td>
@@ -79,19 +84,19 @@
             </tbody>
         </table>
         <? 
-            $sys_url = "http://www.it-montenegro.com/payservice/"; 
+            $sys_url = "http://www.informacionisistem.com/payservice/"; 
             $booking_id = $tb_newid;
         ?>
         <!--PAY BY CREDIT CARD-->
         <?if($tb_status==0){?>
-        <div style="float: right; margin: 20px 0 0 0">
-            <div class="atlas_btn" style="margin-right:0;">
-                <a href="<?=$sys_url?>service/pay/<?=$booking_id?>/tour/<?=$language?>" id="pay_by_credit_card" style="padding: 7px 6px 7px 0;">PAY BY CREDIT CARD</a>
+            <div style="float: right; margin: 20px 0 0 0">
+                <div class="atlas_btn" style="margin-right:0;">
+                    <a href="<?=$sys_url?>service/pay/<?=$booking_id?>/tour/<?=$language?>" id="pay_by_credit_card" style="padding: 7px 6px 7px 0;">PAY BY CREDIT CARD</a>
+                </div>
+                <br class="clearing" /> 
             </div>
-            <br class="clearing" /> 
-        </div>
-        <br class="clearing" />
-        <?}?>
+            <br class="clearing" />
+            <?}?>
 
     </div>
     <br class="clearing" />

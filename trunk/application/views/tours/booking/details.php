@@ -1,19 +1,29 @@
 <script type="text/javascript">
-   /* if (jQuery.browser.mozilla){
-            jQuery('#atlas_tabs').css('margin-top','18px'); 
-        }else if (jQuery.browser.safari){
-            jQuery('#atlas_tabs').css('margin-top','17px'); 
-        }else if (jQuery.browser.msie){
-            jQuery('#atlas_tabs').css('margin-top','19px'); 
-        }  */
+    /* if (jQuery.browser.mozilla){
+    jQuery('#atlas_tabs').css('margin-top','18px'); 
+    }else if (jQuery.browser.safari){
+    jQuery('#atlas_tabs').css('margin-top','17px'); 
+    }else if (jQuery.browser.msie){
+    jQuery('#atlas_tabs').css('margin-top','19px'); 
+    }  */
 </script>
+<style type="text/css">
+    #e321 .desc_main {
+        line-height: 16px;
+        margin-bottom: 43px;
+        width: 300px !important;
+    }
+    #e321 .exc {
+        width: 637px !important;
+    }
+</style>
 <? foreach($tours as $tour){?> 
     <input type="hidden" value="<?=$tour['id']?>" id="exc_id">
 
 
     <div class="picturebox" style="padding-bottom: 0;">
-    
-    <?
+
+        <?
 
             $gallery = $this->db->get_where('gallery', array('tours_id' => $tour['id']))->row_array();
 
@@ -44,7 +54,7 @@
 
                 endif;
         ?>
-    
+
     </div>
     <div class="exc">
         <div class="top_spacer"></div>
@@ -64,14 +74,14 @@
 
                             <br class="clearing" />
                             <style>
-                                 #e321 .product_price {
+                                #e321 .product_price {
                                     margin-top: 50px;
                                     width: 230px;
                                 }
-                                 #e321 .product_price em {
+                                #e321 .product_price em {
                                     font-size: 24px;
                                 }
-                                 #e321 .price{
+                                #e321 .price{
                                     border-right: 1px solid;
                                     padding-right: 10px;
                                     /*width: 90px;*/                                          
@@ -164,7 +174,7 @@
                         single_room_price = '<?=$tour['Cena Jednokrevetne'];?>';
                         double_room_price = '<?=$tour['Cena Dvokrevetne'];?>';
                     </script>
-                    
+
                     <div class="easystep_two">
                         <label>Choose room type</label><br />
                         <p style="margin-bottom: 14px;">

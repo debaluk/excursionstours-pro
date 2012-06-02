@@ -3,7 +3,11 @@
     #e321 .desc_main {
         line-height: 16px;
         margin-bottom: 43px;
+        width: 300px !important;
     }
+    #e321 .exc {
+    width: 637px !important;
+}
 </style>
 
 <? foreach($excursions as $excursion){?> 

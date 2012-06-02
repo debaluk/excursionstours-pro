@@ -18,7 +18,7 @@
                                 $thumb_filename = 'thumbnail/'.$pic_arr[0].'_200x150_exacttop.'.$pic_arr[1];
 
                             ?>
-                            <img src="<?=base_url()?>pro-gallery/<?=$tour['g_path']?>/<?=$thumb_filename?>" alt="excursion_<?=$tour['id']?>" />
+                            <img src="<?=base_url()?>pro-gallery/<?=$tour['g_path']?>/<?=$thumb_filename?>" alt="excursion_<?=$tour['id']?>" width="190" />
                             <?
 
                                 endif;

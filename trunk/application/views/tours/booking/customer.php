@@ -1,3 +1,8 @@
+<style type="text/css">
+    #e321 .exc {
+    width: 637px;
+}
+</style>
 <? foreach($book_infos as $info){?>
 
     <input type="hidden" value="<?=$info['excid'];?>" id="exc_id">

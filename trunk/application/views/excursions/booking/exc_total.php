@@ -1,3 +1,8 @@
+<style type="text/css">
+#content li {
+    color: #848484;
+}
+</style>
 <input type="hidden" value="<?=$eb_newid;?>" id="book_id">
 <div class="box">
     <img alt="Globtour" src="<?=base_url()?>assets/img/logo.jpg" style="margin-left: 50px; margin-top: 50px;">
@@ -89,7 +94,7 @@
         </table>
 
         <? 
-            $sys_url = "http://www.it-montenegro.com/payservice/";
+            $sys_url = "http://www.informacionisistem.com/payservice/";
             $booking_id = $eb_newid;
         ?>
 
