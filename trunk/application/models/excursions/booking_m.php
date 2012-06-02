@@ -354,6 +354,9 @@
             foreach ($query as $key => $list) {
                 $this->data['tra_title'] = $list['title'];
             }
+            
+            $this->data['language'] = $this->lang_ses->getLang();
+            
             $response = $this->load->view('excursions/booking/exc_total', $this->data, TRUE);  
             $this->encode_json_get(array('success'=>'success','html'=>$response,'book_id'=>$newid)); 
         }

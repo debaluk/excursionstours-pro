@@ -331,6 +331,9 @@
                 //Translate class
                 $this->data['t_pickup_location'] = $this->translate->getArray($list['pickup_location'], TRUE);;
             } 
+            
+            $this->data['language'] = $this->lang_ses->getLang();
+            
             $response = $this->load->view('tours/booking/total',  $this->data, TRUE);  
             $this->encode_json_get(array('success'=>'success','html'=>$response,'book_id'=>$newid)); 
         }
