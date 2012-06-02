@@ -1,0 +1,766 @@
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+#content321 #module{   
+    height: 330px;
+    padding: 11px 0 0 23px;
+    z-index: 1;
+    position: relative;
+    float: left;
+    margin-bottom:230px
+}
+
+#content321 #m-left,#content321 #m-mid,#content321 #m-right{
+    float: left;
+    height: 330px;
+
+}  
+#content321 #m-left{
+    width:197px;
+    background:url(../img/backgnds/bp-60sec.png) no-repeat left top;
+}
+#content321 #sel-vehicle{
+    position: absolute;
+    bottom:0;
+    display: block;
+}
+#content321 #m-mid{
+    background:url(../img/backgnds/module-back.png) no-repeat left top;
+    width: 341px;
+    position: relative;
+}
+#content321 #m-right{
+    background:url(../img/backgnds/audi.jpg) no-repeat left top;
+    width: 316px;
+}
+#content321 .m-rentacar{
+    padding: 23px 0 0 23px
+}
+#content321 .m-rentacar h3{
+    color: #333333;
+    font-size: 14px;
+}
+
+#content321 #module select {
+    color: #696969;
+    height: 19px !important;
+    line-height: 19px;
+    margin-top: 4px;
+    padding-top: 0;
+    width: 123px;
+    font-size: 12px;
+}
+#content321 #module input {
+    color: #696969;
+    font-size: 12px;
+    padding-left:6px
+}
+
+#content321 label.element{
+    color: #333;
+    font-size: 14px;
+}
+
+#content321 #datefrom, #content321 #dateto{}               
+
+#content321 #module input.text{
+    background: url("../img/backgnds/form-gradient.png") repeat-x scroll center top transparent;
+    border: 1px solid #ABABAB;
+    line-height: 25px;
+    margin-top: 4px;
+    min-height: 25px;
+    padding: 0 5px;
+    color: #696969;
+}
+
+#content321 .m-form .basic-data-1, #content321 .m-form .basic-data-2{
+    float: left;
+    margin-top: 21px;
+}
+#content321 .m-form .basic-data-2{
+    margin-left: 43px;
+}      
+#content321 .m-form img{
+    margin-left: 0;
+    margin-top: 2px;
+    position: absolute;
+}
+#content321 .m-form dl{
+    padding-bottom: 15px;
+}
+#content321 .basic-data-3 dd{
+    margin-left: 170px;
+    margin-top: 23px;
+}
+#content321 .submit {
+    background: url("../img/backgnds/get_best_prices.png") no-repeat scroll 0 0 transparent;
+    color: white;
+    display: block;
+    font-size: 11px;
+    letter-spacing: -.5px;
+    line-height: 55px;
+    margin: 0 0 5px;
+    padding: 0 0 4px 17px;
+    text-align: left;
+    font-weight: bold;
+    cursor: pointer;
+    width: 133px;
+    height: 46px;
+    border: medium none;
+}
+#content321 .dp-input input{
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #333333;
+    font-size: 11px;
+    height: 20px;
+    line-height: 12px;
+    padding: 3px 0 3px 5px;
+    background: url("../img/backgnds/input-text.png") no-repeat scroll left top transparent;
+}
+#content321 .dp-input, #content321 .dp-input input{
+    float: left;
+    margin-left: -1px;
+    position: relative;
+    width: 100px;
+    margin-top: 1px;
+}
+
+/*CAR BOX*/
+
+#content321 #carlist{
+    float: left;
+}
+#content321 .carbox{
+    margin-bottom: 9px;
+}
+#content321 .b-top, #content321 .b-mid, #content321 .b-mid{
+    width: 573px; 
+}
+#content321 .b-top{
+    background:url(../img/backgnds/b-top.png) no-repeat left top;
+    height: 10px;
+}
+#content321 .b-mid{
+    background:url(../img/backgnds/b-mid.png) repeat-y left top;
+    height: 146px;
+    position: relative;  
+}
+#content321 .b-bot{
+    background:url(../img/backgnds/b-bot.png) no-repeat left top;
+    height: 10px;
+}
+#content321 .c-first, #content321 .c-sec, #content321 .c-third{
+    float:left;
+    position: relative;
+    margin-top:-8px;
+}
+#content321 .c-first{
+}
+#content321 .c-sec{
+    width:247px
+} 
+#content321 .c-first, #content321 .c-sec{
+    padding-top: 11px;
+    padding-left: 13px 
+}
+#content321 .c-sec{
+    padding-left: 19px 
+}
+#content321 .c-third{
+    float:right;
+    position: relative;
+    margin-top:-8px;
+    margin-right:2px;
+    height:162px
+}
+#content321 .car-image{
+    height:74px;
+    padding-top:16px
+}
+#content321 .car-image a{
+    display:block
+}
+#content321 .car-consmp{
+    background:url(../img/backgnds/car-consmp-bg.png) no-repeat left top;
+    width:102px;
+    height: 49px;
+}
+#content321 .car-consmp span{
+    display: block;
+    float: left;
+    height:25px;
+    line-height:25px;
+    margin-right:2px
+}
+#content321 .car-consmp .co2 span{
+    background:url(../img/backgnds/co2.png) no-repeat left 5px;
+    width:29px;    
+}
+#content321 .car-consmp .fuel span{
+    background:url(../img/backgnds/fuel.png) no-repeat left 4px;
+    width:15px;
+}
+#content321 .car-consmp ul{
+    padding:0 0 0 8px
+}
+#content321 .car-consmp li{
+    color:#333333;
+    font-size: 11px;
+    font-weight: bold;
+    height:25px;
+    line-height:25px;
+}
+#content321 .car-info{
+    height:90px;
+}
+#content321 .car-info h3 a{
+    display:block;
+    color:#333333;
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 4px;
+}
+#content321 .car-info p{
+    color:#333333;
+    font-size: 11px;
+    text-align: left;
+    line-height: 12px;
+}
+#content321 .car-include{
+    background:url(../img/backgnds/car-include.png) no-repeat left top;
+    width:247px;
+    height:49px
+}
+#content321 .car-include ul.pic_items{
+    padding:4px 0 0 1px
+}
+#content321 .car-include ul.pic_text{
+    padding:4px 0 0 1px
+}
+#content321 .car-include li{
+    font-weight: bold;
+    color:#333333;
+    font-size: 13px;
+    float:left;
+    position:relative;
+    width:41px;
+    text-align:center
+}
+#content321 .car-include li.ci-yes{
+    padding-top:3px
+}
+#content321 .car-score-price{
+    background:url(../img/backgnds/score-bg.png) no-repeat left top;
+    width:175px;
+    height:113px
+}
+#content321 .score{
+    height:66px;
+    padding-top:17px
+}
+#content321 .score .indicator-bg{
+    background:url(../img/backgnds/score-indicator-bg.png) no-repeat left top;
+    width:130px;
+    height:10px;
+    padding: 4px;
+    margin:0 auto
+}
+#content321 .score .indicator{
+    background:url(../img/backgnds/score-indicator.png) repeat-x left top;
+    width:131px;
+    height:18px;
+}
+#content321 .score .score-txt{
+    text-align: center;
+    color:#333;
+    font-size: 15px;
+    font-weight: bold;
+    height:48px;
+    line-height:38px;
+}
+#content321 .price{
+    height:32px; 
+    line-height:27px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    color:#333
+}
+#content321 .car-booknow{
+    position:absolute;
+    bottom:0
+}
+
+/*INFO BOX*/
+#content321 .info-box, #content321 .change-box{
+    width:297px;
+    float:left ;
+    margin-top: 2px;    
+}
+#content321 .box-anim-holder {
+    float: left;
+    width: 306px;
+    height:100px
+}
+#content321 .info-box .info-top, #content321 .change-box .info-top{
+    height:36px;
+    background:url(../img/backgnds/info-top.png) no-repeat left top;
+}
+#content321 .info-top h4{
+    font-size: 15px;
+    font-weight: bold;
+    color:#333;
+    height:36px;
+    line-height:36px;
+}
+#content321 .info-box .info-bot{ 
+    min-height: 100px;
+    background:url(../img/backgnds/info-bot.png) no-repeat left bottom;
+    padding-top:27px
+}
+#content321 .info-box .info-top, #content321 .info-box .info-bot, #content321 .change-box .info-top{
+    width:284px;
+    padding-left: 13px;
+}
+#content321 .t-info td{
+    font-size: 11px;
+    color:#333;
+    width:134px;
+    vertical-align: top;
+}
+#content321 .t-info tr.t-head td{
+    font-size: 14px;
+}
+#content321 .c-details{
+    padding-top: 20px;
+    padding-bottom: 7px;
+}
+#content321 .c-details a{
+    font-weight: bold;
+    color:#333;
+    text-decoration: underline;
+    font-size: 11px;
+}
+#content321 .info-box, #content321 .change-box, #content321 #carlist{
+    margin-bottom:150px;
+    margin-left: 9px;
+}
+#content321 .change-box .m-form .basic-data-1, #content321 .change-box .m-form .basic-data-2{ 
+    float: none;
+    margin-top: 0;  
+}
+#content321 .change-box .m-form .basic-data-2 {
+    margin-left: 0;
+}
+#content321 .change-box .info-bot{
+    width:271px;
+    padding: 0 13px 0 13px; 
+}
+#content321 .change-box .cbox-dl-left{
+    float:left
+}
+#content321 .change-box #pickup_loc_id, #content321 .change-box #return_loc_id{
+    width:271px;
+}
+#content321 .w143{
+    width:140px; 
+}
+#content321 .change-box .dd{
+    margin-bottom: 0;
+}
+#content321 .change-box label.element {
+    font-size: 15px;
+}
+#content321 .change-box .dd .ddTitle {
+    margin-top: 3px;
+}
+#content321 .change-box .basic-data-3 .chage-details {
+    float: right;
+    margin-top: 0;
+    position: relative;
+    right: -2px;
+    padding: 5px 0 5px
+}
+#content321 .change-box .info-bot{ 
+    background:url(../img/backgnds/info-bot.png) no-repeat left bottom;
+    padding-top:23px
+}
+#content321 .change-box .m-form dl {
+    padding-bottom: 13px;
+}
+#content321 .info-box a{
+    color:#333;
+}
+#content321 .chage-details input{
+    background:url(../img/backgnds/change-details.png) no-repeat left top;
+    width:127px;
+    height:43px
+}
+
+/*FINISH*/
+
+#content321 #bigger-car-btn{
+    background:url(../img/backgnds/change-car.png) no-repeat left top;
+    width:107px; 
+    height:43px;
+    margin-top: 5px;
+}
+#content321 .suplement{
+    font-size: 12px;
+    color:#333;
+    padding-top: 5px;
+}
+#content321 strong{
+    font-weight: bold;
+}
+#content321 .finish .info-box .info-bot {
+    background: url("../img/backgnds/info-bot.png") no-repeat scroll left bottom transparent;
+    min-height: 100px;
+    padding-top: 23px;
+    padding-bottom: 7px;
+}
+#content321 .finish .car-image {
+    padding-top: 9px;
+}
+#content321 .finish .car-include {
+    margin-top: 9px;
+}
+#content321 #summary {
+    float: left;
+    margin-left: 9px;
+    padding: 0 5px 0;
+    margin-bottom: 150px;    
+}
+#content321 #summary .f-mid{
+    padding: 15px 5px; 
+}
+#content321 .f-left, #content321 .f-mid, #content321 .f-right{
+    min-height: 660px;
+    float: left;
+}
+#content321 .f-left{
+    background:url(../img/backgnds/f-left.png) no-repeat left top;
+    width:15px;
+}
+#content321 .f-mid{
+    background:url(../img/backgnds/f-mid.png) repeat-x left top;
+    width:521px;
+}
+#content321 .f-right{
+    background:url(../img/backgnds/f-right.png) no-repeat left top;
+    width:15px;
+}
+#content321 .f-top, #content321 f-bot{
+    width:571px;
+    height:15px
+}
+#content321 .f-top{
+    background:url(../img/backgnds/f-top.png) no-repeat left top;
+}
+#content321 .f-bot{
+    background:url(../img/backgnds/f-bot.png) no-repeat left top;
+}
+#content321 #summary h2{
+    color: #333333;
+    font-size: 15px;
+    font-weight: bold;
+}
+#content321 small{
+    font-weight: normal;
+}
+#content321 .f-first{
+    height:76px
+}
+#content321 .f-image, #content321 .f-description{
+    float:left
+}
+#content321 .f-description{
+    margin-left: 13px;
+    width:390px
+}
+#content321 .details .f-description{
+    margin-left: 13px;
+    width:230px;
+}
+#content321 .details .f-first{
+    height:151px
+}
+#content321 .details .car-include {
+    margin-top: 13px;
+}  
+#content321 .f-description .t-info{
+    margin-top: 9px;
+    width:90%
+}
+#content321 .finish a, #content321 .finish h3{
+    color:#333
+}
+#content321 #change-car-btn{
+    background:url(../img/backgnds/change-car.png) no-repeat left top;
+    width: 107px;
+    height:43px;
+    padding:0
+}
+#content321 #optional-accessories-btn{
+    background:url(../img/backgnds/optional-accessories.png) no-repeat left top;
+    width: 156px;
+    height:43px;
+    padding:0
+}
+#content321 .f-sec{
+    padding-top:13px
+}
+#content321 .f-sec ul li{
+    float: left;
+    margin-right: 13px;
+}
+#content321 .f-third{
+    padding-left:120px;
+    padding-top:7px
+}
+#content321 .f-price{
+    font-size: 13px;
+    font-weight: bold;
+    color:#333;
+    margin-bottom:5px   
+}
+#content321 .f-form{
+    border-top: 1px solid #B5B5B5;
+    margin: 15px 0 0;
+    padding: 10px 0 0;
+    position: relative;
+}   
+#content321 #formReservationStep3{
+    padding: 10px;
+}
+#content321 .f-form p, #content321 .quick-form-required-note-text{
+    font-size: 12px;
+    color:#333;
+}
+#content321 .strong{
+    font-weight: bold;
+}
+#content321 label[for] {
+    cursor: pointer;
+}
+#content321 .f-form form input.text{
+    background: url("../img/backgnds/form-gradient.png") repeat-x scroll center top transparent;
+    background: none;
+    border: 1px solid #ABABAB;
+    line-height: 25px;
+    min-height: 25px;
+    padding: 0 5px;
+    width: 230px;
+}
+#content321 .f-form form b.required, #content321 .f-form form span.quick-form-required-note-asterisk {
+    color: #333333;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0 0 0 -11px;
+    padding: 0 5px 0 0;
+}
+#content321 .f-form form label {
+    font-weight: bold;
+    margin: 0;
+    color:#333
+}
+#content321 .f-form form dl {
+    margin: 0 0 5px;
+}
+#content321 .f-form form dt {
+    margin: 0 0 3px;
+}
+#content321 .f-form form dd {
+    margin: 0;
+}
+#content321 .f-form form div.error {
+    color: red;
+    font-weight: bold;
+    padding: 5px 0 0;
+}
+#content321 .f-form input[disabled] {
+    cursor: not-allowed;
+}
+#content321 .f-form form textarea {
+    background: url("../img/backgnds/form-gradient.png") repeat-x scroll center top transparent;
+    background: none;
+    border: 1px solid #ABABAB;
+    min-height: 200px;
+    padding: 2px 5px;
+    min-height: 125px;
+    width: 238px;
+}
+#content321 .error {
+    border: 1px solid red !important;
+}
+#content321 dl.form-notice {
+    position: absolute;
+    right: 0;
+    top: 35px;
+    width: 250px;
+}
+#content321 .f-form a{
+    text-decoration: underline;
+}
+#content321 .terms dt{
+    float:left
+}
+#content321 .f-submit{
+    margin-top:23px
+}
+#content321 #formReservationStep3Submit{
+    background:url(../img/backgnds/book-now-finish.png) no-repeat left top;
+    width: 121px;
+    height:43px;
+    padding:0
+}
+#content321 .quick-form-required-note-asterisk{
+    padding-right:3px !important;
+} 
+
+/*CAR DETIAL*/
+
+#content321 div.hr {
+    background-color: #B5B5B5;
+    clear: both;
+    height: 1px;
+    margin: 5px 0 10px;
+}
+#content321 .parameter{
+    font-size:12px;
+    color:#333;
+    line-height:16px
+}
+#content321 .bonus-box{
+    float:right;
+    margin: 0 0 10px 20px;
+    width: 265px;
+    clear: left;
+    margin: 0 0 10px 20px;
+    width: 265px;
+    border: 1px solid #B5B5B5;
+}
+#content321 .inline-b-box{
+    margin: 1px;
+    padding: 10px;
+    text-align: left;
+}
+#content321 .inline-b-box h3, #content321 .gallery h3, #content321 .videos h3{
+    font-size: 1.3em;
+    margin: 0.3em 0;
+}
+#content321 .inline-b-box ul{
+    margin: 13px 0 13px 25px;
+    padding: 0;
+    font-size: 11px;
+}
+#content321 div.gallery ul.items {
+    margin: 0 0 0 -10px;
+    overflow: hidden;
+    padding: 0;
+}
+#content321 div.gallery li.item {
+    display: inline-block;
+    list-style: none outside none;
+    margin: 0 0 10px 10px;
+    padding: 0;
+    vertical-align: top;
+    float: left;
+}
+#content321 div.gallery li.item a {
+    display: block;
+}
+#content321 #summary .videos{
+    height:400px;
+}
+
+/*OREDER*/
+#content321 .order .f-image{
+    float:right
+
+}
+#content321 .order .f-description{
+    margin-left:0;
+    width:413px
+}
+#content321 .c-info{
+    margin-top:13px
+}
+#content321 .order  ul li{
+    list-style-type: circle;
+}
+#content321 .p-info{
+    margin-top:13px
+}
+#content321 .p-info p{
+    font-size: 11px; 
+    color: red;
+    margin-top:1px
+}
+#content321 .p-button{
+    margin-top:13px 
+}
+#content321 #pay-by-card{
+    background:url(../img/backgnds/pay-by-card.png) no-repeat left top;
+    width: 153px;
+    height:43px;
+    padding:0 
+}
+#content321 #accessories_preview ul{
+    padding: 0 0 7px;
+}
+#content321 #accessories_preview li{
+    color: #333;
+}
+#content321 .c-info ul{
+    margin-left: 13px;
+}
+#content321 #module input{
+    border:0;
+}
+#content321 .basic-data-3 dd {
+    margin-top: 0;
+}
+#content321 .web_txt_web_col1{
+    padding-top:9px
+}
+#content321 h3{
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 0;
+}
+#content321 h4{
+    margin-bottom: 0 !important;
+}
+#content321 .info-box .info-bot, #content321 .change-box .info-bot {
+    padding-top: 7px !important;
+}
+#content321 #summary h2 {
+    color: #333333;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 15px;
+    padding: 0 0 13px;
+    text-shadow: none;
+}
