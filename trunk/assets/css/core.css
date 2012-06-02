@@ -806,7 +806,8 @@ table.display thead th.sortfalse {
 }
 #logo {
 
-    padding: 13px 0 0;
+    padding: 13px 0 0; /*soho*/
+    padding: 23px 0 0; /*globtour*/
 }
 #myslidemenu .last{
     border-right: none;
