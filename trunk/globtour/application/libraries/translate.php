@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
     class Translate {   
 
-        private $languages = array('me','en','ru','fr','al');
+        private $languages = array('en','me','de','cz','ru','sl','cn');
         private $local_lang;
 
         function  Translate(){
