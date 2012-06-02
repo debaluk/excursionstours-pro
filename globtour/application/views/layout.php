@@ -150,7 +150,7 @@
 
             <div id="content321" class="clearfix"><?=$contlayout ?></div>
 
-            <div id="footer" class="clearfix"><? $this->load->view('footer'); ?></div>
+            <div id="footer" class="clearfix" style="background: none !important"><? $this->load->view('footer'); ?></div>
 
         </div>
 
