@@ -2,6 +2,8 @@
 
     class Gallery_model extends CI_Model{
 
+        var $all_galeries_q = "SELECT * FROM `gallery` WHERE (`table` = 'excursions' or `table` = 'tours' or `table` IS NULL) and `posts_ID` is NULL";
+        
         function __construct(){
             parent::__construct();
 
@@ -371,7 +373,7 @@
 
         function view_all_galleries(){
 
-            $res = $this->db->get('gallery')->result_array();
+            $res = $this->db->query($this->all_galeries_q)->result_array();
             return $res;
 
         }
@@ -421,9 +423,8 @@
             $dimensions = $this->db->get_where('settings', array('name' => 'thumbnail_size'))->result_array();
 
             //print_r($dimensions);
-            $q = "SELECT * FROM `gallery` WHERE `table` = 'excursions' or `table` = 'tours'";
             
-            $galleries = $this->db->query($q)->result_array();
+            $galleries = $this->db->query($this->all_galeries_q)->result_array();
 
             //No galiers and No pictures
             //No need to create thumbnail
