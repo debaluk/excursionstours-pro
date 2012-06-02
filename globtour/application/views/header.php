@@ -28,11 +28,13 @@
 -->
 <div id="langs">
     <ul>
-        <li><a href="javascript:" class="change_lang" rel="me"><img src="<?=$url;?>assets/img/flags/me.png" alt="Crnogorski" title="Crnogorski" /></a></li>
-        <li><a href="javascript:" class="change_lang" rel="fr"><img src="<?=$url;?>assets/img/flags/fr.png" alt="Français" title="Français" /></a></li>
         <li><a href="javascript:" class="change_lang" rel="en"><img src="<?=$url;?>assets/img/flags/en.png" alt="English" title="English" /></a></li>
-        <li><a href="javascript:" class="change_lang" rel="ru"><img src="<?=$url;?>assets/img/flags/ru.png" alt="Rусский" title="Rусский" /></a></li>                            
-        <li><a href="javascript:" class="change_lang" rel="al"><img src="<?=$url;?>assets/img/flags/al.png" alt="Albanian" title="Albanian" /></a></li>
+        <li><a href="javascript:" class="change_lang" rel="me"><img src="<?=$url;?>assets/img/flags/me.png" alt="Crnogorski" title="Crnogorski" /></a></li>
+        <li><a href="javascript:" class="change_lang" rel="de"><img src="<?=$url;?>assets/img/flags/de.png" alt="Deutsch" title="Deutsch" /></a></li>
+        <li><a href="javascript:" class="change_lang" rel="cz"><img src="<?=$url;?>assets/img/flags/cz.png" alt="Český" title="Český" /></a></li>
+        <li><a href="javascript:" class="change_lang" rel="ru"><img src="<?=$url;?>assets/img/flags/ru.png" alt="Rусский" title="Rусский" /></a></li>
+        <li><a href="javascript:" class="change_lang" rel="sl"><img src="<?=$url;?>assets/img/flags/sl.png" alt="Slovenski" title="Slovenski" /></a></li>
+        <li><a href="javascript:" class="change_lang" rel="cn"><img src="<?=$url;?>assets/img/flags/cn.png" alt="中国的" title="中国的" /></a></li>
     </ul>
 </div>   
 <div id="logo">

@@ -10,11 +10,14 @@
             parent::__construct();
             
             $this->data['wp_languages'] = array(
-            'me' => 'Crnogorski',
+            
             'en' => 'English',
+            'me' => 'Crnogorski',
+            'de' => 'Deutsch',
+            'cz' => 'Český',
             'ru' => 'Rусский ',
-            'fr' => 'Français',
-            'al' => 'Albanian'
+            'sl' => 'Slovenski',
+            'cn' => '中国的'
             );
             
             $this->data['language'] = $this->lang_ses->getLang();
