@@ -52,7 +52,7 @@ $autoload['packages'] = array(APPPATH.'third_party');
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('layout', 'montenegrin', 'asset', 'session', 'lang_ses', 'database');
+$autoload['libraries'] = array('layout', 'montenegrin', 'asset', 'session', 'lang_ses', 'database','firephp');
 
 
 

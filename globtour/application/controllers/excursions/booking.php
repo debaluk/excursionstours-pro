@@ -26,6 +26,14 @@
             /*Class*/
             $this->load->library('translate');
 
+            // Log d'un message classique
+            //$this->firephp->log('Booking __construct');
+            if(isset($_GET['language'])) {
+                //$this->firephp->log($_GET['language']);   
+                $this->lang_ses->setLang($_GET['language']);
+
+            }
+
             //set local language
             $this->translate->setLang($this->lang_ses->getLang());
         }
@@ -42,7 +50,7 @@
         }
 
         function e_search()
-        {  
+        {    
             $this->data['days'] =  $this->excursionsbooking->exc_days();                         
             $this->data['excursions'] = $this->excursionsbooking->exc_serach(); 
             $html = $this->load->view('excursions/booking/exc_serch',$this->data,TRUE);

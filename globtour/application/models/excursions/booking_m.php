@@ -24,8 +24,8 @@
         }
 
         function exc_serach()
-        {
-            //print_r($_POST);
+        {    
+            //print_r($_POST); 
 
             if(isset($_GET['eb_starting']))   $day = $_GET['eb_starting']; 
             if(isset($_GET['eb_freetext']))   $freetext = $_GET['eb_freetext']; 
@@ -101,7 +101,7 @@
 
             $res = $this->db->query($q)->result_array();
 
-
+            
             //print_r($this->db->last_query());
 
             foreach($res as $key=>$value){
