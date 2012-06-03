@@ -26,6 +26,14 @@
             /*Class*/
             $this->load->library('translate');
 
+            // Log d'un message classique
+            $this->firephp->log('Booking __construct');
+            if(isset($_GET['language'])) {
+                $this->firephp->log($_GET['language']);   
+                $this->lang_ses->setLang($_GET['language']);
+
+            }
+            
             //set local language
             $this->translate->setLang($this->lang_ses->getLang());
         }
