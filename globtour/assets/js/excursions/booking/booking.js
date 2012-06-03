@@ -292,7 +292,8 @@ $(document).ready(function(){
                 adultprice:     parseInt($('#adult-price').text()), 
                 chprice:        parseInt($('#children-price').text()), 
                 totalprice :    $('#total-price').text() , 
-                date :          c_date
+                date :          c_date,
+                language:       system_lang
             }),
             dataType:   'jsonp',
             type:       'GET',

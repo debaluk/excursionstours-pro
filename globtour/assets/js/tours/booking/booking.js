@@ -69,7 +69,8 @@ $(document).ready(function(){
             url: system_url+'tours/booking/search/?jsoncall=?',
             data: ({
                 eb_freetext : $('#eb_freetext').val(),
-                eb_sort : $('#exc_sort').val()
+                eb_sort : $('#exc_sort').val(),
+                language: system_lang
             }),
             dataType: 'jsonp',
             success: function(data){$('.'+result_div).html(data.html);$.modal.close();},
@@ -85,7 +86,8 @@ $(document).ready(function(){
             url: system_url+'tours/booking/t_filter/?jsoncall=?',
             data: ({
                 eb_freetext : $('#eb_freetext').val(),
-                eb_sort : $('#exc_sort').val()
+                eb_sort : $('#exc_sort').val(),
+                language: system_lang
             }),
             dataType: 'jsonp',
             success: function(data){
@@ -306,7 +308,8 @@ $(document).ready(function(){
                 adultprice:     parseInt($('#adult-price').text()), 
                 chprice:        parseInt($('#children-price').text()), 
                 totalprice :    $('#total-price').text() , 
-                date :          c_date
+                date :          c_date,
+                language:       system_lang
             }),
             dataType:   'jsonp',
             type:       'GET',
