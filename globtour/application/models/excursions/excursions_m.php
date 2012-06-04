@@ -18,6 +18,14 @@
                 foreach($this->fields as $f){
                     $_POST[$f] = $this->translate->updatePost("", $_POST[$f]);
                 }
+                
+                //Weekday
+                $startweekday = implode(',',$_POST['startweekday']);
+
+                unset($_POST['startweekday']);
+                $_POST['startweekday'] = $startweekday;
+
+                $this->firephp->log($_POST['startweekday']);
 
                 $this->db->insert('excursions',$_POST);
                 /*$productdata = array(
@@ -35,7 +43,7 @@
         }
 
         function read($id) {
-            
+
             $res = $this->db->select('*')
             ->from('excursions')
             /*->join('transports','transports.id = excursions.transportsid','left')
@@ -85,8 +93,17 @@
                     $_POST[$f] = $this->translate->updatePost($post[0][$f], $_POST[$f]);
                 }
 
+                //Weekday
+                $startweekday = implode(',',$_POST['startweekday']);
+
+                unset($_POST['startweekday']);
+                $_POST['startweekday'] = $startweekday;
+
+                $this->firephp->log($_POST['startweekday']);
+
                 $this->db->where('id', $_POST['id']);
-                $this->db->update('excursions', $_POST); 
+                $this->db->update('excursions', $_POST);                    
+
 
                 echo json_encode(array('success'=>'success'));
             }else {
