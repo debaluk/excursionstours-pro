@@ -234,9 +234,9 @@
                             <div class="calc_left" >
                                 <div class="adl">
                                     <label for="adults" class="pad_label">Adults:</label>
-                                    <select id="adults" style="width: 40px;">
+                                    <select id="adults" style="width: 40px;" disabled="disabled">
                                         <?
-                                            for ($i=0;$i<10;$i++) {
+                                            for ($i=0;$i<3;$i++) {
                                                 if($i!=2){                                                               
                                                     echo "<option value=".$i." >" . $i . "</option>";
                                                 }else{ 
@@ -250,9 +250,9 @@
                                 </div>
                                 <div class="ch"> 
                                     <label for="children" class="pad_label">Children:</label>
-                                    <select id="children" style="width: 40px;">
+                                    <select id="children" style="width: 40px;" disabled="disabled">
                                         <?
-                                            for ($i=0;$i<10;$i++) {
+                                            for ($i=0;$i<3;$i++) {
                                                 if($i!=0){                                                               
                                                     echo "<option value=".$i." >" . $i . "</option>";
                                                 }else{ 

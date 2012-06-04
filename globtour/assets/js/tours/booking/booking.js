@@ -210,10 +210,10 @@ $(document).ready(function(){
 
 
         //TESTING DATE FILL CODE
-        var first_date = enabledDays[0];
+        /*var first_date = cur_days[0];
         var substr = first_date.split('-');
         $('#exc_date').datepicker('setDate',substr[1]+'.'+substr[0]+'.'+substr[2]);
-        selected_date = 1;
+        selected_date = 1;  */
 
         $('#exc_date').datepicker("show"); 
     }
@@ -244,10 +244,12 @@ $(document).ready(function(){
         switch($(this).val()){
             case '1':
                 $('#adult-price').text(single_room_price);
+                $('#adults').val(1);
                 $('#children-price').text(single_room_price);
                 break;
             case '2':
                 $('#adult-price').text(double_room_price);
+                $('#adults').val(2);
                 $('#children-price').text(double_room_price);
                 break;
         } 
