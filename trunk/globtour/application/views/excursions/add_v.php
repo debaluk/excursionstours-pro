@@ -12,16 +12,19 @@
     </div>
 
     <div class="lineinput">
+
         <label>
-            Departure date:<br />
-            <select name="startweekday" class="selectbox">
+            Departure:<br />            
+
+            <select class="inputbox" name="startweekday[]" multiple="multiple" title="-- Molimo odaberite">
                 <?
                     $weekday = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
 
                     foreach ($weekday as $day) {
-                        echo "<option value='". $day . "'>" . $day . "</option>";                         
+
+                        echo "<option value='". $day . "'>" . $day . "</option>";
                     }
-                ?>
+                ?> 
             </select>
         </label>
     </div>
@@ -107,23 +110,23 @@
 
     $(document).ready(function(){
 
-        $('#addexcursion').live('submit',function(){
-            $.ajax({
-                url: base_url+'excursions/excursions/create/',
-                type: 'POST',
-                data: $(this).serialize(),
-                success: function(data){
-                    if(data.success == 'success'){
-                        $('#infomessage').html('Success.').fadeIn('normal');
-                        $('#addexcursion').hide();
-                        window.location.href = base_url+'excursions/excursions/views';
-                    }else{
-                        $('#infomessage').html(data.message).fadeIn('normal');
-                    }
-                },
-                dataType: 'json'
+            $('#addexcursion').live('submit',function(){
+                    $.ajax({
+                            url: base_url+'excursions/excursions/create/',
+                            type: 'POST',
+                            data: $(this).serialize(),
+                            success: function(data){
+                                if(data.success == 'success'){
+                                    $('#infomessage').html('Success.').fadeIn('normal');
+                                    $('#addexcursion').hide();
+                                    window.location.href = base_url+'excursions/excursions/views';
+                                }else{
+                                    $('#infomessage').html(data.message).fadeIn('normal');
+                                }
+                            },
+                            dataType: 'json'
+                    });
             });
-        });
 
     });
 

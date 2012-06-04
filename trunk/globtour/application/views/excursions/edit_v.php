@@ -1,5 +1,5 @@
 <h2> <img src="<?=$url?>assets/img/titles/excursion_edit.png" /> </h2>  
-  
+
 
 <div id="infomessage" style="display: none;"></div>
 <form name="addexcursion" id="addexcursion" method="post" action="javascript: void(null);">
@@ -13,18 +13,23 @@
 
     <div class="lineinput">
         <label>
-            Departure date:<br />            
+            Departure:<br />            
 
             <select class="inputbox" name="startweekday[]" multiple="multiple" title="-- Molimo odaberite">
                 <?
                     $weekday = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
 
+                    $excursion_weekday = explode(',',$excursion['startWeekDay']);
+
                     foreach ($weekday as $day) {
-                        if ($day==$excursion['startWeekDay']){
-                            echo "<option value='". $day . "' selected='selected'>" . $day . "</option>";    
-                        }else{
-                            echo "<option value='". $day . "'>" . $day . "</option>";
-                        } 
+
+                        $selected = '';
+
+                        foreach ($excursion_weekday as $wd) :
+                            if($wd == $day)$selected = "selected='selected'";
+                            endforeach;                         
+
+                        echo "<option value='". $day . "' $selected>" . $day . "</option>";
                     }
                 ?> 
             </select>
