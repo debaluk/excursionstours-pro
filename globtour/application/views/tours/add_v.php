@@ -64,7 +64,7 @@
             <i>text for tour details page</i>
         </label>
     </div>
-
+    
     <div class="lineinput">
         <label>
             1/1 room price:<br />

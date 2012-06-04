@@ -15,29 +15,29 @@
 
         function create(){
             if($this->validate('create')){
-                
+
                 //Translate class                 
                 foreach($this->fields as $f){
                     $_POST[$f] = $this->translate->updatePost("", $_POST[$f]);
                 }
-                
+
                 //Weekday
                 $startweekday = implode(',',$_POST['startweekday']);
 
                 unset($_POST['startweekday']);
                 $_POST['startweekday'] = $startweekday;
-                
+
                 $tdata = array(
-                'title'=>$this->input->post('title'),
-                'nodays'=>$this->input->post('nodays'),
-                'nonights'=>$this->input->post('nonights'),
-                'guides'=>$this->input->post('guides'),
-                'tour_text'=>$this->input->post('tour_text'),
-                'description'=>$this->input->post('description'),
-                'capacity'=>$this->input->post('capacity'),
-                'addition'=>$this->input->post('addition'),
-                'pickup_location'=>$this->input->post('pickup_location'),
-                'startweekday'=>$this->input->post('startweekday')
+                    'title'=>$this->input->post('title'),
+                    'nodays'=>$this->input->post('nodays'),
+                    'nonights'=>$this->input->post('nonights'),
+                    'guides'=>$this->input->post('guides'),
+                    'tour_text'=>$this->input->post('tour_text'),
+                    'description'=>$this->input->post('description'),
+                    'capacity'=>$this->input->post('capacity'),
+                    'addition'=>$this->input->post('addition'),
+                    'pickup_location'=>$this->input->post('pickup_location'),
+                    'startweekday'=>$this->input->post('startweekday')
                 );
                 $this->db->insert('tours',$tdata);
                 $tour_id = $this->db->insert_id();
@@ -51,10 +51,10 @@
                 }
 
                 $trtdata = array(
-                'id_ture'=>$tour_id,
-                'sifra_room'=>$sifrarnik,
-                'description'=>'Jednokrevetna',
-                'price'=>$this->input->post('onebed')
+                    'id_ture'=>$tour_id,
+                    'sifra_room'=>$sifrarnik,
+                    'description'=>'Jednokrevetna',
+                    'price'=>$this->input->post('onebed')
 
                 );
                 $this->db->insert('tours_room_type',$trtdata);
@@ -67,10 +67,10 @@
                 }
 
                 $trtdata = array(
-                'id_ture'=>$tour_id,
-                'sifra_room'=>$sifrarnik,
-                'description'=>'Dvokrevetna',
-                'price'=>$this->input->post('twobed')
+                    'id_ture'=>$tour_id,
+                    'sifra_room'=>$sifrarnik,
+                    'description'=>'Dvokrevetna',
+                    'price'=>$this->input->post('twobed')
                 );
                 $this->db->insert('tours_room_type',$trtdata);
 
@@ -86,13 +86,13 @@
             FROM tours LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Jednokrevetna') JS ON tours.id = JS.id_ture
             LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Dvokrevetna') DS ON tours.id = DS.id_ture WHERE tours.id=".$id;
             $res = $this->db->query($upit)->row_array();
-            
+
             //Translate class
             foreach($this->fields as $f){
                 //echo $res[$f]."<br>";
                 $res[$f] = $this->translate->getArray($res[$f], TRUE);
             } 
-             
+
             return  $res; 
         }
 
@@ -102,7 +102,7 @@
             FROM tours LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Jednokrevetna') JS ON tours.id = JS.id_ture
             LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Dvokrevetna') DS ON tours.id = DS.id_ture";
             $res = $this->db->query($upit)->result_array();
-            
+
             foreach($res as $key=>$value){
                 //echo $value['title']; 
 
@@ -114,7 +114,7 @@
 
 
             }
-            
+
             return  $res;  
 
         }
@@ -138,17 +138,15 @@
                 $twobed_price = $_POST['twobed'];
 
                 unset($_POST['onebed']);
-                unset($_POST['twobed']);
+                unset($_POST['twobed']);         
 
-                         
-                
                 $post = $this->db->get_where('tours', array('id'=> $_POST['id']))->result_array();
-                
+
                 //Translate class
                 foreach($this->fields as $f){
                     $_POST[$f] = $this->translate->updatePost($post[0][$f], $_POST[$f]);
                 }  
-                
+
                 //Weekday
                 $startweekday = implode(',',$_POST['startweekday']);
 
@@ -156,12 +154,12 @@
                 $_POST['startweekday'] = $startweekday;
 
                 //$this->firephp->log($_POST['startweekday']);
-                
+
                 $this->db->where('id', $_POST['id']);
                 $this->db->update('tours', $_POST); 
-                
-                
-                 //SELECT SIFRA FOR JEDNOKREVETNA AND DVOKREVETNA SOBA
+
+
+                //SELECT SIFRA FOR JEDNOKREVETNA AND DVOKREVETNA SOBA
                 $sifra_onebad = $this->db->query('SELECT id FROM room_type WHERE naziv = "Jednokrevetna soba"')->row('id');
                 $sifra_twobed = $this->db->query('SELECT id FROM room_type WHERE naziv = "Dvokrevetna soba"')->row('id');
 
