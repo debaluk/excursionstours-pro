@@ -31,6 +31,7 @@
         
         <?if($page.'/'.$sub == 'gallery/add_gallery_images'){?> 
         <link href="<?=base_url()?>assets/css/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css"> 
+        <script type="text/javascript" src="<?=base_url()?>assets/js/plupload/plupload.full.js"></script>
         <?}else{?>
         <link href="<?=base_url()?>assets/css/jquery-ui.css" rel="stylesheet" type="text/css"> 
         <?}?>
@@ -92,10 +93,6 @@
             <script src="<?=$url?>assets/js/ui.multiselect.js"  type="text/javascript"></script>
             
             <? endif; ?>
-
-        <!--PLUPLOAD UPLOAD-->
-        <script type="text/javascript" src="<?=base_url()?>assets/js/plupload/plupload.full.js"></script>
-        <!--/PLUPLOAD UPLOAD-->
 
         <!--LIGHTBOX-->
         <link href="<?=base_url()?>assets/css/jquery.lightbox-0.5.css" rel="stylesheet" type="text/css">

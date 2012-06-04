@@ -6,49 +6,54 @@
         width: 300px !important;
     }
     #e321 .exc {
-    width: 637px !important;
-}
+        width: 637px !important;
+    }
 </style>
 
 <? foreach($excursions as $excursion){?> 
     <input type="hidden" value="<?=$excursion['id']?>" id="exc_id">
     <script type="text/javascript">
         <?  
-            $day = $excursion['startWeekDay'];
-            $cur_day;
-            switch($day){
-                case "Monday":
-                    $cur_day = 1;
-                    break;
-                case "Tuesday":
-                    $cur_day = 2;
-                    break;
-                case "Wednesday":
-                    $cur_day = 3;
-                    break;
-                case "Thursday":
-                    $cur_day = 4;
-                    break;
-                case "Friday":
-                    $cur_day = 5;
-                    break;
-                case "Saturday":
-                    $cur_day = 6;
-                    break;
-                case "Sunday":
-                    $cur_day = 7;
-                    break;
 
-            } 
-        ?>
-        cur_day = '<?=$cur_day?>';
-        /*if (jQuery.browser.mozilla){
-        jQuery('#atlas_tabs').css('margin-top','18px'); 
-        }else if (jQuery.browser.safari){
-        jQuery('#atlas_tabs').css('margin-top','17px'); 
-        }else if (jQuery.browser.msie){
-        jQuery('#atlas_tabs').css('margin-top','19px'); 
-        }*/
+            $disabled_days = array();
+            $days = explode(',',$excursion['startWeekDay']);
+
+
+             if(is_numeric(array_search('Sunday', $days))){
+                array_push($disabled_days, 0);
+            }
+            if(is_numeric(array_search('Monday', $days))){
+                array_push($disabled_days, 1);
+            }
+            if(is_numeric(array_search('Tuesday', $days))){
+                array_push($disabled_days, 2);
+            }
+            if(is_numeric(array_search('Wednesday', $days))){
+                array_push($disabled_days, 3);
+            }
+            if(is_numeric(array_search('Thursday', $days))){
+                array_push($disabled_days, 4);
+            }
+            if(is_numeric(array_search('Friday', $days))){
+                array_push($disabled_days, 5);
+            }
+            if(is_numeric(array_search('Saturday', $days))){
+                array_push($disabled_days, 6);
+            }
+            
+
+            /*$this->firephp->log($days);
+            $this->firephp->log($disabled_days); */
+
+            foreach($disabled_days as $key => $value){?>
+
+            cur_days['<?=$key?>'] = '<?=$value?>';
+
+            <?} 
+
+        ?>  
+
+
     </script>
     <?
         /*if($this->session->userdata('lgu_user_name')){
