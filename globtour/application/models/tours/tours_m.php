@@ -21,6 +21,12 @@
                     $_POST[$f] = $this->translate->updatePost("", $_POST[$f]);
                 }
                 
+                //Weekday
+                $startweekday = implode(',',$_POST['startweekday']);
+
+                unset($_POST['startweekday']);
+                $_POST['startweekday'] = $startweekday;
+                
                 $tdata = array(
                 'title'=>$this->input->post('title'),
                 'nodays'=>$this->input->post('nodays'),
@@ -31,6 +37,7 @@
                 'capacity'=>$this->input->post('capacity'),
                 'addition'=>$this->input->post('addition'),
                 'pickup_location'=>$this->input->post('pickup_location'),
+                'startweekday'=>$this->input->post('startweekday')
                 );
                 $this->db->insert('tours',$tdata);
                 $tour_id = $this->db->insert_id();
@@ -66,16 +73,6 @@
                 'price'=>$this->input->post('twobed')
                 );
                 $this->db->insert('tours_room_type',$trtdata);
-
-                //INSERT DAPERTURE DATES
-                $startdate =  $_POST['startdate'];
-                foreach ($startdate as $value){                
-                    $tdata = array(
-                    'tours_id'=>$tour_id,
-                    'startdate'=>strtotime($value)
-                    ); 
-                    $this->db->insert('departure',$tdata); 
-                }
 
                 echo json_encode(array('success'=>'success'));
             }else{
@@ -139,11 +136,9 @@
 
                 $onebed_price = $_POST['onebed'];
                 $twobed_price = $_POST['twobed'];
-                $startdate =  $_POST['startdate']; 
 
                 unset($_POST['onebed']);
                 unset($_POST['twobed']);
-                unset($_POST['startdate']);
 
                          
                 
@@ -153,6 +148,14 @@
                 foreach($this->fields as $f){
                     $_POST[$f] = $this->translate->updatePost($post[0][$f], $_POST[$f]);
                 }  
+                
+                //Weekday
+                $startweekday = implode(',',$_POST['startweekday']);
+
+                unset($_POST['startweekday']);
+                $_POST['startweekday'] = $startweekday;
+
+                //$this->firephp->log($_POST['startweekday']);
                 
                 $this->db->where('id', $_POST['id']);
                 $this->db->update('tours', $_POST); 
@@ -171,21 +174,6 @@
                 $data = array('price' => $twobed_price);
                 $where = 'id_ture='.$_POST['id'].' AND sifra_room ='.$sifra_twobed;
                 $this->db->query($this->db->update_string('tours_room_type', $data, $where));
-
-                //UPDATE DAPERTURE DATES
-                $this->db->where('tours_id',$_POST['id'])->delete('departure');
-                $this->firephp->fb('q: '.$this->db->last_query());
-                foreach ($startdate as $value){
-                    $this->firephp->fb('startdate: '.$startdate);
-                    $this->firephp->fb('value: '.$value);
-
-                    $tdata = array(
-                    'tours_id'=>$_POST['id'],
-                    'startdate'=>strtotime($value)
-                    ); 
-                    $this->db->insert('departure',$tdata);
-                    //$this->firephp->fb('q: '.$this->db->last_query());   
-                }
 
 
                 echo json_encode(array('success'=>'success'));
