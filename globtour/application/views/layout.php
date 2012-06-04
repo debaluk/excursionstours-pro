@@ -140,7 +140,7 @@
             <script type="text/javascript" src="<?=$url?>assets/js/<?=$page?>/booking.js"></script>   
             <script type="text/javascript" src="<?=$url?>assets/js/jquery.idTabs.min.js"></script>   
 
-            <? endif; ?>
+            <? endif; ?>              
 
 
     </head>
@@ -155,7 +155,7 @@
 
             <div id="footer" class="clearfix" style="background: none !important"><? $this->load->view('footer'); ?></div>
 
-        </div>
+        </div>         
 
         <div id="modaleditor" style="display: none;">    
 
