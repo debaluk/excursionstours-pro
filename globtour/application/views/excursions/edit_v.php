@@ -15,7 +15,7 @@
         <label>
             Departure date:<br />            
 
-            <select name="startweekday" class="inputbox multiselect">
+            <select class="inputbox" name="startweekday[]" multiple="multiple" title="-- Molimo odaberite">
                 <?
                     $weekday = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
 
