@@ -1,5 +1,5 @@
 <h2> <img src="<?=$url?>assets/img/titles/excursion_edit.png" /> </h2>  
-
+  
 
 <div id="infomessage" style="display: none;"></div>
 <form name="addexcursion" id="addexcursion" method="post" action="javascript: void(null);">
@@ -15,7 +15,7 @@
         <label>
             Departure date:<br />            
 
-            <select name="startweekday" class="inputbox">
+            <select name="startweekday" class="inputbox multiselect">
                 <?
                     $weekday = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
 
@@ -127,23 +127,26 @@
 
     $(document).ready(function(){
 
-        $('#addexcursion').live('submit',function(){
-            $.ajax({
-                url: base_url+'excursions/excursions/update/',
-                type: 'POST',
-                data: $(this).serialize(),
-                success: function(data){
-                    if(data.success == 'success'){
-                        $('#infomessage').html('Success.').fadeIn('fast');
-                        $('#addexcursion').hide();
-                        window.location.href = base_url+'excursions/excursions/views';
-                    }else{
-                        $('#infomessage').html(data.message).fadeIn('normal');
-                    }
-                },
-                dataType: 'json'
-            });
-        });
+            $('#addexcursion').live('submit',function(){
+                    $.ajax({
+                            url: base_url+'excursions/excursions/update/',
+                            type: 'POST',
+                            data: $(this).serialize(),
+                            success: function(data){
+                                if(data.success == 'success'){
+                                    $('#infomessage').html('Success.').fadeIn('fast');
+                                    $('#addexcursion').hide();
+                                    window.location.href = base_url+'excursions/excursions/views';
+                                }else{
+                                    $('#infomessage').html(data.message).fadeIn('normal');
+                                }
+                            },
+                            dataType: 'json'
+                    });
+            });        
+
+
+            $(".multiselect").multiselect();
 
     });
 </script>

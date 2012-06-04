@@ -84,10 +84,13 @@
             </script>
             <link rel="stylesheet" href="<?=$url?>assets/js/tinymce/themes/advanced/skins/default/ui.css">
             <link media="all" type="text/css" href="<?=$url;?>assets/css/editor-buttons.css?ver=20111114" id="editor-buttons-css" rel="stylesheet">
-            <link href="<?=$url?>assets/css/qtrans.css" rel="stylesheet" type="text/css">
+            <link href="<?=$url?>assets/css/qtrans.css" rel="stylesheet" type="text/css"> 
 
-            <!--/TINY MCE EDITOR-->
+            <!--/TINY MCE EDITOR-->                                                                    
 
+            <link type="text/css" href="<?=$url?>assets/css/ui.multiselect.css" rel="stylesheet" />
+            <script src="<?=$url?>assets/js/ui.multiselect.js"  type="text/javascript"></script>
+            
             <? endif; ?>
 
         <!--PLUPLOAD UPLOAD-->
