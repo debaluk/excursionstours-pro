@@ -28,8 +28,26 @@
 
     <div class="lineinput">                  
         <label>
-            Departure date:<br /> 
-            <input id="startdate" name="startdate[]" type="text" class="inputbox tagger" style="width: 324px; margin-right: 4px;" /> 
+            Departure:<br />            
+
+            <select class="inputbox" name="startweekday[]" multiple="multiple" title="-- Molimo odaberite">
+                <?
+                    $weekday = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
+
+                    $tour_weekday = explode(',',$tour['startWeekDay']);
+
+                    foreach ($weekday as $day) {
+
+                        $selected = '';
+
+                        foreach ($tour_weekday as $wd) :
+                            if($wd == $day)$selected = "selected='selected'";
+                            endforeach;                         
+
+                        echo "<option value='". $day . "' $selected>" . $day . "</option>";
+                    }
+                ?> 
+            </select>
         </label>
     </div>
 
@@ -100,59 +118,11 @@
 </form>   
 
 <script type="text/javascript">
-    (function($){
 
-        $.fn.addTag = function(v){
-            var r = v.split(',');
-            for(var i in r){
-                n = r[i];//.replace(/([^a-zA-Z0-9ŠšĐđŽžČčĆćЉљЊњЕеРрТтЗзУуИиОоПпШшЂђЖжАаСсДдФфГгХхЈјКкЛлЧчЋћЏџЦцВвБбНнМм\s\-\_])|^\s|\s$/g, '');
-                if(n == '') return false;
-                var fn = $(this).data('name');
-                var i = $('<input type="hidden" />').attr('name',fn).val(n);
-                var t = $('<li />').text(n).addClass('tagName')
-                .click(function(){
-                    // remove
-                    var hidden = $(this).data('hidden');
-                    $(hidden).remove();
-                    $(this).remove();
-                })
-                .data('hidden',i);
-                var l = $(this).data('list');
-                $(l).append(t).append(i);
-            }
-        };
-    })(jQuery); 
     $(document).ready(function(){
-        $('.tagger').each(function(i){
-            $(this).data('name', $(this).attr('name'));
-            $(this).removeAttr('name');
-            var b = $('<button type="button" class="sbutton sbtndodaj" style="margin-left: 7px;">Add</button>').addClass('tagAdd')
-            .click(function(){
-                var tagger = $(this).data('tagger');
-                $(tagger).addTag( $(tagger).val() );
-                $(tagger).val('');
-                $(tagger).stop();
-            })
-            .data('tagger', this);
-            var l = $('<ul />').addClass('tagList');
-            $(this).data('list', l);
-            $(this).after(l).after(b);
-        })
-        .bind('keypress', function(e){
-            if( 13 == e.keyCode){
-                //console.log(e.keyCode);
-                $(this).addTag( $(this).val() );
-                $(this).val('');
-                $(this).stop();
-                return false;
-            }
-        }); 
+        
         $('#addtour').live('submit',function(){
-            var numItems = $('.tagName').length
-            if(numItems==0){
-                alert ("Please select at least one departure date");
-                return false;
-            }
+
             $.ajax({
                 url: base_url+'tours/tours/update',
                 data: $(this).serialize(),
@@ -170,37 +140,6 @@
             });
 
         });
-
-    });
-</script>
-<script type="text/javascript">
-    $(function(){     
-        // get the current date
-        var date = new Date();
-        var m = date.getMonth(),
-        d = date.getDate() + 1,
-        y = date.getFullYear();
-        // Datepicker
-        $('#startdate').datepicker({ 
-            showOn: 'button',
-            buttonImage: base_url+'assets/img/backgrounds/calendar2.gif',
-            buttonImageOnly: true,
-            minDate: new Date(y, m, d),
-            maxDate: new Date(y, m+6, d),
-            dateFormat: 'dd.mm.yy',
-            inline:true,
-            numberOfMonths: 3
-
-        });
-
-        $('#startdate').datepicker($.datepicker.regional['fr']);
-
-        $('#startdate').click(function(){
-            $('#startdate').datepicker("show");  
-        });  
-
-        //PARSE TAGS
-        $('#startdate').addTag('<? echo $startdate;?>');     
 
     });
 </script>

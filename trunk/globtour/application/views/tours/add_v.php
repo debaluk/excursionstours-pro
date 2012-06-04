@@ -27,9 +27,18 @@
 
     <div class="lineinput">
         <label>
-            Departure date:<br />
-            <div style="position: absolute; display: none;" id="pickup"></div>
-            <input name="startdate[]" id="startdate" type="text" class="inputbox tagger" style="width: 320px;" />
+            Departure:<br />            
+
+            <select class="inputbox" name="startweekday[]" multiple="multiple" title="-- Molimo odaberite">
+                <?
+                    $weekday = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
+
+                    foreach ($weekday as $day) {
+
+                        echo "<option value='". $day . "'>" . $day . "</option>";
+                    }
+                ?> 
+            </select>
         </label>
     </div>
 
@@ -99,104 +108,27 @@
 
 </form>
 <script type="text/javascript">
-    (function($){
 
-        $.fn.addTag = function(v){
-            var r = v.split(',');
-            for(var i in r){
-                n = r[i];//.replace(/([^a-zA-Z0-9ŠšĐđŽžČčĆćЉљЊњЕеРрТтЗзУуИиОоПпШшЂђЖжАаСсДдФфГгХхЈјКкЛлЧчЋћЏџЦцВвБбНнМм\s\-\_])|^\s|\s$/g, '');
-                if(n == '') return false;
-                var fn = $(this).data('name');
-                var i = $('<input type="hidden" />').attr('name',fn).val(n);
-                var t = $('<li />').text(n).addClass('tagName')
-                .click(function(){
-                    // remove
-                    var hidden = $(this).data('hidden');
-                    $(hidden).remove();
-                    $(this).remove();
-                })
-                .data('hidden',i);
-                var l = $(this).data('list');
-                $(l).append(t).append(i);
-            }
-        };
-
-    })(jQuery);
     $(document).ready(function(){
-        $('.tagger').each(function(i){
-            $(this).data('name', $(this).attr('name'));
-            $(this).removeAttr('name');
-            var b = $('<button type="button" class="sbutton sbtndodaj" style="margin-left: 7px;">Add</button>').addClass('tagAdd')
-            .click(function(){
-                var tagger = $(this).data('tagger');
-                $(tagger).addTag( $(tagger).val() );
-                $(tagger).val('');
-                $(tagger).stop();
-            })
-            .data('tagger', this);
-            var l = $('<ul />').addClass('tagList');
-            $(this).data('list', l);
-            $(this).after(l).after(b);
-        })
-        .bind('keypress', function(e){
-            if( 13 == e.keyCode){
-                //console.log(e.keyCode);
-                $(this).addTag( $(this).val() );
-                $(this).val('');
-                $(this).stop();
-                return false;
-            }
-        });
-        $('#addtour').live('submit',function(){
-            var numItems = $('.tagName').length
-            if(numItems==0){
-                alert ("Please select at least one departure date");
-                return false;
-            }
-            $.ajax({
-                url: base_url+'tours/tours/create',
-                data: $(this).serialize(),
-                type: 'POST',
-                dataType:'json',
-                success:function(data){
-                    if(data.success == 'success'){
-                        $('#infomessage').html('Success.').fadeIn('normal');
-                        $('#addtour').remove();
-                        window.location.href = base_url+'tours/tours/views'; 
-                    }else{
-                        $('#infomessage').html(data.message).fadeIn('normal');
-                    }
-                }
+
+            $('#addtour').live('submit',function(){
+                    $.ajax({
+                            url: base_url+'tours/tours/create',
+                            data: $(this).serialize(),
+                            type: 'POST',
+                            dataType:'json',
+                            success:function(data){
+                                if(data.success == 'success'){
+                                    $('#infomessage').html('Success.').fadeIn('normal');
+                                    $('#addtour').remove();
+                                    window.location.href = base_url+'tours/tours/views'; 
+                                }else{
+                                    $('#infomessage').html(data.message).fadeIn('normal');
+                                }
+                            }
+                    });
+
             });
 
-        });
-
-    });
-</script>
-<script type="text/javascript">
-    $(function(){     
-        // get the current date
-        var date = new Date();
-        var m = date.getMonth(),
-        d = date.getDate() + 1,
-        y = date.getFullYear();
-        // Datepicker
-        $('#startdate').datepicker({ 
-            showOn: 'button',
-            buttonImage: base_url+'assets/img/backgrounds/calendar2.gif',
-            buttonImageOnly: true,
-            minDate: new Date(y, m, d),
-            maxDate: new Date(y, m+6, d),
-            dateFormat: 'dd.mm.yy',
-            inline:true,
-            numberOfMonths: 3
-
-        });
-
-        $('#startdate').datepicker($.datepicker.regional['fr']);
-
-        $('#startdate').click(function(){
-            $('#startdate').datepicker("show");  
-        });         
     });
 </script>
