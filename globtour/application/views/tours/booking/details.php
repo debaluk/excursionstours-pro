@@ -20,6 +20,50 @@
 <? foreach($tours as $tour){?> 
     <input type="hidden" value="<?=$tour['id']?>" id="exc_id">
 
+    <script type="text/javascript">
+        <?  
+
+            $disabled_days = array();
+            $days = explode(',',$tour['startWeekDay']);
+
+
+            if(is_numeric(array_search('Sunday', $days))){
+                array_push($disabled_days, 0);
+            }
+            if(is_numeric(array_search('Monday', $days))){
+                array_push($disabled_days, 1);
+            }
+            if(is_numeric(array_search('Tuesday', $days))){
+                array_push($disabled_days, 2);
+            }
+            if(is_numeric(array_search('Wednesday', $days))){
+                array_push($disabled_days, 3);
+            }
+            if(is_numeric(array_search('Thursday', $days))){
+                array_push($disabled_days, 4);
+            }
+            if(is_numeric(array_search('Friday', $days))){
+                array_push($disabled_days, 5);
+            }
+            if(is_numeric(array_search('Saturday', $days))){
+                array_push($disabled_days, 6);
+            }
+
+
+            /*$this->firephp->log($days);
+            $this->firephp->log($disabled_days); */
+
+            foreach($disabled_days as $key => $value){?>
+
+            cur_days['<?=$key?>'] = '<?=$value?>';
+
+            <?} 
+
+        ?>  
+
+
+    </script>
+
 
     <div class="picturebox" style="padding-bottom: 0;">
 

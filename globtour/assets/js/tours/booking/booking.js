@@ -6,7 +6,7 @@ var system_url = 'http://localhost/excursionstours-pro/globtour/';
 var result_div = 'content_exc';  
 var selected_date;
 var data_load ;
-var cur_day;
+var cur_days = new Array();
 var that;   //Buisy loader
 var p = system_url+'assets/img/busy.gif';   //img path
 
@@ -202,7 +202,7 @@ $(document).ready(function(){
             onSelect: function(dateStr) {
                 selected_date = $.datepicker.parseDate('dd.mm.yy', dateStr);
             },
-            beforeShowDay: enableAllTheseDays ,
+            beforeShowDay: enableDaysOfWeek ,
             showOn: 'button',
             buttonImage: base_url+'assets/img/backgrounds/cal_orange.gif',
             buttonImageOnly: true
@@ -218,16 +218,24 @@ $(document).ready(function(){
         $('#exc_date').datepicker("show"); 
     }
 
-    // Custom function to enable dates in jquery calender
-    function enableAllTheseDays(date) {  
-        var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
-        for (i = 0; i < enabledDays.length; i++) {
-            if($.inArray((m+1) + '-' + d + '-' + y,enabledDays) != -1) {
-                return [true];
+    // Custom function to enable one only day in jquery calender
+        function enableDaysOfWeek(date) {
+            
+            var day = date.getDay();            
+            cond = false;
+            
+            for(var k in cur_days){
+                
+                 if(day==cur_days[k]){
+                     cond = true;
+                 }
+                
             }
+            
+            //console.log(cond)                   
+            return [(cond)];
+
         }
-        return [false];
-    } 
 
     /***********************************************************
     * Calculator

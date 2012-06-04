@@ -126,7 +126,9 @@
         {            
             $id = $_GET['id']; 
             $res = $this->db->where(array('id' => $id, 'status' => 1))->get('excursions')->result_array();
-            //print_r($res);
+            
+            //$this->firephp->log($res);
+            
             //Translate class
             foreach($this->fields as $f){
                 //echo $res[$f]."<br>";
