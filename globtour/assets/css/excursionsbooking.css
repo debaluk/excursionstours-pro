@@ -841,6 +841,7 @@ pre {
     -moz-border-radius-topright: 5px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    white-space: normal;
 }
 
 .body-wrap code, .body-wrap kbd, .body-wrap code var {
