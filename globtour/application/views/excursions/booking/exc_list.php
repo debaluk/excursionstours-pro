@@ -39,7 +39,7 @@
                             ?>
                         </p>
                         <div class="img_bottom">
-                            <p class="price"><?=$langs['per_person'];?> <span class="ppp"> &euro; <?=$excursion['adultPrice']?></span></p> 
+                            <p class="price"><?=$langs['per_person'];?><br/>  <span class="ppp"> &euro; <?=$excursion['adultPrice']?></span></p> 
                             <div class="s_btn" style="margin-right:0; margin-top: 4px;">
                                 <div class="atlas_btn" style="margin-right:0;">
                                     <a href="#ed<?=$excursion['id']?>" class="selexcfromlist" href="#"><?=$langs['check_dates'];?></a>
