@@ -28,13 +28,13 @@
         <?  
             $this->montenegrin->display();
         ?>
-        
+
         <?if($page.'/'.$sub == 'gallery/add_gallery_images'){?> 
-        <link href="<?=base_url()?>assets/css/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css"> 
-        <script type="text/javascript" src="<?=base_url()?>assets/js/plupload/plupload.full.js"></script>
-        <?}else{?>
-        <link href="<?=base_url()?>assets/css/jquery-ui.css" rel="stylesheet" type="text/css"> 
-        <?}?>
+            <link href="<?=base_url()?>assets/css/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css"> 
+            <script type="text/javascript" src="<?=base_url()?>assets/js/plupload/plupload.full.js"></script>
+            <?}else{?>
+            <link href="<?=base_url()?>assets/css/jquery-ui.css" rel="stylesheet" type="text/css"> 
+            <?}?>
 
         <? if (($page=='excursions' && ($sub=='edit_v' || $sub=='add_v')) || ($page=='tours' && ($sub=='edit_v' || $sub=='add_v'))): ?>
             <!--TINY MCE EDITOR-->
@@ -91,7 +91,7 @@
 
             <link type="text/css" href="<?=$url?>assets/css/ui.multiselect.css" rel="stylesheet" />
             <script src="<?=$url?>assets/js/ui.multiselect.js"  type="text/javascript"></script>
-            
+
             <? endif; ?>
 
         <!--LIGHTBOX-->
@@ -132,6 +132,41 @@
 
 
             <!-- IT-Montenegro Rentacar JS       -->
+
+            <?
+
+                switch ($language) {
+                    
+                    case 'en': ?>
+
+                    <? break;
+                    
+                    case 'me': ?>
+                    <script type="text/javascript" src="<?=$url?>assets/js/excursions/datepicker_regional/jquery.ui.datepicker-sr-SR.js"></script>
+                    <? break;
+                    
+                    case 'ru':  ?>         
+                    <script type="text/javascript" src="<?=$url?>assets/js/excursions/datepicker_regional/jquery.ui.datepicker-ru.js"></script>
+                    <? break;
+
+                    case 'de':   ?>      
+                    <script type="text/javascript" src="<?=$url?>assets/js/excursions/datepicker_regional/jquery.ui.datepicker-de.js"></script>
+                    <? break;
+                    
+                    case 'cz': ?>   
+                    <script type="text/javascript" src="<?=$url?>assets/js/excursions/datepicker_regional/jquery.ui.datepicker-cs.js"></script>
+                    <? break;
+                    
+                    case 'sl':  ?>
+                    <script type="text/javascript" src="<?=$url?>assets/js/excursions/datepicker_regional/jquery.ui.datepicker-sl.js"></script>
+                    <? break;
+
+                    case 'cn':  ?>
+                    <script type="text/javascript" src="<?=$url?>assets/js/excursions/datepicker_regional/jquery.ui.datepicker-zh-CN.js"></script>
+                    <? break;
+                }
+
+            ?>
 
             <script type="text/javascript" src="<?=$url?>assets/js/jquery.history.js"></script>   
             <script type="text/javascript" src="<?=$url?>assets/js/<?=$page?>/booking.js"></script>   
