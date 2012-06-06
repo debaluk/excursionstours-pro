@@ -16,7 +16,7 @@ if(window.source_online_booking === undefined){
 } 
 
 $(document).ready(function(){ 
-
+          
 
         jQuery.fn.ajaxLoader = function (conf) {
             var config = jQuery.extend({
