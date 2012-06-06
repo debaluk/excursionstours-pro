@@ -36,6 +36,12 @@
 
             //set local language
             $this->translate->setLang($this->lang_ses->getLang());
+
+            //Load language file
+            $this->load->language('exctours',$this->lang_ses->getLang());
+            $this->data['langs'] = $this->lang->lng_lines();
+            $this->data['local_lang'] = $this->lang_ses->getLang();
+
         }
 
         function index($page='excursions') 
@@ -84,14 +90,17 @@
         }      
 
         function exc_check_aviability() 
-        {                        
-            $this->excursionsbooking->exc_check_aviability(); 
+        {    
+            $html = $this->excursionsbooking->exc_check_aviability();
+            echo $_GET['jsoncall'] . '(' . json_encode($html) . ');';                    
 
         }
 
         function book_info($id) 
-        {                        
-            $this->excursionsbooking->book_info($id);
+        {  
+            $this->data['book_infos'] = $this->excursionsbooking->book_info($id);
+            $html = $this->load->view('excursions/booking/exc_customer',$this->data,TRUE);
+            echo $_GET['jsoncall'] . '(' . json_encode(array('html'=>$html)) . ');';
         } 
 
         function book_now()
@@ -102,7 +111,9 @@
 
         function exc_total($id)
         {
-            $this->excursionsbooking->get_data($id) ;    
+            $this->data = array_merge((array)$this->data, (array)$this->excursionsbooking->get_data($id));
+            $response = $this->load->view('excursions/booking/exc_total', $this->data, TRUE);  
+            echo $_GET['jsoncall'] . '(' . json_encode(array('success'=>'success','html'=>$response,'book_id'=>$id)) . ');';   
         }
 
         function encode_json_get($html)

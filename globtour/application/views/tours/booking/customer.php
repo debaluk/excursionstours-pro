@@ -18,19 +18,19 @@
             <div class="atlas_content_title_inner">                
 
                 <div class="product_price" style="width:170px; color: #FFF; margin-top: 75px;">
-                    <span class="title">Current cart total</span>
+                    <span class="title"><?=$langs['current_cart_total'];?></span>
                     <span>EUR</span>      <br>
                     <span class="price" style="width: 170px"><em>&euro; <?=$info['totalprice']?><span></span></em></span>
                 </div>
 
                 <div class="atlas_content_intro">
-                    <h1>Customer Info</h1>                                
+                    <h1><?=$langs['customer_info'];?></h1>                                
 
                     <div id="atlas_list">
                         <ul>
-                            <li><span>Number of adults: <?=$info['noadult']?></span></li>
-                            <li><span>Number of children: <?=$info['noch']?></span></li>
-                            <li><span>Total Price for <?=$info['persons']?> Traveler<?if($info['persons']>1)echo 's';?>: EUR &euro; <?=$info['totalprice']?></span></li>
+                            <li><span><?=$langs['number_of_adults'];?>: <?=$info['noadult']?></span></li>
+                            <li><span><?=$langs['number_of_children'];?>: <?=$info['noch']?></span></li>
+                            <li><span><?=$langs['total_price_for'];?>: EUR &euro; <?=$info['totalprice']?></span></li>
                         </ul>
                     </div>                     
                 </div>        

@@ -10,24 +10,24 @@
 <div class="exc">
     <div id="total_t">
         <div style="font-weight: normal; line-height: 30px;" class="excbookingSection">
-            Booking number: <b><?php echo $tb_newid;?></b>.
+            <?=$langs['booking_number'];?>: <b><?php echo $tb_newid;?></b>.
         </div>
-        <h2>Booking is accepted</h2>
+        <h2><?=$langs['booking_is_accepted'];?></h2>
 
 
         <table width="100%" cellspacing="0" cellpadding="0" class="excbookingTable">
             <thead>
                 <tr>
-                    <td style="font-weight: bold;">Title</td>
-                    <td style="font-weight: bold;">Description</td>
-                    <td style="text-align: center; font-weight: bold;">Price</td>
-                    <td style="text-align: center; font-weight: bold;">Sub-Total</td>
+                    <td style="font-weight: bold; width: 150px"><?=$langs['title'];?></td>
+                    <td style="font-weight: bold;"><?=$langs['description'];?></td>
+                    <td style="text-align: center; font-weight: bold;"><?=$langs['price'];?></td>
+                    <td style="text-align: center; font-weight: bold;"><?=$langs['sub_total'];?></td>
                 </tr>
             </thead>
             <tbody id="tablebody">
                 <tr>
                     <td>
-                        Tour
+                        <?=$langs['tour'];?>
                     </td>
                     <td colspan="3">
                         <?php echo $t_title ;?>
@@ -35,7 +35,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Duration
+                        <?=$langs['duration'];?>
                     </td>
                     <td colspan="3">
                         <?php echo $t_nodays; ?> / <?php echo $t_nonights; ?> 
@@ -44,7 +44,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Pickup Location
+                        <?=$langs['pickup_location'];?>
                     </td>
                     <td colspan="3">
                         <?php echo $t_pickup_location; ?>
@@ -53,7 +53,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Traveler (Adult)
+                        <?=$langs['traveler'];?> (<?=$langs['adult'];?>)
                     </td>
                     <td>
                         <?php echo $tb_noadult; ?>     
@@ -63,7 +63,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Traveler (Child)
+                         <?=$langs['traveler'];?> (<?=$langs['child'];?>)
                     </td>
                     <td>
                         <?php echo $tb_noch; ?>  
@@ -75,7 +75,7 @@
                 <tr>
                     <td colspan="2" style="border-bottom: none">
                         <?if($tb_status==0){?>
-                            Booking is valid only if you pay by credit card! 
+                            <?=$langs['booking_is_valid_pay_by_credit_card'];?>  
                             <?}else echo '&nbsp;'?>
                     </td>
                     <td style="text-align: center;"><b>Total:</b></td>
@@ -91,7 +91,7 @@
         <?if($tb_status==0){?>
             <div style="float: right; margin: 20px 0 0 0">
                 <div class="atlas_btn" style="margin-right:0;">
-                    <a href="<?=$sys_url?>service/pay/<?=$booking_id?>/tour/<?=$language?>" id="pay_by_credit_card" style="padding: 7px 6px 7px 0;">PAY BY CREDIT CARD</a>
+                    <a href="<?=$sys_url?>service/pay/<?=$booking_id?>/tour/<?=$language?>" id="pay_by_credit_card" style="padding: 7px 6px 7px 0;"><?=$langs['pay_by_credit_card'];?></a>
                 </div>
                 <br class="clearing" /> 
             </div>

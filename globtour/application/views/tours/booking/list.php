@@ -48,15 +48,18 @@
                                 font-size: 18px;
                                 line-height: 16px;
                             }
+                            #e321 .room_price {
+                                width: 93px;
+                            }
                         </style>
                         <div class="img_bottom">
-                            <p class="price" style="width:180px;">per person<br />
-                                <div class="room_price"><span class="ppp">&euro; <?=$tour['Cena Jednokrevetne']?></span><br /> single room</div><br />
-                                <div class="room_price"><span class="ppp">&euro; <?=$tour['Cena Dvokrevetne']?></span><br /> double room</div>
+                            <p class="price" style="width:180px;"><?=$langs['per_person'];?><br />
+                                <div class="room_price"><span class="ppp">&euro; <?=$tour['Cena Jednokrevetne']?></span><br /> <?=$langs['single_room'];?></div><br />
+                                <div class="room_price"><span class="ppp">&euro; <?=$tour['Cena Dvokrevetne']?></span><br /> <?=$langs['double_room'];?></div>
                             </p> 
                             <div class="s_btn" style="margin-right:0; margin-top: 8px;">
                                 <div class="atlas_btn" style="margin-right:0;">
-                                    <a href="#ed<?=$tour['id']?>" class="selexcfromlist" href="#">Check Dates</a>
+                                    <a href="#ed<?=$tour['id']?>" class="selexcfromlist" href="#"><?=$langs['check_dates'];?></a>
                                 </div>
                             </div> 
 

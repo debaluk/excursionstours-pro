@@ -159,23 +159,22 @@
                 if($this->db->insert('book_info', $data)) {
                     $data['book_id'] = $this->db->insert_id();  
 
-                    $available_arr = array('available'=>1,'book_info'=>$data['book_id']);
-                    $this->encode_json_get($available_arr);                   
+                    return array('available'=>1,'book_info'=>$data['book_id']);
+                    //$this->encode_json_get($available_arr);                   
 
                 } 
             }
             else
             {
-                $available_arr = array('available'=>0,'place_left'=>$aviabile);
-                $this->encode_json_get($available_arr); 
+                return array('available'=>0,'place_left'=>$aviabile);
+                //$this->encode_json_get($available_arr); 
             }
 
         }       
 
         function book_info($id)
         {
-            $res['book_infos'] = $this->db->where('id',$id)->get('book_info')->result_array();
-            $this->encode_json_get(array('html'=>$this->load->view('tours/booking/customer',$res,TRUE)));    
+            return $this->db->where('id',$id)->get('book_info')->result_array();
         }
 
         /*
@@ -334,8 +333,7 @@
             
             $this->data['language'] = $this->lang_ses->getLang();
             
-            $response = $this->load->view('tours/booking/total',  $this->data, TRUE);  
-            $this->encode_json_get(array('success'=>'success','html'=>$response,'book_id'=>$newid)); 
+            return  $this->data; 
         }
 
         function encode_json_get($arr){
