@@ -10,24 +10,24 @@
 <div class="exc">
     <div id="total_t">
         <div style="font-weight: normal; line-height: 30px;" class="excbookingSection">
-            Booking number: <b><?php echo $eb_newid;?></b>.
+            <?=$langs['booking_number'];?>: <b><?php echo $eb_newid;?></b>.
         </div>
-        <h2>Booking is accepted</h2>
+        <h2><?=$langs['booking_is_accepted'];?></h2>
 
 
         <table width="100%" cellspacing="0" cellpadding="0" class="excbookingTable">
             <thead>
                 <tr>
-                    <td style="font-weight: bold;">Title</td>
-                    <td style="font-weight: bold;">Description</td>
-                    <td style="text-align: center; font-weight: bold;">Price</td>
-                    <td style="text-align: center; font-weight: bold;">Sub-Total</td>
+                    <td style="font-weight: bold;"><?=$langs['title'];?></td>
+                    <td style="font-weight: bold;"><?=$langs['description'];?></td>
+                    <td style="text-align: center; font-weight: bold;"><?=$langs['price'];?></td>
+                    <td style="text-align: center; font-weight: bold;"><?=$langs['sub_total'];?></td>
                 </tr>
             </thead>
             <tbody id="tablebody">
                 <tr>
                     <td>
-                        Excursion
+                        <?=$langs['excursion'];?>
                     </td>
                     <td colspan="3">
                         <?php echo $exc_title ;?>
@@ -35,16 +35,16 @@
                 </tr>
                 <tr>
                     <td>
-                        Start day
+                        <?=$langs['start_day'];?>
                     </td>
                     <td colspan="3">
-                        <?php echo $exc_startWeekDay; ?>
+                        <?php echo date('d.m.Y', $eb_date_from); ?>
                     </td>
 
                 </tr>
                 <tr>
                     <td>
-                        Addition
+                        <?=$langs['addition'];?>
                     </td>
                     <td colspan="3">
                         <?php echo $exc_addition; ?>
@@ -53,7 +53,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Traveler (Adult)
+                        <?=$langs['traveler'];?> (<?=$langs['adult'];?>)
                     </td>
                     <td>
                         <?php echo $eb_noadult; ?>     
@@ -63,7 +63,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Traveler (Child)
+                        <?=$langs['traveler'];?> (<?=$langs['child'];?>)
                     </td>
                     <td>
                         <?php echo $eb_noch; ?>  
@@ -74,7 +74,7 @@
                 </tr>        
                 <tr>
                     <td>
-                        Transportation type
+                        <?=$langs['transportation_type'];?>
                     </td>
                     <td colspan="3">
                         <?php echo $tra_title; ?>
@@ -84,10 +84,10 @@
                 <tr>
                     <td colspan="2" style="border-bottom: none">
                         <?if($eb_status==0){?>
-                            Booking is valid only if you pay by credit card! 
+                            <?=$langs['booking_is_valid_pay_by_credit_card'];?> 
                             <?}else echo '&nbsp;'?>
                     </td>
-                    <td style="text-align: center;"><b>Total:</b></td>
+                    <td style="text-align: center;"><b><?=$langs['total'];?>:</b></td>
                     <td style="text-align: center;"><b>&euro;<?php echo $eb_totalprice;  ?></b></td>
                 </tr>
             </tbody>
@@ -104,7 +104,7 @@
             <!--PAY BY CREDIT CARD-->
             <div style="float: right; margin: 20px 0 0 0">
                 <div class="atlas_btn" style="margin-right:0;">
-                    <a href="<?=$sys_url?>service/pay/<?=$booking_id?>/excursion/<?=$language?>" id="pay_by_credit_card" style="padding: 7px 6px 7px 0;">PAY BY CREDIT CARD</a>
+                    <a href="<?=$sys_url?>service/pay/<?=$booking_id?>/excursion/<?=$language?>" id="pay_by_credit_card" style="padding: 7px 6px 7px 0;"><?=$langs['pay_by_credit_card'];?></a>
                 </div>
                 <br class="clearing" /> 
             </div>

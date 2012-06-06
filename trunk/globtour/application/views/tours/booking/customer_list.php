@@ -14,12 +14,12 @@
 
             <!--TRAVELER DETAILS-->
             <div class="traveler_details">
-                <h2>Traveler Details</h2>
+                <h2><?=$langs['traveler_details'];?></h2>
                 <div id="infomessage" style="display: none;"></div>
                 <p class="label_header">                           
-                    <label class="traveler_title" for="traveler_title">Title</label>
-                    <label class="traveler_firstname" for="traveler_firstname">First Name / Given Name</label>
-                    <label class="traveler_lastname" for="traveler_lastname">Last Name / Family Name</label>
+                    <label class="traveler_title" for="traveler_title"><?=$langs['title'];?></label>
+                    <label class="traveler_firstname" for="traveler_firstname"><?=$langs['first_name'];?></label>
+                    <label class="traveler_lastname" for="traveler_lastname"><?=$langs['last_name'];?></label>
                 </p>
                 <div class="traveler_list">
                     <!-- do adults first -->                              
@@ -27,7 +27,7 @@
                         <p class="alt" <? if ($i==1)echo 'style="border-top:1px dotted #f5c79f;"'?>>  <!--STYLE FIX :)-->
                             <span class="traveler_index">
                                 <label class="required" for="traveler_firstname<?=$i;?>>" style="<? if($i!=1)echo 'background:none'; ?>">
-                                    <em>*</em> Traveler <?=$i;?> (Adult)
+                                    <em>*</em> <?=$langs['traveler'];?> <?=$i;?> (<?=$langs['adult'];?>)
                                 </label>                                        
                             </span>
                             <select name="a_title<?=$i;?>" id="a_title<?=$i;?>" class="traveler_title">                                    
@@ -46,7 +46,7 @@
                         <p class="alt">
                             <span class="traveler_index">
                                 <label class="required" for="traveler_firstname<?=$i;?>>" style="background: none;">
-                                    <em>*</em> Traveler <?=$i+$j;?> (Child)
+                                    <em>*</em> <?=$langs['traveler'];?> <?=$i+$j;?> (<?=$langs['child'];?>)
                                 </label>                                        
                             </span>
                             <select name="c_title<?=$i;?>" id="c_title<?=$i;?>" class="traveler_title">                                    
@@ -65,25 +65,25 @@
 
             <!--CONTACT DETAILS-->
             <div class="contact_details">
-                <h2>Contact Details</h2>
+                <h2><?=$langs['contact_details'];?></h2>    
                 <p>
-                    <label class="email_address required" for="email_address"><em>*</em> Email address</label>
-                    <input type="text" value="" name="email" class="email_address pad_text_left" id="email_address" style="width: 138px;">
-                    <label class="verify_email_address required " for="verify_email_address"><em>*</em> Verify email address</label>
+                    <label class="email_address required" for="email_address"><em>*</em> <?=$langs['email'];?></label>
+                    <input type="text" value="" name="email" class="email_address iconemail" id="email_address" style="width: 138px;">
+                    <label class="verify_email_address required " for="verify_email_address"><em>*</em> <?=$langs['verify_email'];?></label>
                     <input type="text" value="" name="email1" class="verify_email_address pad_text_left" id="verify_email_address" style="width: 138px;">
                 </p>
 
                 <!--NOTE BOX-->
-                <div class="note_box">
+                 <div class="note_box">
                     <div class="note_body">
 
                         <div class="right_note">
                             <ul>
-                                <li style="color: #848484;">SOHO Group - Montenegro will never sell, share or distribute your personal information.</li>
+                                <li style="color: #848484;"><?=$langs['globtour_montenegro_will_never_sell'];?></li>
                             </ul>
                         </div>
                         <div class="left_note">
-                            <strong class="note_title">Please note:</strong>
+                            <strong class="note_title"><?=$langs['please_note'];?>:</strong>
                         </div>
                         <br class="clearing" /> 
                     </div>
@@ -94,7 +94,7 @@
             <!--BOOK NOW-->
             <div style="float: right; margin: 20px 0 0 0">
                 <div class="atlas_btn_big" style="margin-right:0;">
-                    <a href="javascript:void(0)" id="book_now">Book Now</a>
+                    <a href="javascript:void(0)" id="book_now"><?=$langs['book_now'];?></a>
                 </div>
                 <br class="clearing" /> 
             </div>

@@ -19,7 +19,7 @@
             $days = explode(',',$excursion['startWeekDay']);
 
 
-             if(is_numeric(array_search('Sunday', $days))){
+            if(is_numeric(array_search('Sunday', $days))){
                 array_push($disabled_days, 0);
             }
             if(is_numeric(array_search('Monday', $days))){
@@ -40,7 +40,7 @@
             if(is_numeric(array_search('Saturday', $days))){
                 array_push($disabled_days, 6);
             }
-            
+
 
             /*$this->firephp->log($days);
             $this->firephp->log($disabled_days); */
@@ -108,14 +108,14 @@
 
                     <div class="bbborder_top_right">
                         <div class="bbborder_top_left">
-                            <span style="float: right;"><img src="<?=base_url()?>assets/img/backgrounds/product_lowprice.gif" alt="Low Price Guarantee"></span>
+                            <span style="float: right;"><img src="<?=base_url()?>assets/img/backgrounds/product_lowprice_<?=$local_lang?>.gif" /></span>
 
-                            <span style="float: left; margin-top: 9px;">From EUR</span>
+                            <span style="float: left; margin-top: 9px;"><?=$langs['from_eur'];?></span>
 
                             <br class="clearing" />
 
                             <span class="price" style="float: left"><em><span>&euro;  </span><?=$excursion['adultPrice']?></em></span>  <br class="clearing" /> 
-                            <span style="float: left">Per person</span>  <br class="clearing" />
+                            <span style="float: left"><?=$langs['per_person'];?></span>  <br class="clearing" />
 
                         </div>
                     </div>
@@ -133,9 +133,25 @@
 
                     <div id="atlas_list">
                         <ul>
-                            <li><strong>Start day:</strong><span><?=$excursion['startWeekDay']?></span></li>
-                            <li><strong>Duration:</strong><span>1 day</span></li>
-                            <li><strong>Guides:</strong><span><?=$excursion['guides']?></span></li>
+                            <li><strong><?=$langs['start_day'];?>:</strong><span>
+                            
+                            <?
+                            
+                            $excursion['startWeekDay'] = str_replace('Monday', $langs['week_days'][0], $excursion['startWeekDay']);
+                            $excursion['startWeekDay'] = str_replace('Tuesday', $langs['week_days'][1], $excursion['startWeekDay']);
+                            $excursion['startWeekDay'] = str_replace('Wednesday', $langs['week_days'][2], $excursion['startWeekDay']);
+                            $excursion['startWeekDay'] = str_replace('Thursday', $langs['week_days'][3], $excursion['startWeekDay']);
+                            $excursion['startWeekDay'] = str_replace('Friday', $langs['week_days'][4], $excursion['startWeekDay']);
+                            $excursion['startWeekDay'] = str_replace('Saturday', $langs['week_days'][5], $excursion['startWeekDay']);
+                            $excursion['startWeekDay'] = str_replace('Sunday', $langs['week_days'][6], $excursion['startWeekDay']);
+                            
+                            echo $excursion['startWeekDay'];
+                            
+                            ?>
+                            
+                            </span></li>
+                            <li><strong><?=$langs['duration'];?>:</strong><span>1 <?=$langs['day'];?></span></li>
+                            <li><strong><?=$langs['guides'];?>:</strong><span><?=$excursion['guides']?></span></li>
                         </ul>
                     </div>
 
@@ -143,9 +159,9 @@
 
                 <div id="atlas_tabs">
                     <ul class="idTtabs">
-                        <li class="on"><a href="#info_tab" id="info_a"><span>Information</span></a></li>
-                        <li><a href="#pickup_tab" id="pickup_a"><span>Pickup info</span></a></li> 
-                        <li><a href="#add_tab" id="add_a"><span>Itinerary details</span></a></li> 
+                        <li class="on"><a href="#info_tab" id="info_a"><span><?=$langs['information'];?></span></a></li>
+                        <li><a href="#pickup_tab" id="pickup_a"><span><?=$langs['pickup_info'];?></span></a></li> 
+                        <li><a href="#add_tab" id="add_a"><span><?=$langs['itinerary_details'];?></span></a></li> 
                     </ul>
                 </div>
 
@@ -173,14 +189,14 @@
 
                 <div class="mk_head_wrap orange">
                     <div class="mk_head">
-                        <span>Book in Two Easy Steps</span>
+                        <span><?=$langs['book_in_two_easy_steps'];?></span>
                     </div>
                 </div>
 
                 <div class="mk_body">
 
                     <div class="easystep_one">
-                        <label for="exc_date">Select a date</label><br />
+                        <label for="exc_date"><?=$langs['select_a_date'];?></label><br />
                         <p style="margin-top: 4px;">
                             <input id="exc_date" name="exc_date" disabled="disabled" class="pad_text_left" />
                         </p>
@@ -188,12 +204,12 @@
                     </div>
 
                     <div class="easystep_two">
-                        <label>Enter total number of travelers</label><br />
+                        <label><?=$langs['enter_total_number_of_travelers'];?></label><br />
                         <div class="calculator">
                             <!-- <strong><em>Calculator:</em></strong>   <br>-->
                             <div class="calc_left" >
                                 <div class="adl">
-                                    <label for="adults" class="pad_label">Adults:</label>
+                                    <label for="adults" class="pad_label"><?=$langs['adults'];?>:</label>
                                     <select id="adults" style="width: 40px;">
                                         <?
                                             for ($i=0;$i<10;$i++) {
@@ -206,10 +222,10 @@
                                         ?>
                                     </select>
 
-                                    <span>EUR <span id="adult-price"><?=$excursion['adultPrice']?></span> / person</span><br id="a_price" class="clearing" />
+                                    <span>EUR <span id="adult-price"><?=$excursion['adultPrice']?></span> / <?=$langs['person'];?></span><br id="a_price" class="clearing" />
                                 </div>
                                 <div class="ch"> 
-                                    <label for="children" class="pad_label">Children:</label>
+                                    <label for="children" class="pad_label"><?=$langs['children'];?>:</label>
                                     <select id="children" style="width: 40px;">
                                         <?
                                             for ($i=0;$i<10;$i++) {
@@ -222,10 +238,10 @@
                                         ?>
                                     </select>
 
-                                    <span>EUR <span id="children-price"><?=$excursion['childPrice']?></span> / person</span><br id="c_price" class="clearing" />
+                                    <span>EUR <span id="children-price"><?=$excursion['childPrice']?></span> / <?=$langs['person'];?></span><br id="c_price" class="clearing" />
                                 </div> 
                             </div>
-                            <div class="calc_right">Total cost: <br><span id="total-price">480</span> &euro;</div>    
+                            <div class="calc_right"><?=$langs['total_cost'];?>: <br><span id="total-price">480</span> &euro;</div>    
                             <br class="clearing" />
                         </div>
 
@@ -234,14 +250,14 @@
                     <div class="btn_box">
                         <div style="margin: 20px 0 10px 125px;">
                             <div class="atlas_btn" style="margin-right:0;">
-                                <a href="javascript:void(0)" id="confirm">Confirm Availability</a>
+                                <a href="javascript:void(0)" id="confirm"><?=$langs['confirm_availability'];?></a>
                             </div>
                             <br class="clearing" /> <br />
                         </div>
                     </div>
 
                     <div class="easystep_bottom">
-                        <strong>Please note:</strong> After your purchase is confirmed we will email you a link to your voucher.                        
+                        <strong><?=$langs['please_note'];?>:</strong> <?=$langs['we_will_email_you_a_voucher'];?>                        
                     </div>
 
 
