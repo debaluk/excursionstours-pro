@@ -8,10 +8,12 @@
 /*CONTACT INFO*/
 #e321 .check_out{
     width: 623px;
+    width: 657px;
     /*font-size: 13px; */
 }
 #e321 .check_out label {
     padding:3px 3px 0 10px;
+    letter-spacing: -1px;
 }
 #e321 .check_out input, #e321 .check_out select, #e321 .check_out textarea {
     /*border-color:#5E5E5E #B7B7B7 #B7B7B7 #5E5E5E;
@@ -40,10 +42,11 @@
 }
 #e321 .label_header .traveler_title {
     padding-left:156px;
+    padding-left:186px;
     width:50px;
 }
 #e321 .label_header .traveler_firstname {
-    width:180px;
+    width:185px;
 }
 #e321 .label_header label {
     float:left;
@@ -63,6 +66,7 @@
 #e321 .traveler_index {
     float:left;
     width:150px;
+    width:180px;
     margin-top:8px;
 }
 #e321 .traveler_title{

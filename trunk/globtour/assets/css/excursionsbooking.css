@@ -335,7 +335,7 @@
 }
 #e321 .pad_label {
     float: left;
-    width: 55px;
+    width: 65px;
     margin-top: 8px;
 }
 #e321 #adults, #e321 #children{
@@ -412,6 +412,7 @@
     color:#666666;
     font-size:12px;
     font-weight: bold;
+    letter-spacing: -1px;
 }
 #e321 .exc_one .ppp{
     color:#666666;
@@ -476,7 +477,7 @@
     font-weight:bold;
     height:27px;
     line-height:27px;*/
-    padding:7px 26px 7px 0;
+    padding:7px 17px 7px 0;
     color:#FFFFFF; 
     /*width:105px;*/    
 }
@@ -611,8 +612,8 @@
     float: left;
     font-size: 12px;
     font-weight: bold;
-    letter-spacing: 1px;
-    width: 84px;
+    /*letter-spacing: -0.35px; */
+    width: 127px;
 }
 #e321 #atlas_list li span{ 
     color: #FFF; 
