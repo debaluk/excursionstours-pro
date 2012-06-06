@@ -588,6 +588,7 @@
     display:block;
     line-height:40px;
     padding:0 0 0 7px;
+    letter-spacing: -1px;
 }
 #e321 #atlas_tabs .on a {
     background:url(../img/backgrounds/global_tabs_right.gif) no-repeat scroll right top transparent;
