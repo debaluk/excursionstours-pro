@@ -100,7 +100,9 @@
             $upit = "SELECT tours.*, JS.description AS 'JS1', JS.price AS 'Cena Jednokrevetne',
             DS.description AS 'DS1', DS.price AS 'Cena Dvokrevetne' 
             FROM tours LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Jednokrevetna') JS ON tours.id = JS.id_ture
-            LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Dvokrevetna') DS ON tours.id = DS.id_ture";
+            LEFT JOIN (SELECT * FROM tours_room_type WHERE description = 'Dvokrevetna') DS ON tours.id = DS.id_ture
+            ORDER BY status DESC, DS.price ASC
+            ";
             $res = $this->db->query($upit)->result_array();
 
             foreach($res as $key=>$value){

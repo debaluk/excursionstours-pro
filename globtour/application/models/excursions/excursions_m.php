@@ -64,7 +64,7 @@
         }
 
         function readAll() {
-            $res = $this->db->order_by('id','asc')->get('excursions')->result_array();
+            $res = $this->db->order_by('adultPrice','asc')->get('excursions')->result_array();
 
             foreach($res as $key=>$value){
                 //echo $value['title']; 
