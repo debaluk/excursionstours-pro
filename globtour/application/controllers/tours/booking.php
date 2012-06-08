@@ -126,15 +126,26 @@
         {
             if(isset($_GET['jsoncall'])) {
 
-                $html = preg_replace(
-                    array('/\n/','/\r/','/\t/'),
-                    array(''),
-                    $html);
-                echo $_GET['jsoncall'] . '(' . json_encode(array('html'=>$html)) . ');';
+                echo $_GET['jsoncall'] . '(' . $this->my_json_encode(array('html'=>$html)) . ');';
 
             }else {
                 echo json_encode(array('html',$html));
             }
+        }
+
+        function my_json_encode($arr)
+        {
+            //convmap since 0x80 char codes so it takes all multibyte codes (above ASCII 127). 
+            //So such characters are being "hidden" from normal json_encoding
+            array_walk_recursive($arr, array($this, 'multibyte_codes'));
+            return mb_decode_numericentity(json_encode($arr), array (0x80, 0xffff, 0, 0xffff), 'UTF-8');
+
+        }
+
+        function multibyte_codes(&$item, $key) { 
+
+            if (is_string($item)) $item = mb_encode_numericentity($item, array (0x80, 0xffff, 0, 0xffff), 'UTF-8'); 
+
         }
     }
 
