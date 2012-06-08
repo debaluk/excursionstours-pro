@@ -335,7 +335,7 @@
 }
 #e321 .pad_label {
     float: left;
-    width: 65px;
+    width: 80px;
     margin-top: 8px;
 }
 #e321 #adults, #e321 #children{
@@ -352,8 +352,10 @@
     margin-left: 80px;
 }
 #e321 .calc_right{
-    float:right;
-    width:65px;
+    float: right;
+    margin: 13px 0 0;
+    text-align: right;
+    width: 95px;
 
 }
 #e321 .calc_right span{
@@ -479,7 +481,9 @@
     line-height:27px;*/
     padding:7px 17px 7px 0;
     color:#FFFFFF; 
-    /*width:105px;*/    
+    /*width:105px;*/ 
+    line-height: 27px;
+    padding: 7px 5px 7px 0;   
 }
 #e321 .atlas_btn2 {
     background:url(../img/backgrounds/buttons/atlas_btn2.gif) no-repeat scroll left top transparent;

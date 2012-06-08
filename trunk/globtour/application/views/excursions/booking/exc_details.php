@@ -8,6 +8,9 @@
     #e321 .exc {
         width: 637px !important;
     }
+    #e321 #atlas_list li span {
+    letter-spacing: -0.8px;
+}
 </style>
 
 <? foreach($excursions as $excursion){?> 
@@ -248,12 +251,14 @@
                     </div>
 
                     <div class="btn_box">
-                        <div style="margin: 20px 0 10px 125px;">
+                        <div style="margin: 20px 0 10px 0; float: right;">
                             <div class="atlas_btn" style="margin-right:0;">
                                 <a href="javascript:void(0)" id="confirm"><?=$langs['confirm_availability'];?></a>
                             </div>
                             <br class="clearing" /> <br />
                         </div>
+                        
+                        <div style="clear: both;"></div>
                     </div>
 
                     <div class="easystep_bottom">
