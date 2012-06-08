@@ -1,3 +1,14 @@
+
+<? if($language=='de'): ?>
+
+<style type="text/css">
+#e321 .atlas_btn a {
+    padding: 7px 1px 7px 0;
+}
+</style>
+
+<? endif; ?>
+
 <div class="hold_exc">    
     <div class="exc">
         <div style="margin-top:6px;"></div>
