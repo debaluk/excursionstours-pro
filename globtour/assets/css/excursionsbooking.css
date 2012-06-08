@@ -76,6 +76,9 @@
 #e321 .e_price{
     font: bold 26px/22px arial ;   
 }
+#e321 .price{
+    padding-right: 5px !important;
+}
 #e321 .icons{
     float: left;
     width: 100px;
