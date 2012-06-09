@@ -192,7 +192,7 @@ $(document).ready(function(){
 
             case 'et':              hash_excursionbooking(data);
                 break;
-        }
+        }         
         return false;
     });
 
