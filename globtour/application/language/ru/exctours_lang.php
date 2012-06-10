@@ -1,21 +1,21 @@
 <?php
     
     $lang['sel_weekday'] = 'Выберите день недели';
-    $lang['week_any'] = 'Любой';
+    $lang['week_any'] = 'Каждый день';
     $lang['week_days'] = array('Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресение');
     $lang['free_text'] = 'Поиск слов';
     $lang['sort_by'] = 'Сортировать по';
-    $lang['none'] = 'None';
-    $lang['name'] = 'Сортировать по';
+    $lang['none'] = 'Hет';
+    $lang['name'] = 'Имя';
     $lang['price'] = 'Price';
-    $lang['clear'] = 'Clear';
+    $lang['clear'] = 'Очистить';
     $lang['search'] = 'Цена';
     $lang['check_dates'] = 'Проверьте даты';
     
     $lang['from_eur'] = 'От Евро';
     $lang['per_person'] = 'на человека';
     $lang['start_day'] = 'День';
-    $lang['duration'] = 'Продолжительность';
+    $lang['duration'] = 'Длительность';
     $lang['guides'] = 'Гиды';
     $lang['information'] = 'Информация';
     $lang['pickup_info'] = 'Отправление';
@@ -64,7 +64,7 @@
     $lang['pay_by_credit_card'] = 'ОПЛАТА КРЕДИТНОЙ КАРТОЙ';
     $lang['total'] = 'Итог';
     
-    $lang['day'] = 'дне';
+    $lang['day'] = 'день';
     $lang['days'] = 'дней';
     $lang['nights'] = 'ночей';
     $lang['single_room'] = 'Одноместный';
