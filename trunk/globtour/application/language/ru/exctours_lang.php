@@ -77,6 +77,6 @@
     $lang['please_select_date'] = '-- Please Select Date --';
     $lang['tour'] = 'Тур';
     $lang['pickup_location'] = 'Место отправления';
+    $lang['transports'] = array('Автобус','Корабль','Jeep','Автобус + Корабль','Автобус + Jeep','Bus + Canoe');
     
-       
 ?> 

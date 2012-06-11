@@ -1,7 +1,7 @@
 <style type="text/css">
-#content li {
-    color: #848484;
-}
+    #content li {
+        color: #848484;
+    }
 </style>
 <input type="hidden" value="<?=$eb_newid;?>" id="book_id">
 <div class="box">
@@ -77,7 +77,18 @@
                         <?=$langs['transportation_type'];?>
                     </td>
                     <td colspan="3">
-                        <?php echo $tra_title; ?>
+                        <?
+
+                            $tra_title = str_replace('Bus', $langs['transports'][0], $tra_title);
+                            $tra_title = str_replace('Boat', $langs['transports'][1], $tra_title);
+                            $tra_title = str_replace('Jeep', $langs['transports'][2], $tra_title);
+                            $tra_title = str_replace('Bus + Boat', $langs['transports'][3], $tra_title);
+                            $tra_title = str_replace('Bus + Jeep', $langs['transports'][4], $tra_title);
+                            $tra_title = str_replace('Bus + Canoe', $langs['transports'][5], $tra_title);
+
+                            echo $tra_title;
+
+                        ?>
                     </td>
 
                 </tr>

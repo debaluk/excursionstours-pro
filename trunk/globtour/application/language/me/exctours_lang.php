@@ -73,5 +73,6 @@
     $lang['please_select_date'] = '-- Molimo odaberite datum --';
     $lang['tour'] = 'Tura';
     $lang['pickup_location'] = 'Mjesto polaska';
+    $lang['transports'] = array('Autobus','Brod','Džip','Autobus + brod','Autobus + Džip','Autobus + Kanu');
        
 ?> 
