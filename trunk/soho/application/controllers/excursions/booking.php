@@ -19,15 +19,29 @@
             $this->load->model('excursions/booking_m','excursionsbooking');
 
             $this->data['server'] = 'http://sohotravel.it-montenegro.com/';
-            $this->data['server'] = 'http://localhost/excursionstours-pro/';
+            $this->data['server'] = 'http://localhost/excursionstours-pro/globtour/';
 
             $this->data['language'] = $this->lang_ses->getLang();
 
             /*Class*/
             $this->load->library('translate');
 
+            // Log d'un message classique
+            //$this->firephp->log('Booking __construct');
+            if(isset($_GET['language'])) {
+                //$this->firephp->log($_GET['language']);   
+                $this->lang_ses->setLang($_GET['language']);
+
+            }
+
             //set local language
             $this->translate->setLang($this->lang_ses->getLang());
+
+            //Load language file
+            /*$this->load->language('exctours',$this->lang_ses->getLang());
+            $this->data['langs'] = $this->lang->lng_lines();
+            $this->data['local_lang'] = $this->lang_ses->getLang();*/
+
         }
 
         function index($page='excursions') 
@@ -35,14 +49,14 @@
 
             $this->data['page'] = $page; 
             $this->data['days'] =  $this->excursionsbooking->exc_days(); 
-            $this->data['title'] = 'SOHO Group - Montenegro | Booking';
+            $this->data['title'] = 'Online Booking';
 
             $this->core_site('excursions/booking',$page,NULL,$this->data);      
 
         }
 
         function e_search()
-        {  
+        {    
             $this->data['days'] =  $this->excursionsbooking->exc_days();                         
             $this->data['excursions'] = $this->excursionsbooking->exc_serach(); 
             $html = $this->load->view('excursions/booking/exc_serch',$this->data,TRUE);
@@ -76,14 +90,17 @@
         }      
 
         function exc_check_aviability() 
-        {                        
-            $this->excursionsbooking->exc_check_aviability(); 
+        {    
+            $html = $this->excursionsbooking->exc_check_aviability();
+            echo $_GET['jsoncall'] . '(' . json_encode($html) . ');';                    
 
         }
 
         function book_info($id) 
-        {                        
-            $this->excursionsbooking->book_info($id);
+        {  
+            $this->data['book_infos'] = $this->excursionsbooking->book_info($id);
+            $html = $this->load->view('excursions/booking/exc_customer',$this->data,TRUE);
+            echo $_GET['jsoncall'] . '(' . json_encode(array('html'=>$html)) . ');';
         } 
 
         function book_now()
@@ -94,7 +111,9 @@
 
         function exc_total($id)
         {
-            $this->excursionsbooking->get_data($id) ;    
+            $this->data = array_merge((array)$this->data, (array)$this->excursionsbooking->get_data($id));
+            $response = $this->load->view('excursions/booking/exc_total', $this->data, TRUE);  
+            echo $_GET['jsoncall'] . '(' . json_encode(array('success'=>'success','html'=>$response,'book_id'=>$id)) . ');';   
         }
 
         function encode_json_get($html)
