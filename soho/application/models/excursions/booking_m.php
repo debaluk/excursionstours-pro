@@ -24,8 +24,8 @@
         }
 
         function exc_serach()
-        {
-            //print_r($_POST);
+        {    
+            //print_r($_POST); 
 
             if(isset($_GET['eb_starting']))   $day = $_GET['eb_starting']; 
             if(isset($_GET['eb_freetext']))   $freetext = $_GET['eb_freetext']; 
@@ -56,10 +56,10 @@
             }       
             $where = "status = 1";
 
-            if($day!='Any') $where.=' AND startWeekDay = "'.$day.'"';
-
-
             $like = '';
+            
+            if($day!='Any') $like.=" AND (excursions.startWeekDay LIKE '%".$day."%')";
+            
             if((isset($freetext)and($freetext!=''))){
                 $like.=" AND (excursions.excursion_text LIKE '%".$freetext."%'";
                 $like.=" OR ";
@@ -101,8 +101,9 @@
 
             $res = $this->db->query($q)->result_array();
 
-
-            //print_r($this->db->last_query());
+            
+            $this->firephp->log($this->db->last_query());
+            
 
             foreach($res as $key=>$value){
                 //echo $value['title']; 
@@ -126,7 +127,9 @@
         {            
             $id = $_GET['id']; 
             $res = $this->db->where(array('id' => $id, 'status' => 1))->get('excursions')->result_array();
-            //print_r($res);
+            
+            //$this->firephp->log($res);
+            
             //Translate class
             foreach($this->fields as $f){
                 //echo $res[$f]."<br>";
@@ -174,23 +177,22 @@
                 if($this->db->insert('book_info', $data)) {
                     $data['book_id'] = $this->db->insert_id();  
 
-                    $available_arr = array('available'=>1,'book_info'=>$data['book_id']);
-                    $this->encode_json_get($available_arr);                   
+                    return array('available'=>1,'book_info'=>$data['book_id']);
+                    //$this->encode_json_get($available_arr);                   
 
                 } 
             }
             else
             {
-                $available_arr = array('available'=>0,'place_left'=>$aviabile);
-                $this->encode_json_get($available_arr); 
+                return array('available'=>0,'place_left'=>$aviabile);
+                //$this->encode_json_get($available_arr); 
             }
 
         }       
 
         function book_info($id)
         {
-            $res['book_infos'] = $this->db->where('id',$id)->get('book_info')->result_array();
-            $this->encode_json_get(array('html'=>$this->load->view('excursions/booking/exc_customer',$res,TRUE)));    
+            return $this->db->where('id',$id)->get('book_info')->result_array();
         }
 
         /*
@@ -357,8 +359,8 @@
             
             $this->data['language'] = $this->lang_ses->getLang();
             
-            $response = $this->load->view('excursions/booking/exc_total', $this->data, TRUE);  
-            $this->encode_json_get(array('success'=>'success','html'=>$response,'book_id'=>$newid)); 
+            return  $this->data;
+             
         }
 
         function encode_json_get($arr){
