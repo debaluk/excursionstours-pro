@@ -28,7 +28,7 @@
     $lang['children'] = 'Children';
     $lang['confirm_availability'] = 'Confirm Availability';
     $lang['please_note'] = 'Please note';
-    $lang['we_will_email_you_a_voucher'] = 'After your purchase is confirmed we will email you a link to your voucher.';
+    $lang['we_will_email_you_a_voucher'] = 'After your purchase is confirmed, voucher will be sent to Your e-mail address.';
     $lang['total_cost'] = 'Total cost';
     $lang['current_cart_total'] = 'Current cart total';
     $lang['customer_info'] = 'Customer Info';
@@ -67,8 +67,8 @@
     $lang['double_room'] = 'double room';
     $lang['capacity'] = 'Capacity';
     $lang['please_select'] = '-- Please select --';
-    $lang['singe_room_'] = 'Singe room';
-    $lang['double_room_'] = 'double room';
+    $lang['singe_room_'] = 'Single room';
+    $lang['double_room_'] = 'Double room';
     $lang['room_type'] = 'Choose room type';
     $lang['please_select_date'] = '-- Please Select Date --';
     $lang['tour'] = 'Tour';
