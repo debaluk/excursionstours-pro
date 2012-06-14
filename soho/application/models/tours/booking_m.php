@@ -159,23 +159,19 @@
                 if($this->db->insert('book_info', $data)) {
                     $data['book_id'] = $this->db->insert_id();  
 
-                    $available_arr = array('available'=>1,'book_info'=>$data['book_id']);
-                    $this->encode_json_get($available_arr);                   
-
+                    return array('available'=>1,'book_info'=>$data['book_id']);
                 } 
             }
             else
             {
-                $available_arr = array('available'=>0,'place_left'=>$aviabile);
-                $this->encode_json_get($available_arr); 
+                return array('available'=>0,'place_left'=>$aviabile);
             }
 
         }       
 
         function book_info($id)
         {
-            $res['book_infos'] = $this->db->where('id',$id)->get('book_info')->result_array();
-            $this->encode_json_get(array('html'=>$this->load->view('tours/booking/customer',$res,TRUE)));    
+            return $this->db->where('id',$id)->get('book_info')->result_array();
         }
 
         /*
