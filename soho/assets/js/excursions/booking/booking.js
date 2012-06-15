@@ -1,6 +1,6 @@
 
-//var system_url = 'http://sohotravel.it-montenegro.com/'; 
-var system_url = 'http://localhost/excursionstours-pro/'; 
+var system_url = 'http://www.it-montenegro.com/excursionstours-pro/';
+//var system_url = 'http://localhost/excursionstours-pro/soho/'; 
 
 var result_div = 'content_exc';  
 var selected_date;
@@ -154,15 +154,6 @@ $(document).ready(function(){
         });  
         return false; 
     }     
-
-    /*$('.selexcfromlist').live('click',function(){
-
-    var excid = $(this).attr('href');
-    excid = excid.replace(/^.*#/, '');
-    console.log('id='+excid) 
-    $.history.load(excid);
-    return false;
-    });*/
 
     $('.exc_one').live('click',function(){
         //console.log('id='+this.id.replace(/^.*#/, ''))
@@ -360,9 +351,14 @@ $(document).ready(function(){
 
         var is_valid_form = $("#customer").valid();
         if(is_valid_form==false) return false;
+        
+        if($('#location').val()==0){
+            alert ("Please select pickup location.");
+            return false;
+        }
 
         loadingfinal();
-
+        
         $.ajax({ 
             url:        system_url+'excursions/booking/book_now/?jsoncall=?&s_b_i='+source_online_booking,
             data:       $(this).serialize(),

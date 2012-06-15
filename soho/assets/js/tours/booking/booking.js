@@ -1,6 +1,6 @@
 
-//var system_url = 'http://sohotravel.it-montenegro.com/'; 
-var system_url = 'http://localhost/excursionstours-pro/'; 
+var system_url = 'http://www.it-montenegro.com/excursionstours-pro/';
+//var system_url = 'http://localhost/excursionstours-pro/soho/'; 
 
 var result_div = 'content_exc';  
 var selected_date;
@@ -140,14 +140,6 @@ $(document).ready(function(){
         return false; 
     }     
 
-    /*$('.selexcfromlist').live('click',function(){
-
-    var excid = $(this).attr('href');
-    excid = excid.replace(/^.*#/, '');
-    $.history.load(excid);
-    return false;
-    });*/
-
     $('.exc_one').live('click',function(){
         //console.log('id='+this.id.replace(/^.*#/, ''))
         $.history.load(this.id.replace(/^.*#/, ''));     
@@ -212,7 +204,7 @@ $(document).ready(function(){
         $('#exc_date').datepicker('setDate',substr[1]+'.'+substr[0]+'.'+substr[2]);
         selected_date = 1;
 
-        $('#exc_date').datepicker("show"); 
+        //$('#exc_date').datepicker("show"); 
     }
 
     // Custom function to enable dates in jquery calender
@@ -375,6 +367,11 @@ $(document).ready(function(){
         var is_valid_form = $("#customer").valid();
         if(is_valid_form==false) return false;
 
+        if($('#location').val()==0){
+            alert ("Please select pickup location.");
+            return false;
+        }
+        
         loadingfinal();
 
         $.ajax({ 
