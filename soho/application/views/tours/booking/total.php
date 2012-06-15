@@ -90,7 +90,9 @@
             </div>
             <br class="clearing" /> 
         </div>
-        <br class="clearing" />
+        <div style="float: left; margin: 20px 0 0 0">
+                 <img alt="Credit Cards" src="<?=base_url()?>assets/img/credit_cards.png" />                
+            </div>
         <?}?>
 
     </div>
