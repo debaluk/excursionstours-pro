@@ -817,6 +817,12 @@ table.display thead th.sortfalse {
 .th-action{
     width:141px !important
 }
+.demo_jui .th-action{
+    width:71px !important
+}
+.demo_jui td.actiontd {
+    width: 71px;
+}
 tr.even{
     background-color: #FFF !important;
 }
