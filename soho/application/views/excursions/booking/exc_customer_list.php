@@ -73,6 +73,24 @@
                     <input type="text" value="" name="email1" class="verify_email_address pad_text_left" id="verify_email_address" style="width: 138px;">
                 </p>
 
+                <p style="margin: 0 0 0 11px">
+                    <label class="phone" for="phone" style="padding-right: 10px;">Contact phone</label>
+                    <input type="text" value="" name="phone" class="phone" id="phone" style="width: 161px;">
+                </p>
+            </div>
+            <div class="contact_details">
+                <h2>Pickup location</h2>
+
+                <p style="margin: 0 0 0 11px"> 
+                    <label class="phone" for="location" style="padding-right: 10px;">Pickup location</label>
+                    <select name="location" id="location" style="width: 161px; float: none;">
+                        <option value="0">-- Please Select</option>
+                        <option value="Ulcinj">Ulcinj</option>
+                        <option value="Bar">Bar</option>
+                        <option value="Budva">Budva</option>
+                    </select>
+                </p>
+
                 <!--NOTE BOX-->
                 <div class="note_box">
                     <div class="note_body">

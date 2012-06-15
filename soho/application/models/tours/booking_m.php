@@ -185,6 +185,8 @@
             $customerid = -1;
 
             if($this->validate() == 1) {
+                
+                //Customer double entry check 
                 $this->db->select('id'); 
                 $query = $this->db->get_where('customers', array('email' => $_GET['email'],'what'=>2))->result_array(); 
 
@@ -192,13 +194,15 @@
                     $customerid= $list['id']; 
                 } 
 
-                if($customerid < 0)
-                {
+                /*if($customerid < 0)
+                {*/
                     $data = array(
                         'title' => $_GET['a_title1'],
                         'firstName' => $_GET['a_firstName1'],
                         'lastName' => $_GET['a_lastName1'],   
                         'email' => $_GET['email'],
+                        'phone' => $_GET['phone'],
+                        'otherDetails' => $_GET['location'],
                         'what' => 2
                     ); 
 
@@ -209,7 +213,7 @@
                     {
                         $response = "false, db error";
                     }     
-                }
+                //}
 
                 if($response == "ok")
                 {

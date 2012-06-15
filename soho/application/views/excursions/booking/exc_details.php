@@ -188,7 +188,7 @@
                                     <select id="adults" style="width: 40px;">
                                         <?
                                             for ($i=0;$i<10;$i++) {
-                                                if($i!=2){                                                               
+                                                if($i!=1){                                                               
                                                     echo "<option value=".$i." >" . $i . "</option>";
                                                 }else{ 
                                                     echo "<option value=".$i." selected=selected>" . $i . "</option>";    
