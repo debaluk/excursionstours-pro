@@ -1,6 +1,6 @@
 <input type="hidden" value="<?=$eb_newid;?>" id="book_id">
 <div class="box">
-    <img alt="Globtour" src="<?=base_url()?>assets/img/logo.jpg" style="margin-left: 50px; margin-top: 50px;">
+    <img alt="Soho" src="<?=base_url()?>assets/img/logo.jpg" style="margin-left: 50px; margin-top: 50px;">
 </div>
 <div class="exc">
     <div id="total_t">
@@ -103,7 +103,10 @@
                 </div>
                 <br class="clearing" /> 
             </div>
-            <br class="clearing" />
+            
+            <div style="float: left; margin: 20px 0 0 0">
+                 <img alt="Credit Cards" src="<?=base_url()?>assets/img/credit_cards.png" />                
+            </div>
 
             <?}?>
 
