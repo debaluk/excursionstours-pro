@@ -6,7 +6,7 @@
 
         var $queryexc0 = 'SELECT t1.id, t1.date_from, t1.num_of_day, t1.totalprice, t1.noadult, t1.noch,
         t2.title, 
-        t3.firstName, t3.lastName, t3.phone, t3.title AS c_title, t3.email AS c_email
+        t3.firstName, t3.lastName, t3.phone, t3.title AS c_title, t3.email AS c_email, t3.otherDetails
         FROM excursionbooking AS t1
         INNER JOIN excursions AS t2 ON t1.excursions_id = t2.id
         INNER JOIN customers AS t3 ON t1.customers_id = t3.id
@@ -14,7 +14,7 @@
 
         var $queryexc1 = 'SELECT t1.id, t1.date_from, t1.num_of_day, t1.totalprice, t1.noadult, t1.noch,
         t2.title, 
-        t3.firstName, t3.lastName, t3.phone, t3.title AS c_title, t3.email AS c_email
+        t3.firstName, t3.lastName, t3.phone, t3.title AS c_title, t3.email AS c_email, t3.otherDetails
         FROM tourbooking AS t1
         INNER JOIN tours AS t2 ON t1.tours_id = t2.id
         INNER JOIN customers AS t3 ON t1.customers_id = t3.id

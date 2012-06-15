@@ -22,6 +22,8 @@
                 <th>Title</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Phone</th>
+                <th>Pickup</th>
                 <th class="th-action center last">Action</th>
             </tr>
         </thead>
@@ -56,6 +58,8 @@
                 <th>Title</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Phone</th>
+                <th>Pickup</th>
                 <th class="th-action center last">Action</th>
             </tr>
         </thead>
