@@ -62,8 +62,8 @@
 
     <div class="lineinput">
         <label>
-            Add on during jurney:<br />
-            <input name="addition" value="<?=$excursion['addition']?>" id="addition" type="text" class="inputbox" />
+            Add on during jurney:<br />    
+            <textarea name="addition" id="addition" rows="5" class="inputbox" cols="40"><?=$excursion['addition'];?></textarea>
         </label>
     </div>
 

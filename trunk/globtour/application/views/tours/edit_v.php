@@ -94,11 +94,11 @@
             <input name="capacity" id="capacity" type="text" class="inputbox" value="<?=$tour['capacity']?>" />
         </label>
     </div>
-
+    
     <div class="lineinput">
         <label>
-            Add on during jurney:<br />
-            <input name="addition" id="addition" type="text" class="inputbox" value="<?=$tour['addition']?>" />
+            Add on during jurney:<br />    
+            <textarea name="addition" id="addition" rows="5" class="inputbox" cols="40"><?=$tour['addition'];?></textarea>
         </label>
     </div>
 

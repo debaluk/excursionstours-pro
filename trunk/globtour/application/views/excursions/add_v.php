@@ -55,8 +55,8 @@
 
     <div class="lineinput">
         <label>
-            Add on during jurney:<br />
-            <input name="addition" id="addition" type="text" class="inputbox" />
+            Add on during jurney:<br />    
+            <textarea name="addition" id="addition" rows="5" class="inputbox" cols="40"></textarea>
         </label>
     </div>
 
