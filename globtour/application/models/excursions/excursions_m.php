@@ -3,7 +3,7 @@
     class excursions_m extends CI_Model {
 
         var $errors = '';
-        private $fields = array('title','description','excursion_text','addition','pickup_location');
+        private $fields = array('title','guides','description','excursion_text','addition','pickup_location');
 
 
         function excursions_m () {
