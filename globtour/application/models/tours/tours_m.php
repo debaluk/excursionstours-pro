@@ -7,7 +7,7 @@
     class tours_m extends CI_Model {
 
         public $errors;
-        private $fields = array('title','description','tour_text','addition','pickup_location');
+        private $fields = array('title','guides','description','tour_text','addition','pickup_location');
 
         function tours_m () {
             parent::__construct();

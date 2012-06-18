@@ -1,7 +1,7 @@
 <?php
     class Booking_m extends CI_Model
     {       
-         private $fields = array('title','description','tour_text','addition','pickup_location');
+         private $fields = array('title','guides','description','tour_text','addition','pickup_location');
         private $data;
 
         function Booking_m()
