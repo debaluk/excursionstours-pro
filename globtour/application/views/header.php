@@ -41,7 +41,7 @@
     <a href="<?=base_url()?>">
         <img alt="Sohotravel Montenegro" src="<?=base_url()?>assets/img/logo.jpg" />
     </a>
-    <?echo $language?>
+    <?//echo $language?>
 </div>
 
 <div id="myslidemenu" class="jqueryslidemenu">
