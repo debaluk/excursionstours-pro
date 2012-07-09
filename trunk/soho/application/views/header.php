@@ -83,6 +83,7 @@
 
         <li><a href="<?=base_url()?>transactions/view_all_transactions" class="last"><span>Transactions</span></a>
             <ul>
+                <li><a href="<?=base_url()?>transactions/get_airticket_link" class="last"><span>Get Air Ticket Link</span> </a></li>
                 <li><a href="<?=base_url()?>transactions/confirm_cbd" class="last"><span>Close Business Day</span> </a></li>
             </ul>
         </li> 

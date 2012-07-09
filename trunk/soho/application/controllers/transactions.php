@@ -67,5 +67,49 @@
         
         function do_cbd(){
             $this->transactions_model->do_cbd();
-        }             
+        } 
+        
+        function get_airticket_link(){
+            $data['title'] = "Get Air Ticket Link"; 
+            $this->core_site('transactions','get_airticket_link',NULL,$data);
+        }
+        
+        function do_generate_link(){
+            
+            $this->db->insert('airticketbooking', array(
+            'description' => $_POST['description'],
+            'totalprice' => $_POST['amount'],
+            'email' => $_POST['email']
+            ));
+            
+            $data['ID'] = $this->db->insert_id();
+            
+            $text = $this->load->view('transactions/show_airticket_invoice.php', $data, TRUE); 
+            
+            echo $text;
+            exit;
+            
+            //  SEND MAIL TO CUSTOMER                 
+            $this->mail_send($_POST['email'],$text);
+
+            //  SEND INFO 1 TO AGENCY
+            //$this->mail_send('info@sohotravel.me',$text);
+
+            //  SEND INFO 3 TO Administrator
+            $this->mail_send('ikukic@yahoo.com',$text);
+            
+            print_r($_POST);
+        }
+        
+        function mail_send($to,$message){
+
+            $from = 'no-reply@sohotravel.me';
+            $subject = 'ONLINE BOOKING - Sohotravel Montenegro';
+
+            $headers  = "From: $from\r\n";
+            $headers .= 'MIME-Version: 1.0' . "\r\n" . 'Content-type: text/html; charset=UTF-8' . "\r\n";
+            
+            return mail($to, $subject, $message, $headers); //0 or 1
+
+        }
 }
