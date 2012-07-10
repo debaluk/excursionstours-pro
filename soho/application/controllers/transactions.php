@@ -93,7 +93,7 @@
             $this->mail_send($_POST['email'],$text);
 
             //  SEND INFO 1 TO AGENCY
-            //$this->mail_send('info@sohotravel.me',$text);
+            $this->mail_send('info@sohotravel.me',$text);
 
             //  SEND INFO 3 TO Administrator
             $this->mail_send('ikukic@yahoo.com',$text);
