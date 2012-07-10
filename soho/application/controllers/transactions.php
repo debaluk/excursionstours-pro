@@ -86,8 +86,8 @@
             
             $text = $this->load->view('transactions/show_airticket_invoice.php', $data, TRUE); 
             
-            echo $text;
-            exit;
+            /*echo $text;
+            exit; */
             
             //  SEND MAIL TO CUSTOMER                 
             $this->mail_send($_POST['email'],$text);
@@ -98,7 +98,7 @@
             //  SEND INFO 3 TO Administrator
             $this->mail_send('ikukic@yahoo.com',$text);
             
-            print_r($_POST);
+            echo json_encode(array('success'=>'success','message'=>'Generate link successful'));
         }
         
         function mail_send($to,$message){
