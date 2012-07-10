@@ -18,7 +18,7 @@
 
 <h2> <img src="<?=$url?>assets/img/titles/generate_link.png" /> </h2>  
 
-<form id="post" method="post" action="<?=base_url()?>transactions/do_generate_link" name="post">
+<form id="post" method="post" action="javascript:" name="post">
 
     <div class="metabox-holder has-right-sidebar" id="poststuff">
 
@@ -62,7 +62,7 @@
 
 </form>
 
-<!--FORM SUBMIT HANDLER
+<!--FORM SUBMIT HANDLER  --> 
 <script>
 
     jQuery(document).ready(function() {       
@@ -132,5 +132,5 @@
 
     });
 
-</script>       --> 
+</script>
 <!--/FORM SUBMIT HANDLER--> 
