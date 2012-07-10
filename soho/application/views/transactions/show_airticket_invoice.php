@@ -41,7 +41,7 @@
      <tbody>
         <tr>
             <td colspan="2" style="padding: 9px 13px; border-bottom:1px solid #DEDEDE;">
-                <a style="color: #000; font-size: 11px;" href="http://www.it-montenegro.com/payservice/service/test_pay/<?=$ID?>/avio">click to pay by credit card</a>
+                <a style="color: #000; font-size: 11px;" href="http://www.it-montenegro.com/payservice/service/pay/<?=$ID?>/avio/me">click to pay by credit card</a>
             </td>
             <td colspan="2" style="padding: 9px 13px; border-bottom:1px solid #DEDEDE;">
                 <img src="http://www.it-montenegro.com/excursionstours-pro/assets/img/credit_cards.png" alt="" />
