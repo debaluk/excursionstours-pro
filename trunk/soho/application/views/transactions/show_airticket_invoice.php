@@ -47,4 +47,9 @@
                 <img src="http://www.it-montenegro.com/excursionstours-pro/assets/img/credit_cards.png" alt="" />
             </td>                                            
         </tr>
+        <tr>
+            <td colspan="4" style="padding: 9px 13px; border-bottom:1px solid #DEDEDE;">
+                NLB Montenegro bank takes 3% of each transactions
+            </td>                                          
+        </tr>
      </table>
