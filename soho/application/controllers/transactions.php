@@ -18,8 +18,8 @@
             $this->load->config('merchant');
             $cnfg_mrchnt = array(
             'url' => $this->config->item('ecomm_server_url'),
-            'keystore' => "./certificate/test.pem",
-            'keystorepassword' => "testpass",
+            'keystore' => $this->config->item('cert_url'),
+            'keystorepassword' => $this->config->item('cert_pass'),
             1
             );
             $this->load->library('merchant',$cnfg_mrchnt);
