@@ -109,16 +109,13 @@
     </div>
 
     <div class="lineinput">
-        <label>
-            Piuckup location:<br />
-            <!--<textarea name="pickup_location" id="pickup_location" rows="5" class="inputbox tinymce" cols="40"><?=$excursion['pickup_location']?></textarea>-->
-            <ul id="mytags">
-                <!-- Existing list items will be pre-added to the tags -->
-                <li>Tag1</li>
-                <li>Tag2</li>
-            </ul>
-            <i>use unordered list for best results</i>
-        </label>
+
+        Piuckup location:<br />
+        <!--<textarea name="pickup_location" id="pickup_location" rows="5" class="inputbox tinymce" cols="40"></textarea>-->
+        <ul id="mytags">
+            <!-- Existing list items will be pre-added to the tags -->
+        </ul>
+        <i style="color: red;">do not use quotation marks  [ “ ” ] or  [ ' ' ]</i>
     </div>
 
     <div class="lineinput">
@@ -128,6 +125,18 @@
     </div>
 
 </form>
+<style type="text/css">
+    .tagit-label{
+        color: #414141;
+    }
+    #mytags{
+        width:370px
+    }
+</style>
+
+<?
+print_r($excursion["pickup_location"]);
+?>
 
 <script type="text/javascript">
     /*
@@ -138,6 +147,7 @@
     $(document).ready(function(){
 
             $('#addexcursion').live('submit',function(){
+
                     $.ajax({
                             url: base_url+'excursions/excursions/update/',
                             type: 'POST',
@@ -155,10 +165,15 @@
                     });
             });        
 
+            $("#mytags").tagit({ allowSpaces : true });
 
-            $(".multiselect").multiselect();
-            
-            $("#mytags").tagit();
+            <?
+                $locations = explode("__!__",$excursion["pickup_location"]);
+                foreach ($locations as $value):?>
+                $("#mytags").tagit("createTag", '<?=$value?>');
+                <?endforeach; ?>
+
+
 
     });
 </script>
