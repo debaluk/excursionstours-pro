@@ -29,7 +29,7 @@
                 unset($_POST['startweekday']);
                 $_POST['startweekday'] = $startweekday;
 
-                $this->firephp->log($_POST['startweekday']);
+                //$this->firephp->log($_POST['startweekday']);
 
                 $this->db->insert('excursions',$_POST);
                 /*$productdata = array(

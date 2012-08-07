@@ -16,7 +16,7 @@ if(window.source_online_booking === undefined){
 } 
 
 $(document).ready(function(){ 
-          
+
 
         jQuery.fn.ajaxLoader = function (conf) {
             var config = jQuery.extend({
@@ -222,18 +222,18 @@ $(document).ready(function(){
 
         // Custom function to enable one only day in jquery calender
         function enableDaysOfWeek(date) {
-            
+
             var day = date.getDay();            
             cond = false;
-            
+
             for(var k in cur_days){
-                
-                 if(day==cur_days[k]){
-                     cond = true;
-                 }
-                
+
+                if(day==cur_days[k]){
+                    cond = true;
+                }
+
             }
-            
+
             //console.log(cond)                   
             return [(cond)];
 
@@ -273,6 +273,11 @@ $(document).ready(function(){
                 that.busy("hide");
                 return false;
             } 
+            if($('#location').val()==0){
+                alert ("Please select pickup location.");
+                that.busy("hide");
+                return false;
+            }
             if($('#total-price').text()=='0'){
                 alert('plese select al lest one person!');
                 that.busy("hide");
@@ -297,6 +302,7 @@ $(document).ready(function(){
                             chprice:        parseInt($('#children-price').text()), 
                             totalprice :    $('#total-price').text() , 
                             date :          c_date,
+                            pickup_location : $('#location').val(),
                             language:       system_lang
                     }),
                     dataType:   'jsonp',
