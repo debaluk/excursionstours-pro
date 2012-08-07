@@ -134,10 +134,6 @@
     }
 </style>
 
-<?
-print_r($excursion["pickup_location"]);
-?>
-
 <script type="text/javascript">
     /*
     *      ADD EXCURSION JS FILE
