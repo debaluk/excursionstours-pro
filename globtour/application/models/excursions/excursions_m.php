@@ -88,6 +88,10 @@
                 //get db post
                 $post = $this->db->get_where('excursions', array('id'=> $_POST['id']))->result_array();
 
+                // Pickup locations
+                $_POST['pickup_location'] = implode('__!__',$_POST['item']['tags']);
+                unset($_POST['item']);
+                
                 //Translate class
                 foreach($this->fields as $f){
                     $_POST[$f] = $this->translate->updatePost($post[0][$f], $_POST[$f]);
@@ -97,9 +101,9 @@
                 $startweekday = implode(',',$_POST['startweekday']);
 
                 unset($_POST['startweekday']);
-                $_POST['startweekday'] = $startweekday;
+                $_POST['startweekday'] = $startweekday;               
 
-                $this->firephp->log($_POST['startweekday']);
+                //$this->firephp->log($_POST['pickup_location']);
 
                 $this->db->where('id', $_POST['id']);
                 $this->db->update('excursions', $_POST);                    
