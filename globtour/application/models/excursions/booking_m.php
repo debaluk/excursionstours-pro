@@ -57,9 +57,9 @@
             $where = "status = 1";
 
             $like = '';
-            
+
             if($day!='Any') $like.=" AND (excursions.startWeekDay LIKE '%".$day."%')";
-            
+
             if((isset($freetext)and($freetext!=''))){
                 $like.=" AND (excursions.excursion_text LIKE '%".$freetext."%'";
                 $like.=" OR ";
@@ -101,9 +101,9 @@
 
             $res = $this->db->query($q)->result_array();
 
-            
+
             $this->firephp->log($this->db->last_query());
-            
+
 
             foreach($res as $key=>$value){
                 //echo $value['title']; 
@@ -127,9 +127,9 @@
         {            
             $id = $_GET['id']; 
             $res = $this->db->where(array('id' => $id, 'status' => 1))->get('excursions')->result_array();
-            
+
             //$this->firephp->log($res);
-            
+
             //Translate class
             foreach($this->fields as $f){
                 //echo $res[$f]."<br>";
@@ -149,6 +149,7 @@
             $data['chprice'] = $_GET['chprice'];
             $data['totalprice'] = $_GET['totalprice'];
             $data['date'] = $_GET['date'];
+            $data['pickup_location'] = $_GET['pickup_location'];
 
 
 
@@ -213,24 +214,19 @@
                     $customerid= $list['id']; 
                 } 
 
-                if($customerid < 0)
-                {
-                    $data = array(
-                        'title' => $_GET['a_title1'],
-                        'firstName' => $_GET['a_firstName1'],
-                        'lastName' => $_GET['a_lastName1'],   
-                        'email' => $_GET['email'],
-                        'what' => 2
-                    ); 
 
-                    if($this->db->insert('customers', $data)) {
-                        $customerid = $this->db->insert_id();
-                    } 
-                    else
-                    {
-                        $response = "false, db error";
-                    }     
-                }
+                $data = array(
+                    'title' => $_GET['a_title1'],
+                    'firstName' => $_GET['a_firstName1'],
+                    'lastName' => $_GET['a_lastName1'],   
+                    'email' => $_GET['email'],
+                    'phone' => $_GET['phone'],
+                    'what' => 2
+                ); 
+
+                $this->db->insert('customers', $data);
+                $customerid = $this->db->insert_id();
+
 
                 if($response == "ok")
                 {
@@ -254,7 +250,8 @@
                         'adultprice' => $_GET['adultprice'],
                         'totalprice' => $_GET['totalprice'],        
 
-                        'source_info' => $_GET['s_b_i']
+                        'source_info' => $_GET['s_b_i'],
+                        'pickup_location' => $_GET['pickup_location']
 
                     );
 
@@ -356,11 +353,11 @@
             foreach ($query as $key => $list) {
                 $this->data['tra_title'] = $list['title'];
             }
-            
+
             $this->data['language'] = $this->lang_ses->getLang();
-            
+
             return  $this->data;
-             
+
         }
 
         function encode_json_get($arr){

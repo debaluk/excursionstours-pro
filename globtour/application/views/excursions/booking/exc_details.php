@@ -9,8 +9,8 @@
         width: 637px !important;
     }
     #e321 #atlas_list li span {
-    letter-spacing: -0.8px;
-}
+        letter-spacing: -0.8px;
+    }
 </style>
 
 <? foreach($excursions as $excursion){?> 
@@ -137,22 +137,22 @@
                     <div id="atlas_list">
                         <ul>
                             <li><strong><?=$langs['start_day'];?>:</strong><span>
-                            
-                            <?
-                            
-                            $excursion['startWeekDay'] = str_replace('Monday', $langs['week_days'][0], $excursion['startWeekDay']);
-                            $excursion['startWeekDay'] = str_replace('Tuesday', $langs['week_days'][1], $excursion['startWeekDay']);
-                            $excursion['startWeekDay'] = str_replace('Wednesday', $langs['week_days'][2], $excursion['startWeekDay']);
-                            $excursion['startWeekDay'] = str_replace('Thursday', $langs['week_days'][3], $excursion['startWeekDay']);
-                            $excursion['startWeekDay'] = str_replace('Friday', $langs['week_days'][4], $excursion['startWeekDay']);
-                            $excursion['startWeekDay'] = str_replace('Saturday', $langs['week_days'][5], $excursion['startWeekDay']);
-                            $excursion['startWeekDay'] = str_replace('Sunday', $langs['week_days'][6], $excursion['startWeekDay']);
-                            
-                            echo $excursion['startWeekDay'];
-                            
-                            ?>
-                            
-                            </span></li>
+
+                                    <?
+
+                                        $excursion['startWeekDay'] = str_replace('Monday', $langs['week_days'][0], $excursion['startWeekDay']);
+                                        $excursion['startWeekDay'] = str_replace('Tuesday', $langs['week_days'][1], $excursion['startWeekDay']);
+                                        $excursion['startWeekDay'] = str_replace('Wednesday', $langs['week_days'][2], $excursion['startWeekDay']);
+                                        $excursion['startWeekDay'] = str_replace('Thursday', $langs['week_days'][3], $excursion['startWeekDay']);
+                                        $excursion['startWeekDay'] = str_replace('Friday', $langs['week_days'][4], $excursion['startWeekDay']);
+                                        $excursion['startWeekDay'] = str_replace('Saturday', $langs['week_days'][5], $excursion['startWeekDay']);
+                                        $excursion['startWeekDay'] = str_replace('Sunday', $langs['week_days'][6], $excursion['startWeekDay']);
+
+                                        echo $excursion['startWeekDay'];
+
+                                    ?>
+
+                                </span></li>
                             <li><strong><?=$langs['duration'];?>:</strong><span>1 <?=$langs['day'];?></span></li>
                             <li><strong><?=$langs['guides'];?>:</strong><span><?=$excursion['guides']?></span></li>
                         </ul>
@@ -179,13 +179,13 @@
             </div>
             <div id="pickup_tab" style="display:none;">
                 <div class="desc_txt">
-                <ul>
-                <?
-                $locations = explode('__!__',$excursion['pickup_location']);
-                foreach ($locations as $value):?>
-                    <li><?=$value?></li>
-                <?endforeach;?>
-                </ul>
+                    <ul>
+                        <?
+                            $locations = explode('__!__',$excursion['pickup_location']);
+                            foreach ($locations as $value):?>
+                            <li><?=$value?></li>
+                            <?endforeach;?>
+                    </ul>
                 </div>
             </div>
             <div id="add_tab" style="display:none;">
@@ -212,6 +212,17 @@
                             <input id="exc_date" name="exc_date" disabled="disabled" class="pad_text_left" />
                         </p>
 
+                        <p style="margin: 4px 0 0"> 
+                            <label class="phone" for="location" style="padding-right: 10px; text-align: left;"><?=$langs['pickup_info']?></label><br>
+                            <select name="location" id="location" style="width: 199px; float: none;">
+                                <option value="0"><?=$langs['please_select']?></option>
+                                <?
+                                    $locations = explode('__!__',$excursion[pickup_location]);
+                                    foreach ($locations as $value):?>
+                                    <option value="<?=$value?>"><?=$value?></option>
+                                    <?endforeach;?>
+                            </select>
+                        </p>
                     </div>
 
                     <div class="easystep_two">
@@ -265,7 +276,7 @@
                             </div>
                             <br class="clearing" /> <br />
                         </div>
-                        
+
                         <div style="clear: both;"></div>
                     </div>
 

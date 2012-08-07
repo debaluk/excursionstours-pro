@@ -11,6 +11,7 @@
             <input type="hidden" value="<?=$info['chprice']?>" name="chprice" />
             <input type="hidden" value="<?=$info['totalprice']?>" name="totalprice" />
             <input type="hidden" value="<?=$info['date']?>" name="date" />
+            <input type="hidden" value="<?=$info['pickup_location']?>" name="pickup_location" />
 
             <!--TRAVELER DETAILS-->
             <div class="traveler_details">
@@ -71,6 +72,11 @@
                     <input type="text" value="" name="email" class="email_address iconemail" id="email_address" style="width: 138px;">
                     <label class="verify_email_address required " for="verify_email_address"><em>*</em> <?=$langs['verify_email'];?></label>
                     <input type="text" value="" name="email1" class="verify_email_address pad_text_left" id="verify_email_address" style="width: 138px;">
+                </p>
+
+                <p style="margin: 0 0 0 11px">
+                    <label class="phone" for="phone" style="padding-right: 2px;">Kontakt telefon</label>
+                    <input type="text" value="" name="phone" class="phone" id="phone" style="width: 161px;">
                 </p>
 
                 <!--NOTE BOX-->
