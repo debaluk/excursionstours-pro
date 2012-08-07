@@ -21,7 +21,7 @@
                 <th>Name</th>
                 <th>Email</th>                
                 <th>Phone</th> 
-                <th style="width: 200px;">Pickup location</th>
+                <th style="width: 160px;">Pickup location</th>
                 <th class="th-action center last" style="width: 60px !important;">Action</th>
             </tr>
         </thead>
