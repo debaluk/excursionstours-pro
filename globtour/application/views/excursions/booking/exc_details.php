@@ -178,7 +178,15 @@
                 <div class="desc_txt"><?=$excursion['excursion_text']?></div>
             </div>
             <div id="pickup_tab" style="display:none;">
-                <div class="desc_txt"><?=$excursion['pickup_location']?></div>
+                <div class="desc_txt">
+                <ul>
+                <?
+                $locations = explode('__!__',$excursion['pickup_location']);
+                foreach ($locations as $value):?>
+                    <li><?=$value?></li>
+                <?endforeach;?>
+                </ul>
+                </div>
             </div>
             <div id="add_tab" style="display:none;">
                 <div class="desc_txt"><?=$excursion['addition']?></div>

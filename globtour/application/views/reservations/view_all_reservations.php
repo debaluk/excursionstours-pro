@@ -16,13 +16,13 @@
             <tr>
                 <th>Excursion</th>
                 <th>Start date</th>
-                <th>Adult</th>
-                <th>Children</th>
+                <th>Persons</th>
                 <th>Total price</th>
-                <th>Title</th>
                 <th>Name</th>
-                <th>Email</th>
-                <th class="th-action center last">Action</th>
+                <th>Email</th>                
+                <th>Phone</th> 
+                <th style="width: 200px;">Pickup location</th>
+                <th class="th-action center last" style="width: 60px !important;">Action</th>
             </tr>
         </thead>
         <tbody id="excrows">

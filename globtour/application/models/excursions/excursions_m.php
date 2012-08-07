@@ -14,6 +14,10 @@
         function create() {
             if($this->validate()) {
 
+                // Pickup locations
+                $_POST['pickup_location'] = implode('__!__',$_POST['item']['tags']);
+                unset($_POST['item']);
+                
                 //Translate class                 
                 foreach($this->fields as $f){
                     $_POST[$f] = $this->translate->updatePost("", $_POST[$f]);

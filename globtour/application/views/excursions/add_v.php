@@ -94,8 +94,11 @@
     <div class="lineinput">
         <label>                          
             Piuckup location:<br />
-            <textarea name="pickup_location" id="pickup_location" rows="5" class="inputbox tinymce" cols="40"></textarea>
-            <i>use unordered list for best results</i> 
+            <!--<textarea name="pickup_location" id="pickup_location" rows="5" class="inputbox tinymce" cols="40"></textarea>-->
+            <ul id="mytags">
+                <!-- Existing list items will be pre-added to the tags -->
+            </ul>
+            <i style="color: red;">do not use quotation marks  [ “ ” ] or  [ ' ' ] </i>
         </label>
     </div>
 
@@ -106,6 +109,27 @@
     </div>
 
 </form>
+
+<style type="text/css">
+    .tagit-label{
+        color: #414141;
+    }
+    #mytags{
+        width:370px
+    }
+    ul.tagit input[type="text"] {
+        -moz-box-sizing: border-box;
+        background-color: inherit;
+        border: 1px solid #DEDEDE;
+        height: 24px;
+        line-height: 24px;
+        margin: 0;
+        outline: medium none;
+        padding: 0;
+        width: 364px;
+    }
+</style>
+
 <script type="text/javascript">
 
     $(document).ready(function(){
@@ -127,6 +151,8 @@
                             dataType: 'json'
                     });
             });
+
+            $("#mytags").tagit({ allowSpaces : true });
 
     });
 
