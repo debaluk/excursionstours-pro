@@ -115,7 +115,7 @@
         <ul id="mytags">
             <!-- Existing list items will be pre-added to the tags -->
         </ul>
-        <i style="color: red;">do not use quotation marks  [ “ ” ] or  [ ' ' ]</i>
+        <i style="color: red;">do not use quotation marks  [ “ ” ] or  [ ' ' ] </i>
     </div>
 
     <div class="lineinput">
@@ -131,6 +131,17 @@
     }
     #mytags{
         width:370px
+    }
+    ul.tagit input[type="text"] {
+        -moz-box-sizing: border-box;
+        background-color: inherit;
+        border: 1px solid #DEDEDE;
+        height: 24px;
+        line-height: 24px;
+        margin: 0;
+        outline: medium none;
+        padding: 0;
+        width: 364px;
     }
 </style>
 
