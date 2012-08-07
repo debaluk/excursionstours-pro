@@ -111,7 +111,12 @@
     <div class="lineinput">
         <label>
             Piuckup location:<br />
-            <textarea name="pickup_location" id="pickup_location" rows="5" class="inputbox tinymce" cols="40"><?=$excursion['pickup_location']?></textarea>
+            <!--<textarea name="pickup_location" id="pickup_location" rows="5" class="inputbox tinymce" cols="40"><?=$excursion['pickup_location']?></textarea>-->
+            <ul id="mytags">
+                <!-- Existing list items will be pre-added to the tags -->
+                <li>Tag1</li>
+                <li>Tag2</li>
+            </ul>
             <i>use unordered list for best results</i>
         </label>
     </div>
@@ -152,6 +157,8 @@
 
 
             $(".multiselect").multiselect();
+            
+            $("#mytags").tagit();
 
     });
 </script>

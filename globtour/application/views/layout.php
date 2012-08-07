@@ -91,6 +91,9 @@
 
             <link type="text/css" href="<?=$url?>assets/css/ui.multiselect.css" rel="stylesheet" />
             <script src="<?=$url?>assets/js/ui.multiselect.js"  type="text/javascript"></script>
+            
+            <!--<link type="text/css" href="<?=$url?>assets/css/jquery.tagit.css" rel="stylesheet" />
+            <script src="<?=$url?>assets/js/tag-it.js"  type="text/javascript"></script>    -->
 
             <? endif; ?>
 
