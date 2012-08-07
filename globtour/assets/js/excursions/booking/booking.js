@@ -1,6 +1,6 @@
 
 //var system_url = 'http://sohotravel.it-montenegro.com/'; 
-//var system_url = 'http://www.informacionisistem.com/excursionstours-pro/'; 
+//var system_url = 'http://www.informacionisistem.com/excursionstours/'; 
 var system_url = 'http://localhost/excursionstours-pro/globtour/'; 
 
 var result_div = 'content_exc';  
