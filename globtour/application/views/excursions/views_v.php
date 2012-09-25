@@ -9,6 +9,8 @@
                 <th>Photo</th>
                 <th>Excursion name</th>
                 <th>Info</th>
+                <th class="center">Action Big</th>
+                <th class="center">Action Small</th>
                 <th class="center">Status</th>
                 <th class="th-action center last">Action</th>
             </tr>
@@ -58,6 +60,15 @@
                         Price for Children: <?=$excursion['childPrice']?>&euro;<br />
                         Capacity: <?=$excursion['capacity']?> persons
                     </td>
+
+                    <td class="action_check">
+                        <input type="checkbox" name="action_1[]" value="1" class="action_big" data-holder="<?=$excursion['id']?>" <?if($excursion['action_1']==1)echo 'checked="checked";'?>  />
+                    </td>
+
+                    <td class="action_check">
+                        <input type="checkbox" name="action_2[]" value="1" class="action_small" data-holder="<?=$excursion['id']?>" <?if($excursion['action_2']==1)echo 'checked="checked";'?>  />
+                    </td>
+
                     <td class="center" style="vertical-align: middle;">
                         <?
                             switch ($excursion['status']){
@@ -123,6 +134,54 @@
                                     $('#ex_'+id).parent().parent().remove();
                                 }
                         });
+                    }
+            });
+
+            //var log = console.log;
+
+            set_action = function(action_type,action_value,exc_id)
+            {
+                //log('set_action:'+action_type+' value: '+action_value+' on car:'+ car_id)
+
+                $.ajax({
+                        url: base_url + 'excursions/excursions/set_action',
+                        type: 'POST',
+                        data: ({
+                                action_type:action_type,
+                                action_value:action_value,
+                                exc_id:exc_id
+                        }),
+                        dataType: 'json',
+                        success: function(data){
+                            if(data.success == true){
+                                alert(data.msg)
+                            }else{
+                                alert('Error!');
+                            }
+                        }
+                });
+
+            }
+
+            $('.action_big').live('change',function(){
+                    var checked = $(this).attr('checked');
+                    if(checked)
+                        {
+                        set_action('action_1',1,$(this).attr('data-holder'))
+                    }else
+                        {
+                        set_action('action_1',0,$(this).attr('data-holder'))
+                    }
+            });
+
+            $('.action_small').live('change',function(){
+                    var checked = $(this).attr('checked');
+                    if(checked)
+                        {
+                        set_action('action_2',1,$(this).attr('data-holder'))
+                    }else
+                        {
+                        set_action('action_2',0,$(this).attr('data-holder'))
                     }
             });
     });
