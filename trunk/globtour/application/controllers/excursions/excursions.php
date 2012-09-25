@@ -68,6 +68,13 @@
             $this->excursionsm->set_status($exc_id,$status);
             $this->views();
         }
+        
+        function set_action()
+        {
+            $this->db->where('id',$this->input->post('exc_id'));
+            $this->db->update('excursions',array($this->input->post('action_type')=>$this->input->post('action_value')));
+            echo json_encode(array('success'=>TRUE, 'msg'=>'Seccess action operation'));
+        }
 
     }
 ?>
