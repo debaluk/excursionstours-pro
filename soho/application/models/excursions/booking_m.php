@@ -102,7 +102,7 @@
             $res = $this->db->query($q)->result_array();
 
             
-            $this->firephp->log($this->db->last_query());
+            //$this->firephp->log($this->db->last_query());
             
 
             foreach($res as $key=>$value){
