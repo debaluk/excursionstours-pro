@@ -13,10 +13,10 @@ class MY_Controller extends CI_Controller {
     {
         if($val != NULL)
         {
-            $this->firephp->fb($string.':'.$val);         
+            //$this->firephp->fb($string.':'.$val);         
         }else
         {
-            $this->firephp->fb($string);         
+            //$this->firephp->fb($string);         
         }
 
     }

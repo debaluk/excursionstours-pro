@@ -108,7 +108,7 @@
                 $this->firephp->fb('$resp '.$resp);  */
 
                 if (substr($resp,8,2) == "OK" OR substr($resp,8,8) == "REVERSED") {           
-                    $this->firephp->fb('$resp '.$resp); 
+                    //$this->firephp->fb('$resp '.$resp); 
 
                     if (strstr($resp, 'RESULT:')) {
                         $result = explode('RESULT: ', $resp);
