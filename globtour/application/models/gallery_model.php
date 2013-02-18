@@ -2,7 +2,7 @@
 
     class Gallery_model extends CI_Model{
 
-        var $all_galeries_q = "SELECT * FROM `gallery` WHERE (`table` = 'excursions' or `table` = 'tours' or `table` IS NULL) and `posts_ID` is NULL";
+        var $all_galeries_q = "SELECT * FROM `gallery` WHERE (`table` = 'excursions' or `table` = 'tours') and `posts_ID` is NULL";
         
         function __construct(){
             parent::__construct();
@@ -437,6 +437,8 @@
 
             //delete thumbnails folders and files within each gallery
             foreach ($galleries as $gallery):
+                
+                //echo "./pro-gallery/".$gallery['path'].'/thumbnail'.'<br>';
 
                 $this->deleteDir("./pro-gallery/".$gallery['path'].'/thumbnail');
 
