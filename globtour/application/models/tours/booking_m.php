@@ -74,7 +74,7 @@
 
             $res = $this->db->query($upit)->result_array();
             
-            $this->firephp->log($this->db->last_query());
+            //$this->firephp->log($this->db->last_query());
 
             foreach($res as $key=>$value){
                 //echo $value['title']; 
@@ -88,7 +88,7 @@
 
             } 
 
-            $this->firephp->log($res);
+            //$this->firephp->log($res);
             
             return  $res; 
 
