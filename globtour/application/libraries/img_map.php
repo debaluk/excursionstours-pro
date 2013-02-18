@@ -280,7 +280,7 @@
          */
         private function getGdSrcImage($filepath, $type)
         {
-            echo $type;
+            //echo $type;
             // create the image
             $src_img=false;
             switch($type)
@@ -534,7 +534,7 @@
 
             $filepathNew=$this->getThumbFilepath($filename, $filetime, $maxWidth, $maxHeight, $type);
             
-            echo $filepathNew;
+            //echo $filepathNew;
 
             if($type == self::TYPE_EXACT || $type == self::TYPE_EXACT_TOP)
                 $response=$this->cropImageSaveNew($filepath, $maxWidth, $maxHeight, $filepathNew, $type);
