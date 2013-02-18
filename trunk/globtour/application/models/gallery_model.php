@@ -461,12 +461,12 @@
 
                         /* This is the correct way to loop over the directory. */
                         while (false !== ($entry = readdir($handle))) {
-                            if ($entry != "." && $entry != ".." && $entry != "thumbnail"  && $entry != "videos") {
+                            if ($entry != "." && $entry != ".." && $entry != "thumbnail"  && $entry != "videos" && $entry!='.DS_Store') {
 
                                 foreach ($dimensions as $dimension):
 
                                     //echo '<br>'.print_r($dimension).'<br>';
-                                    echo 'ntry'.$entry;
+                                    //echo 'ntry'.$entry;
 
                                     $dim = unserialize($dimension['user_data']);
 
