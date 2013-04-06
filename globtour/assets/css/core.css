@@ -881,7 +881,6 @@ table.display thead th {
     font-weight: bold;
     line-height: 23px;
     padding: 0 7px;
-    text-transform: uppercase;
 }
 .widefat td {
     background: none repeat scroll 0 0 #FFFFFF;
