@@ -56,7 +56,7 @@
             // way, you don't need to fiddle with these options.
             singleField: false,
 
-            singleFieldDelimiter: ',',
+            singleFieldDelimiter: '--',
 
             // Set this to an input DOM node to use an existing form field.
             // Any text in it will be erased on init. But it will be
@@ -181,7 +181,7 @@
                     // except when there is an open quote or if setting allowSpaces = true.
                     // Tab will also create a tag, unless the tag input is empty, in which case it isn't caught.
                     if (
-                        event.which == $.ui.keyCode.COMMA ||
+                        
                         event.which == $.ui.keyCode.ENTER ||
                         (
                             event.which == $.ui.keyCode.TAB &&
