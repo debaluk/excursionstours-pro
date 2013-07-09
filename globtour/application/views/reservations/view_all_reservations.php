@@ -17,10 +17,8 @@
                 <th>Excursion</th>
                 <th>Start date</th>
                 <th>Persons</th>
-                <th>Total price</th>
-                <th>Name</th>
-                <th>Email</th>                
-                <th>Phone</th> 
+                <th>Price</th>
+                <th>Client</th>
                 <th style="width: 160px;">Pickup location</th>
                 <th class="th-action center last" style="width: 60px !important;">Action</th>
             </tr>
