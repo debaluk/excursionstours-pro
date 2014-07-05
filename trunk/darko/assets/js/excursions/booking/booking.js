@@ -1,6 +1,6 @@
 
-var system_url = 'http://www.it-montenegro.com/excursionstours-pro/';
-//var system_url = 'http://localhost/excursionstours-pro/soho/'; 
+//var system_url = 'http://www.it-montenegro.com/excursionstours-pro/';
+var system_url = 'http://localhost/working_files/excursionstours_pro/darko/'; 
 
 var result_div = 'content_exc';  
 var selected_date;

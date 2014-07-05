@@ -54,7 +54,7 @@
             //Insert account into the database
             
             $data = array(               
-                'name' => $_POST['name'],                              
+                'name' => $_POST['nicename'],                              
                 'email' => $_POST['email'],                
                 'password' => $user_pass_hashed,          
                 'date' => time()                     

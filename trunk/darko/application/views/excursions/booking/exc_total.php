@@ -67,7 +67,7 @@
                     <td style="text-align: center;">&euro;<?php echo $eb_chprice_sub;  ?>.00</td>
 
                 </tr>        
-                <tr>
+<!--                <tr>
                     <td>
                         Transportation type
                     </td>
@@ -75,7 +75,7 @@
                         <?php echo $tra_title; ?>
                     </td>
 
-                </tr>
+                </tr>-->
                 <tr>
                     <td colspan="2" style="border-bottom: none">
                         <?if($eb_status==0){?>

@@ -97,7 +97,7 @@
 
                         <div class="right_note">
                             <ul>
-                                <li style="color: #848484;">SOHO Group - Montenegro will never sell, share or distribute your personal information.</li>
+                                <li style="color: #848484;">We will never sell, share or distribute your personal information.</li>
                             </ul>
                         </div>
                         <div class="left_note">
