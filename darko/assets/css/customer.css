@@ -1,0 +1,168 @@
+#e321 input, #e321 select, #e321 textarea, #e321 button {
+    font-family:'Arial','Helvetica','Verdana',sans-serif;
+    font-size:11px;
+}
+#e321 label {
+    font-weight:bold;
+}
+/*CONTACT INFO*/
+#e321 .check_out{
+    width: 623px;
+    /*font-size: 13px; */
+}
+#e321 .check_out label {
+    padding:3px 3px 0 10px;
+}
+#e321 .check_out input, #e321 .check_out select, #e321 .check_out textarea {
+    /*border-color:#5E5E5E #B7B7B7 #B7B7B7 #5E5E5E;
+    border-style:solid;
+    border-width:1px;*/
+}
+#e321 .check_out select {
+    float:left;
+    padding:2px 0;
+}
+
+/*TRAVELER LABEL*/ 
+#e321 .traveler_details, #e321 .contact_details{
+    border-bottom:1px solid #e77817;
+    padding:15px;
+}
+#e321 .check_out h2 {
+    font-size:21px;
+    font-weight:bold;
+     text-shadow: none;
+}
+#e321 .check_out .label_header {
+    margin-bottom:0;
+    padding-bottom:0;
+    padding-top:10px;
+}
+#e321 .label_header .traveler_title {
+    padding-left:156px;
+    width:50px;
+}
+#e321 .label_header .traveler_firstname {
+    width:180px;
+}
+#e321 .label_header label {
+    float:left;
+    margin-right:5px;
+    padding-left:0;
+    padding-right:0;
+}
+/*TRAVELER LIST*/
+#e321 .traveler_list {
+    clear:both;
+}  
+#e321 .traveler_list p {
+    border-bottom:1px dotted #f5c79f;
+    margin:0;
+    padding: 0 5px 5px;
+}
+#e321 .traveler_index {
+    float:left;
+    width:150px;
+    margin-top:8px;
+}
+#e321 .traveler_title{
+    width: 45px;
+    margin-right:6px;
+}
+#e321 .traveler_list input {
+    /*float:left;*/
+}
+#e321 input.traveler_firstname, #e321 input.traveler_lastname {
+    width:175px;
+}
+#e321 .traveler_list .traveler_firstname {
+    margin-right:5px;
+}
+
+#e321 .check_out label em {
+    color:#CE2B1A;
+    float:left;
+    line-height:16px; 
+    margin-left:-9999px;
+}
+#e321 .check_out p label.required {
+    background:url(../img/backgrounds/asterisk.gif) no-repeat scroll 0 4px transparent;
+}
+
+/*CONTACT LABEL*/ 
+#e321 .contact_details .email_address, #e321 .contact_details .verify_email_address {
+    margin-left:10px;
+    width:153px;
+}
+#e321 .contact_list p {
+    margin:0;
+    padding:3px 0;
+} 
+
+/*NOTE BOX*/
+#e321 .note_box {
+    margin-top:10px;
+    padding-bottom:3px;
+}
+#e321 .note_body {
+    background-color:#F7EDE5;
+    border-bottom:1px solid #F5C79F;
+    border-top:1px solid #F5C79F;
+    font-size:11px;
+    padding:10px 10px 7px;
+    height: 60px;
+}
+#e321 .note_body .note_title, #e321 .note_body .note_title_block {
+    font-size: 11px;
+    font-weight: bold;
+}
+#e321 .note_body ul {
+    /*float:right; */
+    margin: 0;
+    padding-left:3px;
+    /*width:620px; */
+}
+#e321 .note_body ul li {
+    background:url(../img/backgrounds/icon_dot_black.gif) no-repeat scroll 0 6px transparent;
+    list-style-type:none;
+    padding-left:10px;
+    font-size: 11px;
+}
+#e321 .right_note{
+    float: right;
+    width: 465px;
+}
+#e321 .left_note{
+    float: left;
+    width: 80px;
+    margin-left: 20px;
+}
+#e321 .clearing{
+    clear: both;
+}
+#e321 input.iconname{
+    background-image: url(../img/backgrounds/fullname.gif);
+    background-repeat: no-repeat;
+    background-position: 5px 50%;
+    padding-left:20px;
+    width: 165px;
+}
+#e321 input.iconemail{
+    background-image: url(../img/backgrounds/email.gif);
+    background-repeat: no-repeat;
+    background-position: 5px 50%;
+    padding-left:23px;
+    width: 138px;
+}
+#e321 .required {
+color:#848484;
+}
+#e321 .pad_text_left{
+    padding-left: 5px;
+}
+#e321 .traveler_list .traveler_firstname {
+    margin-right: 3px;
+}
+#e321 .error{
+    border: 1px solid red !important;
+}
