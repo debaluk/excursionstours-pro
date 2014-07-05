@@ -6,7 +6,7 @@
         <meta name="description" content="Accommodation - PRO" />
         <meta name="Language" content="en" />
         <title>Excursions &amp; Tours - PRO | <?=$title?></title>  
-        <link rel="icon" href="<?=base_url()?>assets/img/pngico.png" type="image/x-icon" />
+        <!--<link rel="icon" href="<?=base_url()?>assets/img/pngico.png" type="image/x-icon" />-->
 
 
 
