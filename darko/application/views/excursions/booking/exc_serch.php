@@ -3,7 +3,7 @@
         <div id="searchtop"></div>
         <div id="searchContents">
             <div class="sp_title">
-                <img alt="Soho Group" src="<?=base_url()?>assets/img/logo.jpg" style="padding-left: 10px;">
+                <img alt="Online bookin" src="<?=base_url()?>assets/img/logo.jpg" style="padding-left: 10px;">
             </div>
             <br>
             <label for="eb_starting">Select Weekday:</label>
